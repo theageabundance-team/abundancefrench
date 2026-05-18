@@ -606,7 +606,7 @@
 
       const replyHTML = '<div class="reply-box">' +
           '<input class="amen-input" id="amenInput-' + dateStr + '" type="text" placeholder="Partagez votre amen..." maxlength="200"/>' +
-          '<button class="amen-send" onclick="sendAmen(\'' + dateStr + '\')">Send</button>' +
+          '<button class="amen-send" onclick="sendAmen(\'' + dateStr + '\')">Envoyer</button>' +
         '</div>';
 
       return '<div class="date-div"><span>' + dow + ', ' + mon + ' ' + day + '</span></div>' +
@@ -635,7 +635,7 @@
     function renderAll() {
       const todayStr = _localDateStr();
       const dates    = getAvailableDates();
-      const membres  = 2847 + dates.length * 17;
+      const members  = 2847 + dates.length * 17;
 
       document.getElementById('memberCount').textContent  = fmt(members) + ' membres';
       document.getElementById('onboardCount').textContent = fmt(members) + ' membres · Prières quotidiennes';
