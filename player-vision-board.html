@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPGZMZW88T"></script>
@@ -15,10 +15,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Age of Abundance">
+  <meta name="apple-mobile-web-app-title" content="L'Ere de l'Abondance">
   <link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
   <meta name="theme-color" content="#0d0d12">
-  <title>Vision Board Academy — Abundance Time</title>
+  <title>Académie du Tableau de Vision — Temps d'Abondance</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -424,20 +424,20 @@
 <!-- GIFT BANNER -->
 <div class="gift-banner" id="gift-banner">
   <div class="gift-banner-text">
-    Complete all lessons to receive your spiritual gift
-    <span class="gift-pill">🎯 Gift of Divine Vision</span>
+    Terminez toutes les leçons pour recevoir votre don spirituel
+    <span class="gift-pill">🎯 Don de la Vision Divine</span>
   </div>
   <div class="gift-progress-wrap">
     <div class="gift-progress-bar">
       <div class="gift-progress-fill" id="gift-progress-fill"></div>
     </div>
-    <div class="gift-progress-label" id="gift-progress-label">0 of 1</div>
+    <div class="gift-progress-label" id="gift-progress-label">0 sur 1</div>
   </div>
 </div>
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-back" onclick="fadeOut(event, 'index.html')">← Back to Home</a>
+  <a href="index.html" class="nav-back" onclick="fadeOut(event, 'index.html')">← Retour à l'Accueil</a>
 </nav>
 
 <!-- LAYOUT -->
@@ -446,13 +446,13 @@
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-eyebrow">Course Content</div>
-      <div class="sidebar-course-title">Vision Board Academy</div>
+      <div class="sidebar-eyebrow">Contenu du Cours</div>
+      <div class="sidebar-course-title">Académie du Tableau de Vision</div>
     </div>
     <div class="sidebar-progress">
       <div class="progress-row">
-        <span>Progress</span>
-        <span id="progress-label">0 of 1 complete</span>
+        <span>Progression</span>
+        <span id="progress-label">0 sur 1 terminé</span>
       </div>
       <div class="progress-bar-wrap">
         <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
@@ -475,7 +475,7 @@
         <h1 class="module-title" id="lesson-title"></h1>
         <button class="btn-complete" id="btn-complete" onclick="markComplete()">
           <span id="complete-icon">◯</span>
-          <span id="complete-text">Mark as Complete</span>
+          <span id="complete-text">Marquer comme Terminé</span>
         </button>
       </div>
 
@@ -486,45 +486,45 @@
       </div>
 
       <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('about', this)">About</button>
-        <button class="tab-btn" onclick="switchTab('notes', this)">My Notes</button>
-        <button class="tab-btn" onclick="switchTab('comments', this)">Community</button>
+        <button class="tab-btn active" onclick="switchTab('about', this)">À Propos</button>
+        <button class="tab-btn" onclick="switchTab('notes', this)">Mes Notes</button>
+        <button class="tab-btn" onclick="switchTab('comments', this)">Communauté</button>
       </div>
 
       <!-- TAB: ABOUT -->
       <div class="tab-content active" id="tab-about">
-        <div class="about-label">About This Lesson</div>
+        <div class="about-label">À Propos de Cette Leçon</div>
         <p class="about-text" id="lesson-desc"></p>
         <div class="download-section" id="download-section" style="display:none;">
-          <div class="about-label" style="margin-top:28px;">Course Material</div>
+          <div class="about-label" style="margin-top:28px;">Matériel du Cours</div>
           <div id="download-content"></div>
         </div>
       </div>
 
       <!-- TAB: NOTES -->
       <div class="tab-content" id="tab-notes">
-        <div class="about-label">Your Personal Notes</div>
-        <textarea class="notes-textarea" id="notes-input" placeholder="Write your reflections, revelations, and insights here..."></textarea>
-        <button class="btn-save-notes" onclick="saveNotes()">✦ Save Notes</button>
+        <div class="about-label">Vos Notes Personnelles</div>
+        <textarea class="notes-textarea" id="notes-input" placeholder="Écrivez vos réflexions, révélations et idées ici..."></textarea>
+        <button class="btn-save-notes" onclick="saveNotes()">✦ Sauvegarder les Notes</button>
       </div>
 
       <!-- TAB: COMMENTS -->
       <div class="tab-content" id="tab-comments">
         <div class="rating-section">
-          <div class="about-label">Rate This Lesson</div>
+          <div class="about-label">Évaluez Cette Leçon</div>
           <div class="stars-row">
             <button class="star-btn" onclick="setRating(1)">★</button>
             <button class="star-btn" onclick="setRating(2)">★</button>
             <button class="star-btn" onclick="setRating(3)">★</button>
             <button class="star-btn" onclick="setRating(4)">★</button>
             <button class="star-btn" onclick="setRating(5)">★</button>
-            <span class="rating-label" id="rating-label">Tap to rate</span>
+            <span class="rating-label" id="rating-label">Appuyer pour évaluer</span>
           </div>
         </div>
         <div class="comment-box">
-          <textarea class="comment-input" id="comment-input" placeholder="Share what this teaching revealed to you..."></textarea>
+          <textarea class="comment-input" id="comment-input" placeholder="Partagez ce que cet enseignement vous a révélé..."></textarea>
           <div class="comment-footer">
-            <button class="btn-comment" onclick="submitComment()">✦ Share</button>
+            <button class="btn-comment" onclick="submitComment()">✦ Partager</button>
           </div>
         </div>
         <div class="comments-list" id="comments-list"></div>
@@ -532,8 +532,8 @@
 
       <!-- LESSON NAVIGATION -->
       <div class="lesson-nav">
-        <button class="btn-lesson-nav" id="btn-prev" onclick="goLesson(-1)">← Previous</button>
-        <button class="btn-lesson-nav next" id="btn-next" onclick="goLesson(1)">Next →</button>
+        <button class="btn-lesson-nav" id="btn-prev" onclick="goLesson(-1)">← Précédent</button>
+        <button class="btn-lesson-nav next" id="btn-next" onclick="goLesson(1)">Suivant →</button>
       </div>
 
     </div>
@@ -546,15 +546,15 @@
 <div class="gift-modal-overlay" id="gift-modal">
   <div class="gift-modal">
     <span class="gift-modal-emoji">🎯</span>
-    <div class="gift-modal-eyebrow">Your Gift Has Been Unlocked</div>
-    <div class="gift-modal-title">Gift of Divine Vision</div>
+    <div class="gift-modal-eyebrow">Votre Don a Été Débloqué</div>
+    <div class="gift-modal-title">Don de la Vision Divine</div>
     <p class="gift-modal-text">
-      You have learned to see with the eyes of faith. Your vision board is not just a collage — it is a declaration of what God has already prepared. Write it down, make it plain, and watch it come to pass.
+      Vous avez appris à voir avec les yeux de la foi. Votre tableau de vision n'est pas qu'un collage — c'est une déclaration de ce que Dieu a déjà préparé. Écrivez-le, rendez-le clair, et regardez-le se réaliser.
     </p>
-    <div class="gift-modal-verse">"Write the vision and make it plain on tablets, that he may run who reads it." — Habakkuk 2:2</div>
+    <div class="gift-modal-verse">« Écris la vision, grave-la sur des tables, pour qu'on la lise couramment. » — Habacuc 2:2</div>
     <div class="gift-modal-btns">
-      <a href="journey.html" class="btn-gift-journey" onclick="fadeOut(event,'journey.html')">✦ View My Gift on the Journey</a>
-      <button class="btn-gift-stay" onclick="closeGiftModal()">Keep Exploring</button>
+      <a href="journey.html" class="btn-gift-journey" onclick="fadeOut(event,'journey.html')">✦ Voir Mon Don sur le Parcours</a>
+      <button class="btn-gift-stay" onclick="closeGiftModal()">Continuer à Explorer</button>
     </div>
   </div>
 </div>
@@ -564,9 +564,9 @@
 const LESSONS = [
   {
     id: 'vision-board-1',
-    title: 'Welcome to Vision Board Academy',
-    eyebrow: 'Lesson 1 of 1 · Mindset',
-    desc: 'Learn to create powerful vision boards that accelerate your manifestation journey and align your desires with divine purpose.',
+    title: 'Bienvenue à l\'Académie du Tableau de Vision',
+    eyebrow: 'Leçon 1 sur 1 · État d\'Esprit',
+    desc: 'Apprenez à créer des tableaux de vision puissants qui accélèrent votre parcours de manifestation et alignent vos désirs avec la volonté divine.',
     hasDownload: true,
     downloadType: 'pdf',
     downloadHref: 'pdfs/Visionboard.pdf',
@@ -633,7 +633,7 @@ function renderLesson(idx) {
           <div class="download-title">${lesson.downloadTitle}</div>
           <div class="download-meta">${lesson.downloadMeta}</div>
         </div>
-        <div class="download-btn">↓ Download PDF</div>
+        <div class="download-btn">↓ Télécharger PDF</div>
       </a>`;
   } else {
     dlSection.style.display = 'none';
@@ -641,12 +641,12 @@ function renderLesson(idx) {
 
   const done = isCompleted(lesson.id);
   document.getElementById('complete-icon').textContent = done ? '✓' : '◯';
-  document.getElementById('complete-text').textContent = done ? 'Completed' : 'Mark as Complete';
+  document.getElementById('complete-text').textContent = done ? 'Terminé' : 'Marquer comme Terminé';
   document.getElementById('btn-complete').className = 'btn-complete' + (done ? ' done' : '');
 
   document.getElementById('btn-prev').className = 'btn-lesson-nav' + (idx === 0 ? ' disabled' : '');
   document.getElementById('btn-next').className = 'btn-lesson-nav next' + (idx === LESSONS.length - 1 ? ' disabled' : '');
-  document.getElementById('btn-next').textContent = idx === LESSONS.length - 1 ? '✓ Last Lesson' : 'Next →';
+  document.getElementById('btn-next').textContent = idx === LESSONS.length - 1 ? '✓ Dernière Leçon' : 'Suivant →';
 
   document.getElementById('notes-input').value = localStorage.getItem('notes_' + lesson.id) || '';
   currentRating = parseInt(localStorage.getItem('rating_' + lesson.id) || '0');
@@ -673,9 +673,9 @@ function updateProgress() {
   const total = LESSONS.length;
   const pct = (count / total) * 100;
   document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('progress-label').textContent = `${count} of ${total} complete`;
+  document.getElementById('progress-label').textContent = `${count} sur ${total} terminé`;
   document.getElementById('gift-progress-fill').style.width = pct + '%';
-  document.getElementById('gift-progress-label').textContent = `${count} of ${total}`;
+  document.getElementById('gift-progress-label').textContent = `${count} sur ${total}`;
 }
 
 function markComplete() {
@@ -686,7 +686,7 @@ function markComplete() {
   localStorage.setItem('completed_lessons_' + MODULE_ID, JSON.stringify(done));
   saveModuleProgress(MODULE_ID, currentLesson, done);
   document.getElementById('complete-icon').textContent = '✓';
-  document.getElementById('complete-text').textContent = 'Completed';
+  document.getElementById('complete-text').textContent = 'Terminé';
   document.getElementById('btn-complete').className = 'btn-complete done';
   updateProgress();
   renderSidebar();
@@ -722,7 +722,7 @@ function setRating(n) {
 }
 function renderStars() {
   document.querySelectorAll('.star-btn').forEach((s, i) => s.className = 'star-btn' + (i < currentRating ? ' active' : ''));
-  const labels = ['Tap to rate', 'Not for me', 'It was ok', 'Good', 'Very good', 'Life-changing ✦'];
+  const labels = ['Appuyer pour évaluer', 'Pas pour moi', 'C\'était bien', 'Bien', 'Très bien', 'Qui change la vie ✦'];
   document.getElementById('rating-label').textContent = labels[currentRating];
 }
 
@@ -766,8 +766,8 @@ function renderComments() {
 function saveNotes() {
   saveLessonInteraction(LESSONS[currentLesson].id, document.getElementById('notes-input').value, undefined);
   const btn = document.querySelector('.btn-save-notes');
-  btn.textContent = '❆ Saved';
-  setTimeout(() => btn.textContent = '❆ Save Notes', 1800);
+  btn.textContent = '❆ Sauvegardé';
+  setTimeout(() => btn.textContent = '❆ Sauvegarder les Notes', 1800);
 }
 
 function closeGiftModal() {
@@ -802,7 +802,7 @@ onSupabaseReady(function() {
     updateProgress();
     var done = (p.completedLessons || []).includes(LESSONS[currentLesson].id);
     document.getElementById('complete-icon').textContent = done ? '\u2713' : '\u25ef';
-    document.getElementById('complete-text').textContent = done ? 'Completed' : 'Mark as Complete';
+    document.getElementById('complete-text').textContent = done ? 'Terminé' : 'Marquer comme Terminé';
     document.getElementById('btn-complete').className = 'btn-complete' + (done ? ' done' : '');
   });
 });

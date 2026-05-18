@@ -396,7 +396,7 @@ async function getLessonComments(lessonId) {
       .order('created_at', { ascending: false })
       .limit(50);
     return (data || []).map(r => ({
-      name: r.user_name || 'Member',
+      name: r.user_name || 'Membre',
       text: r.comment_text,
       rating: r.rating,
       date: new Date(r.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
@@ -505,7 +505,7 @@ async function saveCommunityReaction(reactionType, date) {
 
   if (!await _ready()) return;
   const email = getUserEmail();
-  const userName = localStorage.getItem('abundance_name') || 'Anonymous';
+  const userName = localStorage.getItem('abundance_name') || 'Anonyme';
   try {
     await sb().from('community_interactions')
       .upsert(
@@ -516,7 +516,7 @@ async function saveCommunityReaction(reactionType, date) {
 }
 
 async function saveCommunityAmen(text, date) {
-  const userName = localStorage.getItem('abundance_name') || 'Blessed Soul';
+  const userName = localStorage.getItem('abundance_name') || 'Âme Bénie';
   if (!await _ready()) return;
   const email = getUserEmail();
   try {
@@ -537,7 +537,7 @@ async function getCommunityAmens(date) {
       .order('created_at', { ascending: true });
     if (data && data.length > 0) {
       const amens = data.map(r => ({
-        name: r.user_name || 'Blessed Soul',
+        name: r.user_name || 'Âme Bénie',
         text: r.amen_text,
         date: new Date(r.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       }));

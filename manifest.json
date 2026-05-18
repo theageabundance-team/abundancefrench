@@ -1,7 +1,7 @@
 {
-  "name": "The Age of Abundance",
-  "short_name": "Age of Abundance",
-  "description": "Your divine journey to spiritual abundance and manifestation.",
+  "name": "L'Ere de l'Abondance",
+  "short_name": "Ere de l'Abondance",
+  "description": "Votre parcours divin vers l'abondance spirituelle et la manifestation.",
   "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait",

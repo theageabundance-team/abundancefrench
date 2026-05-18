@@ -4,42 +4,42 @@
   // ── SEARCH INDEX ─────────────────────────────────────────────
   var INDEX = [
     // Pages
-    { title: 'Home',                          desc: 'Your daily dashboard and spiritual overview',              cat: 'Pages',      url: 'index.html',                   emoji: '🏠' },
-    { title: 'My Journey',                    desc: 'Track your milestones and unlock divine gifts',            cat: 'Pages',      url: 'journey.html',                 emoji: '✨' },
-    { title: 'My Journal',                    desc: 'Write your reflections and gratitude entries',             cat: 'Pages',      url: 'journal.html',                 emoji: '📖' },
-    { title: 'Abundance Circle',              desc: 'Daily prayers and community connection',                   cat: 'Pages',      url: 'community.html',               emoji: '👥' },
-    { title: 'Divine Script',                 desc: 'Your personalized divine script and declarations',         cat: 'Pages',      url: 'divine-script.html',           emoji: '📜' },
-    { title: 'Support',                       desc: 'Get help and contact the team',                            cat: 'Pages',      url: 'support.html',                 emoji: '💬' },
+    { title: 'Accueil',                       desc: 'Votre tableau de bord quotidien et aperçu spirituel',     cat: 'Pages',      url: 'index.html',                   emoji: '🏠' },
+    { title: 'Mon Parcours',                  desc: 'Suivez vos étapes et débloquez des dons divins',          cat: 'Pages',      url: 'journey.html',                 emoji: '✨' },
+    { title: 'Mon Journal',                   desc: 'Écrivez vos réflexions et entrées de gratitude',          cat: 'Pages',      url: 'journal.html',                 emoji: '📖' },
+    { title: 'Cercle d\'Abondance',          desc: 'Prières quotidiennes et connexion communautaire',         cat: 'Pages',      url: 'community.html',               emoji: '👥' },
+    { title: 'Script Divin',                  desc: 'Votre script divin personnalisé et vos déclarations',     cat: 'Pages',      url: 'divine-script.html',           emoji: '📜' },
+    { title: 'Assistance',                    desc: 'Obtenez de l\'aide et contactez l\'équipe',             cat: 'Pages',      url: 'support.html',                 emoji: '💬' },
 
     // Today's Practice
-    { title: 'Daily Focus',                   desc: 'Your daily spiritual focus and intention setting',         cat: "Today's Practice", url: 'player-daily-focus.html',    emoji: '🎯' },
-    { title: 'Divine Truth',                  desc: 'Daily scripture and divine truth meditation',              cat: "Today's Practice", url: 'player-divine-truth.html',   emoji: '✝️' },
-    { title: "Solomon's Wisdom",              desc: 'Daily wisdom from the book of Proverbs',                   cat: "Today's Practice", url: 'player-solomons-wisdom.html',emoji: '👑' },
-    { title: 'Daily Decree',                  desc: 'Speak divine decrees over your life today',                cat: "Today's Practice", url: 'player-daily-decree.html',   emoji: '📜' },
+    { title: 'Focus Quotidien',               desc: 'Votre focus spirituel quotidien et intention',            cat: "Pratique du Jour", url: 'player-daily-focus.html',    emoji: '🎯' },
+    { title: 'Vérité Divine',                 desc: 'Écriture quotidienne et méditation de vérité divine',    cat: "Pratique du Jour", url: 'player-divine-truth.html',   emoji: '✝️' },
+    { title: "Sagesse de Salomon",            desc: 'Sagesse quotidienne du livre des Proverbes',              cat: "Pratique du Jour", url: 'player-solomons-wisdom.html',emoji: '👑' },
+    { title: 'Décret Quotidien',              desc: 'Prononcez des décrets divins sur votre vie aujourd\'hui',cat: "Pratique du Jour", url: 'player-daily-decree.html',   emoji: '📜' },
 
     // My Products
-    { title: 'Discover Your Guardian Angel', desc: 'Find out which angel watches over you and your path',      cat: 'My Products', url: 'https://quizangel.vercel.app/', emoji: '👼', external: true },
-    { title: 'Powerful Prayers to Archangel Michael', desc: 'Connect with divine protection through powerful prayers', cat: 'My Products', url: 'player.html',            emoji: '⚔️' },
-    { title: 'The Sacred Chant of Archangel Michael', desc: 'Transformative journey into divine protection and purification', cat: 'My Products', url: 'player-sacred-chant.html', emoji: '🎵' },
-    { title: 'The 7 Frequencies of Divine Acceleration', desc: 'Activate the seven sacred frequencies of your divine path', cat: 'My Products', url: 'player-7frequencies.html', emoji: '🔮' },
-    { title: "The Hidden Secrets of King Solomon's Prosperity", desc: 'Unlock ancient wisdom and sacred principles of wealth', cat: 'My Products', url: 'player-solomon.html', emoji: '💎' },
-    { title: '21-Day Manifestation Challenge',desc: 'Transform your life in 21 days through focused divine intention', cat: 'My Products', url: 'player-21-days.html',    emoji: '🌟' },
+    { title: 'Découvrez Votre Ange Gardien', desc: 'Découvrez quel ange veille sur vous et votre chemin',      cat: 'Mes Produits', url: 'https://quizangel.vercel.app/', emoji: '👼', external: true },
+    { title: 'Prières Puissantes à l\'Archange Michel', desc: 'Connectez-vous à la protection divine par des prières puissantes', cat: 'Mes Produits', url: 'player.html', emoji: '⚔️' },
+    { title: 'Le Chant Sacré de l\'Archange Michel', desc: 'Voyage transformateur vers la protection et la purification divines', cat: 'Mes Produits', url: 'player-sacred-chant.html', emoji: '🎵' },
+    { title: 'Les 7 Fréquences de l\'Accélération Divine', desc: 'Activez les sept fréquences sacrées de votre voie divine', cat: 'Mes Produits', url: 'player-7frequencies.html', emoji: '🔮' },
+    { title: "Les Secrets Cachés de la Prospérité du Roi Salomon", desc: 'Déverrouillez la sagesse ancienne et les principes sacrés de la richesse', cat: 'Mes Produits', url: 'player-solomon.html', emoji: '💎' },
+    { title: 'Défi de Manifestation de 21 Jours',desc: 'Transformez votre vie en 21 jours par une intention divine concentrée', cat: 'Mes Produits', url: 'player-21-days.html', emoji: '🌟' },
 
     // Expand Your Journey
-    { title: 'Powerful Numbers — Divine Frequency', desc: 'Explore the sacred geometry of numbers and divine frequencies', cat: 'Expand Your Journey', url: 'player-powerful-numbers.html', emoji: '🔢' },
-    { title: 'Vision Board Academy',          desc: 'Create vision boards that accelerate your manifestation', cat: 'Expand Your Journey', url: 'player-vision-board.html',  emoji: '🖼️' },
-    { title: 'Dream Journal',                 desc: 'Record and decode the messages in your dreams',            cat: 'Expand Your Journey', url: 'player-dream-journal.html', emoji: '🌙' },
-    { title: 'Secret of Power',               desc: 'Unlock the hidden secrets of spiritual power',             cat: 'Expand Your Journey', url: 'player-secret-of-power.html', emoji: '⚡' },
-    { title: 'Mindset Reset',                 desc: 'Break limiting beliefs and reprogram your abundance mindset', cat: 'Expand Your Journey', url: 'player-mindset-reset.html', emoji: '🧠' },
-    { title: 'Whisper of Faith',              desc: 'Deepen your connection through the whisper of faith',      cat: 'Expand Your Journey', url: 'player-whisper-faith.html', emoji: '🕊️' },
-    { title: 'Age of Abundance',              desc: 'The complete Age of Abundance experience',                 cat: 'Expand Your Journey', url: 'player-age-of-abundance.html', emoji: '✨' },
+    { title: 'Nombres Puissants — Fréquence Divine', desc: 'Explorez la géométrie sacrée des nombres et les fréquences divines', cat: 'Élargissez Votre Parcours', url: 'player-powerful-numbers.html', emoji: '🔢' },
+    { title: 'Académie du Tableau de Vision', desc: 'Créez des tableaux de vision qui accélèrent votre manifestation', cat: 'Élargissez Votre Parcours', url: 'player-vision-board.html', emoji: '🖼️' },
+    { title: 'Journal des Rêves',             desc: 'Enregistrez et décodez les messages dans vos rêves',       cat: 'Élargissez Votre Parcours', url: 'player-dream-journal.html', emoji: '🌙' },
+    { title: 'Secret de Puissance',           desc: 'Déverrouillez les secrets cachés du pouvoir spirituel',    cat: 'Élargissez Votre Parcours', url: 'player-secret-of-power.html', emoji: '⚡' },
+    { title: 'Réinitialisation de l\'État d\'Esprit', desc: 'Brisez les croyances limitantes et reprogrammez votre état d\'esprit d\'abondance', cat: 'Élargissez Votre Parcours', url: 'player-mindset-reset.html', emoji: '🧠' },
+    { title: 'Murmure de Foi',                desc: 'Approfondissez votre connexion par le murmure de foi',     cat: 'Élargissez Votre Parcours', url: 'player-whisper-faith.html', emoji: '🕊️' },
+    { title: 'L\'Ère de l\'Abondance',      desc: 'L\'expérience complète de l\'Ère de l\'Abondance',     cat: 'Élargissez Votre Parcours', url: 'player-age-of-abundance.html', emoji: '✨' },
 
     // Journey Gifts
-    { title: 'The Golden Scroll',             desc: 'Day 3 milestone gift — sacred scroll of wisdom',          cat: 'Journey Gifts', url: 'gift-golden-scroll.html',      emoji: '📜' },
-    { title: 'Solomon Wealth Map',            desc: 'Day 7 milestone gift — wealth map of King Solomon',       cat: 'Journey Gifts', url: 'gift-solomon-wealth-map.html', emoji: '🗺️' },
-    { title: 'The Hidden Key of 444',         desc: 'Day 15 milestone gift — the angelic key of abundance',   cat: 'Journey Gifts', url: 'gift-hidden-key-444.html',     emoji: '🔑' },
-    { title: 'The New Name',                  desc: 'Day 21 milestone gift — receive your divine name',        cat: 'Journey Gifts', url: 'gift-new-name.html',           emoji: '✨' },
-    { title: 'The Sacred Mission',            desc: 'Day 40 milestone gift — your divine mission revealed',    cat: 'Journey Gifts', url: 'gift-sacred-mission.html',     emoji: '🎯' },
+    { title: 'Le Rouleau d\'Or',             desc: 'Don étape Jour 3 — rouleau sacré de sagesse',             cat: 'Dons du Parcours', url: 'gift-golden-scroll.html',   emoji: '📜' },
+    { title: 'Carte de la Richesse de Salomon', desc: 'Don étape Jour 7 — carte de richesse du Roi Salomon', cat: 'Dons du Parcours', url: 'gift-solomon-wealth-map.html', emoji: '🗺️' },
+    { title: 'La Clé Cachée du 444',          desc: 'Don étape Jour 15 — la clé angélique de l\'abondance', cat: 'Dons du Parcours', url: 'gift-hidden-key-444.html',  emoji: '🔑' },
+    { title: 'Le Nouveau Nom',                desc: 'Don étape Jour 21 — recevez votre nom divin',            cat: 'Dons du Parcours', url: 'gift-new-name.html',        emoji: '✨' },
+    { title: 'La Mission Sacrée',             desc: 'Don étape Jour 40 — votre mission divine révélée',       cat: 'Dons du Parcours', url: 'gift-sacred-mission.html',  emoji: '🎯' },
   ];
 
   // ── CSS ──────────────────────────────────────────────────────
@@ -137,8 +137,8 @@
   overlay.id = '_srch_overlay';
   overlay.innerHTML =
     '<div id="_srch_bar">' +
-      '<input id="_srch_input" type="search" placeholder="Search content…" autocomplete="off" autocorrect="off" spellcheck="false"/>' +
-      '<button id="_srch_cancel">Cancel</button>' +
+      '<input id="_srch_input" type="search" placeholder="Rechercher du contenu…" autocomplete="off" autocorrect="off" spellcheck="false"/>' +
+      '<button id="_srch_cancel">Annuler</button>' +
     '</div>' +
     '<div id="_srch_results"></div>';
 
@@ -190,7 +190,7 @@
     var q = raw.trim().toLowerCase();
 
     if (!q) {
-      container.innerHTML = '<div class="_srch_hint">Type to search modules, players and pages…</div>';
+      container.innerHTML = '<div class="_srch_hint">Tapez pour rechercher des modules, lecteurs et pages…</div>';
       return;
     }
 
@@ -201,7 +201,7 @@
       container.innerHTML =
         '<div class="_srch_empty">' +
           '<div class="_srch_empty_icon">🔍</div>' +
-          'No results for <strong style="color:#c9a84c">"' + escHtml(raw) + '"</strong>' +
+          'Aucun résultat pour <strong style="color:#c9a84c">"' + escHtml(raw) + '"</strong>' +
         '</div>';
       return;
     }

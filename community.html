@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPGZMZW88T"></script>
@@ -15,10 +15,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Age of Abundance">
+  <meta name="apple-mobile-web-app-title" content="L'Âge de l'Abondance">
   <link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
   <meta name="theme-color" content="#0d0d12">
-  <title>Abundance Circle | Age of Abundance</title>
+  <title>Cercle d'Abondance | L'Âge de l'Abondance</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -149,16 +149,16 @@
   <div class="onboard-overlay hidden" id="onboardOverlay">
     <div class="onboard-modal">
       <div class="onboard-avatar">🌿</div>
-      <div class="onboard-name">Abundance Circle</div>
+      <div class="onboard-name">Cercle d'Abondance</div>
       <div class="onboard-count" id="onboardCount"></div>
-      <div class="onboard-desc">A sacred group where every day begins with a divine alignment prayer from The Age of Abundance.</div>
+      <div class="onboard-desc">Un groupe sacré où chaque jour commence par une prière d'alignement divin de L'Âge de l'Abondance.</div>
       <div class="onboard-bullets">
-        <div class="onboard-bullet"><span class="ob-icon">🙏</span><span>A fresh prayer of alignment every single day</span></div>
-        <div class="onboard-bullet"><span class="ob-icon">✨</span><span>Scripture and decree to anchor your morning</span></div>
-        <div class="onboard-bullet"><span class="ob-icon">🔥</span><span>React and leave your Amen alongside thousands</span></div>
+        <div class="onboard-bullet"><span class="ob-icon">🙏</span><span>Une nouvelle prière d'alignement chaque jour</span></div>
+        <div class="onboard-bullet"><span class="ob-icon">✨</span><span>Écriture et décret pour ancrer votre matin</span></div>
+        <div class="onboard-bullet"><span class="ob-icon">🔥</span><span>Réagissez et laissez votre Amen parmi des milliers</span></div>
       </div>
-      <button class="onboard-btn" onclick="joinCircle()">Join the Abundance Circle</button>
-      <div class="onboard-skip" onclick="skipOnboard()">Just looking for now</div>
+      <button class="onboard-btn" onclick="joinCircle()">Rejoindre le Cercle d'Abondance</button>
+      <div class="onboard-skip" onclick="skipOnboard()">Juste regarder pour l'instant</div>
     </div>
   </div>
 
@@ -167,7 +167,7 @@
     <a href="index.html" class="ch-back" onclick="navigateTo(event,'index.html')">‹</a>
     <div class="ch-avatar" id="headerAvatar">🌿</div>
     <div class="ch-info">
-      <div class="ch-name">Abundance Circle</div>
+      <div class="ch-name">Cercle d'Abondance</div>
       <div class="ch-status"><span class="ch-dot"></span><span id="memberCount"></span></div>
     </div>
   </div>
@@ -176,7 +176,7 @@
   <div class="chat-body" id="chatBody">
     <!-- Prayers rendered dynamically by JS -->
     <div class="joined-notice hidden" id="joinedNotice">
-      <span>You joined the Abundance Circle</span>
+      <span>Vous avez rejoint le Cercle d'Abondance</span>
     </div>
   </div>
 
@@ -186,223 +186,223 @@
     // ── PRAYERS (indexed by local date YYYY-MM-DD) ──
     const PRAYERS = {
       '2026-04-03': {
-        title: 'Sealing the Harvest 🔱',
+        title: 'Sceller la Moisson 🔱',
         verse: '"The blessing of the Lord brings wealth, without painful toil for it."',
         ref: 'Proverbs 10:22',
         text: 'Today is Friday, April 3, 2026. We have reached the point of completion. This is the moment to seal the spiritual work you have done this week and prepare your heart to receive the physical manifestation of your decrees.\n\nRead these words slowly and let their authority settle in your mind:\n\n"On this Friday, April 3, I decree that my harvest is secured. I seal every prayer, every decree, and every divine idea released this week. I release all remaining stress and enter into the rest of the Creator. I am a magnet for Friday breakthroughs and unexpected weekend blessings. My path is clear, and I walk in the quiet confidence that my supply is infinite. Amen." ✨\n\nDrop a "🔱" if you are resting in your overflow today!'
       },
       '2026-04-04': {
-        title: 'The Frequency of Gratitude 🔱',
+        title: 'La Fréquence de la Gratitude 🔱',
         verse: '"Give thanks to the Lord, for he is good; his love endures forever."',
         ref: '1 Chronicles 16:34',
         text: 'Today is Saturday, April 4, 2026. Gratitude is the spiritual key that locks in the blessings of the past week and opens the door for the miracles of the next.\n\nRead these words slowly and let a spirit of thanksgiving fill your heart:\n\n"On this Saturday, April 4, I decree that my heart is full of gratitude. I look back at this week and see the hand of the Creator in every victory. I thank the Source for my protection, my provision, and my peace. Because I am grateful for what I have, I am now positioned for the \'more\' that is coming. Amen." ✨\n\nDrop a "🙏" if you are ending your week in gratitude!'
       },
       '2026-04-05': {
-        title: 'Sacred Rest & Restoration 🔱',
+        title: 'Repos Sacré et Restauration 🔱',
         verse: '"He refreshes my soul."',
         ref: 'Psalm 23:3',
         text: 'Today is Sunday, April 5, 2026. This is your day of sacred rest. Restoration is a spiritual requirement for those who walk in abundance.\n\nRead these words slowly and let them recalibrate your spirit:\n\n"On this Sunday, April 5, I choose to enter into Divine Rest. I release the labor of the past week and trust that the seeds I have planted are growing in the silence. I allow my mind to be still and my heart to be restored. I am at peace, and I am ready for the overflow that the new week holds. Amen." ✨\n\nDrop a "🕊️" if you are claiming your peace today!'
       },
       '2026-04-06': {
-        title: 'The Shield of Archangel Michael 🔱',
+        title: 'Le Bouclier de l'Archange Michel 🔱',
         verse: '"No weapon formed against you shall prosper."',
         ref: 'Isaiah 54:17',
         text: 'Today is Monday, April 6, 2026. We call upon the protection and strength of Archangel Michael. This is the day to cut away the ties of the past and stand in your divine authority.\n\nRead these words with focus and let the authority shift your atmosphere:\n\n"On this Monday, April 6, I call upon the presence of Archangel Michael. With his sword of blue flame, I decree that every cord of lack and fear is being cut away right now. I am protected. I am empowered. Every obstacle in my path is being removed, and every door meant for my success is being forced open. Amen." ✨\n\nDrop a "⚔️" if you are walking under divine protection!'
       },
       '2026-04-07': {
-        title: 'Divine Wisdom & Clarity 🔱',
+        title: 'Sagesse Divine et Clarté 🔱',
         verse: '"If any of you lacks wisdom, let him ask God."',
         ref: 'James 1:5',
         text: 'Today is Tuesday, April 7, 2026. Today is the day for precision and clarity.\n\nRead these words slowly and let them sharpen your mind:\n\n"On this Tuesday, April 7, I decree that my mind is clear and my spirit is sharp. I release the noise of the world and tune into the frequency of divine wisdom. Every decision I make today is aligned with my purpose and my highest good. Wisdom is my companion, and clarity is my strength. Amen." ✨\n\nDrop a "💡" if you are walking in divine clarity!'
       },
       '2026-04-08': {
-        title: 'Mid-Week Acceleration 🔱',
+        title: 'Accélération de Mi-Semaine 🔱',
         verse: '"And my God will supply every need of yours."',
         ref: 'Philippians 4:19',
         text: 'Today is Wednesday, April 8, 2026. We have reached the pivot point. This is the day to align with the rapid flow of divine provision.\n\nRead these words with focus and let them settle in your soul:\n\n"On this Wednesday, April 8, I decree that the gates of celestial supply are wide open. I release all fatigue and align my heart with the frequency of sudden acceleration. I am a divine magnet for wealth and breakthrough opportunities. I do not struggle; I flow. Amen." ✨\n\nDrop a "💰" to activate your mid-week surge!'
       },
       '2026-04-09': {
-        title: 'Breaking Every Limit 🔱',
+        title: 'Briser Chaque Limite 🔱',
         verse: '"Enlarge the place of your tent."',
         ref: 'Isaiah 54:2',
         text: 'Today is Thursday, April 9, 2026. This is the day of expansion. You are not meant to stay small.\n\nRead these words slowly and let them expand your spirit:\n\n"On this Thursday, April 9, I decree that my territory is enlarging. I break every limit and every barrier that has hindered my progress. I align myself with the frequency of infinite expansion. I have the courage to take up space and the wisdom to manage my growth. Amen." ✨\n\nDrop a "🔥" if you are breaking through every limit!'
       },
       '2026-04-10': {
-        title: 'Sealing the Week 🔱',
+        title: 'Sceller la Semaine 🔱',
         verse: '"It is finished."',
         ref: 'John 19:30',
         text: 'Today is Friday, April 10, 2026. We seal the harvest of the week.\n\nRead these words and claim your victory:\n\n"On this Friday, April 10, I decree that my harvest is secured. I seal every prayer and every divine idea released this week. I am a magnet for Friday breakthroughs and unexpected weekend blessings. My territory is protected, and my success is inevitable. Amen." ✨\n\nDrop a "🔱" to seal your week!'
       },
       '2026-04-11': {
-        title: 'Overflow through Thanksgiving 🔱',
+        title: 'Débordement par la Gratitude 🔱',
         verse: '"Enter his gates with thanksgiving."',
         ref: 'Psalm 100:4',
         text: 'Today is Saturday, April 11, 2026.\n\nRead these words with a grateful heart:\n\n"On this Saturday, April 11, I dwell in the frequency of \'Thank You.\' Because I am grateful for what I have, I am now positioned for the overflow that is coming. I allow my spirit to rest, knowing that I am already provided for. My weekend is blessed. Amen." ✨\n\nDrop a "🙏" for your weekend blessings!'
       },
       '2026-04-12': {
-        title: 'Sacred Stillness 🔱',
+        title: 'Silence Sacré 🔱',
         verse: '"Be still, and know that I am God."',
         ref: 'Psalm 46:10',
         text: 'Today is Sunday, April 12, 2026.\n\nRead these words to recalibrate your spirit:\n\n"On this Sunday, April 12, I choose to enter into Divine Rest. I release the labor of the past week. I allow my mind to be still and my heart to be restored. I am clearing the space for new ideas and new levels of prosperity to find me. Amen." ✨\n\nDrop a "🕊️" for your peace!'
       },
       '2026-04-13': {
-        title: 'Dominion and Power 🔱',
+        title: 'Domination et Puissance 🔱',
         verse: '"I have given you authority."',
         ref: 'Luke 10:19',
         text: 'Today is Monday, April 13, 2026.\n\nRead these words and step into your power:\n\n"On this Monday, April 13, I decree that I am stepping into a week of momentum. I release any stagnation and align myself with the frequency of dominion. Every step I take today is guided by wisdom and backed by the force of the Creator. My victory is already won. Amen." ✨\n\nDrop a "🔥" to command your week!'
       },
       '2026-04-14': {
-        title: 'Clarity of Path 🔱',
+        title: 'Clarté du Chemin 🔱',
         verse: '"Your word is a lamp to my feet."',
         ref: 'Psalm 119:105',
         text: 'Today is Tuesday, April 14, 2026.\n\nRead these words for your direction:\n\n"On this Tuesday, April 14, I decree that my path is clear. I see through every illusion and recognize every open door meant for me. I ask for the discernment to see things as they truly are. Clarity is my strength, and wisdom is my guide. Amen." ✨\n\nDrop a "💡" for your divine direction!'
       },
       '2026-04-15': {
-        title: 'Mid-Week Momentum 🔱',
+        title: 'Élan de Mi-Semaine 🔱',
         verse: '"But my God shall supply all your need."',
         ref: 'Philippians 4:19',
         text: 'Today is Wednesday, April 15, 2026.\n\nRead these words and receive the flow:\n\n"On this Wednesday, April 15, I decree that the gates of celestial supply are open. I release all mental fatigue and align my heart with the frequency of sudden increase. I am a divine magnet for clarity and breakthrough. I do not struggle; I flow. Amen." ✨\n\nDrop a "💰" to activate your surge!'
       },
       '2026-04-16': {
-        title: 'Breaking Every Limit 🔱',
+        title: 'Briser Chaque Limite 🔱',
         verse: '"Enlarge the place of your tent, stretch your tent curtains wide."',
         ref: 'Isaiah 54:2',
         text: 'Today is Thursday, April 16, 2026. This is the day of expansion—the moment to step beyond the boundaries that have tried to contain you. You are designed for divine increase.\n\nRead these words slowly and let them expand your spirit:\n\n"On this Thursday, April 16, I decree that my territory is enlarging. I break every limit, every barrier, and every self-imposed boundary that has hindered my progress. I align myself with the frequency of infinite expansion. I have the courage to take up space and the wisdom to manage my growth. Amen." ✨\n\nDrop a "🔥" if you are breaking through every limit today!'
       },
       '2026-04-17': {
-        title: 'Sealing the Harvest 🔱',
+        title: 'Sceller la Moisson 🔱',
         verse: '"The blessing of the Lord brings wealth, without painful toil for it."',
         ref: 'Proverbs 10:22',
         text: 'Today is Friday, April 17, 2026. We have reached the point of completion. Seal the spiritual work you have done this week and prepare your heart to receive the manifestation of your decrees.\n\nRead these words slowly and let their authority settle in your mind:\n\n"On this Friday, April 17, I decree that my harvest is secured. I seal every prayer and every divine idea released this week. I release all remaining stress and enter into the rest of the Creator. I am a magnet for Friday breakthroughs and unexpected weekend blessings. My success is inevitable. Amen." ✨\n\nDrop a "🔱" if you are resting in your overflow today!'
       },
       '2026-04-18': {
-        title: 'The Frequency of Gratitude 🔱',
+        title: 'La Fréquence de la Gratitude 🔱',
         verse: '"Give thanks to the Lord, for he is good."',
         ref: '1 Chronicles 16:34',
         text: 'Today is Saturday, April 18, 2026. Gratitude is the key that locks in the blessings of the past week and prepares you for the next level.\n\nRead these words slowly and let a spirit of thanksgiving fill your heart:\n\n"On this Saturday, April 18, I decree that my heart is full of gratitude. I thank the Source for my protection, my provision, and my peace. Because I am grateful for what I have, I am now positioned for the \'more\' that is coming. My weekend is blessed. Amen." ✨\n\nDrop a "🙏" if you are ending your week in gratitude!'
       },
       '2026-04-19': {
-        title: 'Sacred Rest & Restoration 🔱',
+        title: 'Repos Sacré et Restauration 🔱',
         verse: '"He leads me beside quiet waters, he refreshes my soul."',
         ref: 'Psalm 23:2-3',
         text: 'Today is Sunday, April 19, 2026. This is your day of sacred rest. True power is found in the ability to be still and trust the process.\n\nRead these words slowly and let them recalibrate your spirit:\n\n"On this Sunday, April 19, I choose to enter into Divine Rest. I release the labor of the past week and trust that the seeds I have planted are growing in the silence. I allow my mind to be still and my heart to be restored. I am at peace. Amen." ✨\n\nDrop a "🕊️" if you are claiming your peace today!'
       },
       '2026-04-20': {
-        title: 'The Shield of Archangel Michael 🔱',
+        title: 'Le Bouclier de l'Archange Michel 🔱',
         verse: '"For he will command his angels concerning you."',
         ref: 'Psalm 91:11',
         text: 'Today is Monday, April 20, 2026. We call upon protection and strength. This is the day to cut away the ties of the past and stand in your divine authority.\n\nRead these words with focus and let the authority shift your atmosphere:\n\n"On this Monday, April 20, I call upon the presence of Archangel Michael. With his sword of blue flame, I decree that every cord of lack and fear is being cut away right now. I am protected. I am guarded. Every obstacle in my path is being removed. Amen." ✨\n\nDrop a "⚔️" if you are walking under divine protection!'
       },
       '2026-04-21': {
-        title: 'Divine Wisdom & Clarity 🔱',
+        title: 'Sagesse Divine et Clarté 🔱',
         verse: '"If any of you lacks wisdom, let him ask God."',
         ref: 'James 1:5',
         text: 'Today is Tuesday, April 21, 2026. This is the day for precision—knowing exactly where to place your energy for the highest impact.\n\nRead these words slowly and let them sharpen your mind:\n\n"On this Tuesday, April 21, I decree that my mind is clear and my spirit is sharp. I release the noise of the world and tune into the frequency of divine wisdom. Every decision I make today is aligned with my purpose. Wisdom is my companion. Amen." ✨\n\nDrop a "💡" if you are walking in divine clarity today!'
       },
       '2026-04-22': {
-        title: 'Mid-Week Acceleration 🔱',
+        title: 'Accélération de Mi-Semaine 🔱',
         verse: '"And my God will supply every need of yours."',
         ref: 'Philippians 4:19',
         text: 'Today is Wednesday, April 22, 2026. We have reached the pivot point. This is the day to align with the rapid flow of divine provision.\n\nRead these words with focus and let them settle in your soul:\n\n"On this Wednesday, April 22, I decree that the gates of celestial supply are wide open. I align my heart with the frequency of sudden acceleration. I am a divine magnet for wealth, clarity, and breakthrough. I do not struggle; I flow. Amen." ✨\n\nDrop a "💰" to activate your mid-week surge!'
       },
       '2026-04-23': {
-        title: 'Expansion Beyond Limits 🔱',
+        title: 'Expansion Au-Delà des Limites 🔱',
         verse: '"Enlarge the place of your tent."',
         ref: 'Isaiah 54:2',
         text: 'Today is Thursday, April 23, 2026. You are not meant to stay small. Today is for pushing past your comfort zone into new levels of growth.\n\nRead these words slowly and let them expand your spirit:\n\n"On this Thursday, April 23, I decree that my territory is enlarging. I break every barrier that has hindered my progress. I have the courage to take up space and the wisdom to manage my divine increase. I am walking in greatness. Amen." ✨\n\nDrop a "🔥" if you are breaking through every limit!'
       },
       '2026-04-24': {
-        title: "Sealing the Week's Victories 🔱",
+        title: 'Sceller les Victoires de la Semaine 🔱',
         verse: '"It is finished."',
         ref: 'John 19:30',
         text: "Today is Friday, April 24, 2026. We seal the work of the week. You are stepping out of the \"hustle\" and into the \"harvest.\"\n\nRead these words and claim your victory:\n\n\"On this Friday, April 24, I decree that my harvest is secured. I seal every prayer and every divine idea released this week. I am a magnet for Friday breakthroughs. My path is clear, and my success is inevitable. Amen.\" ✨\n\nDrop a \"🔱\" to seal your week!"
       },
       '2026-04-25': {
-        title: 'Overflow through Thanksgiving 🔱',
+        title: 'Débordement par la Gratitude 🔱',
         verse: '"Enter his gates with thanksgiving."',
         ref: 'Psalm 100:4',
         text: 'Today is Saturday, April 25, 2026. Gratitude is the frequency of the receiver.\n\nRead these words with a grateful heart:\n\n"On this Saturday, April 25, I dwell in the frequency of \'Thank You.\' Because I am grateful for what I have, I am now positioned for the overflow that is coming. I allow my spirit to rest, knowing I am already provided for. Amen." ✨\n\nDrop a "🙏" for your weekend blessings!'
       },
       '2026-04-26': {
-        title: 'Sacred Stillness 🔱',
+        title: 'Silence Sacré 🔱',
         verse: '"Be still, and know that I am God."',
         ref: 'Psalm 46:10',
         text: 'Today is Sunday, April 26, 2026. This is the day to recharge your spirit and clear the space for the new week\'s blessings.\n\nRead these words to recalibrate your spirit:\n\n"On this Sunday, April 26, I choose to enter into Divine Rest. I release the labor of the past week. I allow my mind to be still and my heart to be restored. I am clearing the space for new ideas and new levels of prosperity. Amen." ✨\n\nDrop a "🕊️" for your peace!'
       },
       '2026-04-27': {
-        title: 'New Beginnings & Authority 🔱',
+        title: 'Nouveaux Débuts et Autorité 🔱',
         verse: '"Commit your way to the Lord; trust in him."',
         ref: 'Psalm 37:5',
         text: 'Today is Monday, April 27, 2026. A new cycle begins. Command your territory with authority and set the frequency for success.\n\nRead these words and step into your power:\n\n"On this Monday, April 27, I decree that I am stepping into a week of momentum. I release any stagnation and align myself with the frequency of power. Every step I take today is backed by the force of the Creator. My victory is won. Amen." ✨\n\nDrop a "🔥" to command your week!'
       },
       '2026-04-28': {
-        title: 'Clarity & Discernment 🔱',
+        title: 'Clarté et Discernement 🔱',
         verse: '"Your word is a lamp to my feet."',
         ref: 'Psalm 119:105',
         text: 'Today is Tuesday, April 28, 2026. Discernment is your shield. Today, you will see exactly which doors are meant for you.\n\nRead these words for your direction:\n\n"On this Tuesday, April 28, I decree that my path is clear. I see through every illusion and recognize every open door. I ask for the discernment to see things as they truly are. Clarity is my strength. Amen." ✨\n\nDrop a "💡" for your divine direction!'
       },
       '2026-04-29': {
-        title: 'Flow and Abundance 🔱',
+        title: 'Flux et Abondance 🔱',
         verse: '"And my God will supply every need of yours."',
         ref: 'Philippians 4:19',
         text: 'Today is Wednesday, April 29, 2026. As the month winds down, your momentum speeds up.\n\nRead these words and receive the flow:\n\n"On this Wednesday, April 29, I decree that the gates of celestial supply are open. I release all mental fatigue and align my heart with sudden increase. I do not chase; I attract. I walk in favor and receive with gratitude. Amen." ✨\n\nDrop a "💰" to activate your surge!'
       },
       '2026-04-30': {
-        title: 'Month-End Completion & Victory 🔱',
+        title: 'Achèvement de Fin de Mois et Victoire 🔱',
         verse: '"Thanks be to God, who gives us the victory."',
         ref: '1 Corinthians 15:57',
         text: 'Today is Thursday, April 30, 2026. We close this month in total victory. Everything you have declared this month is being finalized in the spirit realm.\n\nRead these words to seal your month of April:\n\n"On this Thursday, April 30, I decree that I have finished this month in strength and favor. I claim every blessing, every breakthrough, and every expansion that April has brought me. I seal this month with gratitude and step into the next with authority. My path is secure, and my victory is complete. It is finished. Amen." ✨\n\nDrop a "🏆" to claim your month-end victory!'
       },
       '2026-05-01': {
-        title: 'Opening the Gates of May 🔱',
+        title: 'Ouverture des Portes de Mai 🔱',
         verse: '"Behold, I am doing a new thing; now it springs forth."',
         ref: 'Isaiah 43:19',
         text: 'Today is Friday, May 1, 2026. A new month opens its gates. May is a month of fresh starts, divine acceleration, and new levels of abundance.\n\nRead these words and seal your entry into May:\n\n"On this Friday, May 1, I decree that I step into this new month with authority and expectation. I release every limitation of the past and align myself with the frequency of divine newness. May brings me breakthrough, overflow, and supernatural favor. My harvest is ready, and I receive it with gratitude. Amen." ✨\n\nDrop a "🔱" to open your May in victory!'
       },
       '2026-05-02': {
-        title: 'Gratitude Opens New Doors 🔱',
+        title: 'La Gratitude Ouvre de Nouvelles Portes 🔱',
         verse: '"Every good gift and every perfect gift is from above."',
         ref: 'James 1:17',
         text: 'Today is Saturday, May 2, 2026. As you rest this weekend, gratitude is the bridge between where you are and where you are going.\n\nRead these words with a thankful heart:\n\n"On this Saturday, May 2, I count every blessing, seen and unseen. I thank the Source for the gifts already in my life and for the ones on their way. My gratitude is a magnet for miracles. I rest in the knowledge that I am fully provided for, today and always. Amen." ✨\n\nDrop a "🙏" if you are counting your blessings today!'
       },
       '2026-05-03': {
-        title: 'Divine Rest is Power 🔱',
+        title: 'Le Repos Divin est Puissance 🔱',
         verse: '"In returning and rest you shall be saved; in quietness and trust shall be your strength."',
         ref: 'Isaiah 30:15',
         text: 'Today is Sunday, May 3, 2026. Rest is not passive — it is an act of profound faith. When you rest, you declare that you trust the Creator to sustain you.\n\nRead these words and allow your spirit to be renewed:\n\n"On this Sunday, May 3, I choose sacred rest. I lay down every burden and every worry. I trust the process completely. My strength is being restored, my vision is being sharpened, and my blessings are multiplying even as I rest. Amen." ✨\n\nDrop a "🕊️" to claim your divine rest today!'
       },
       '2026-05-04': {
-        title: 'Commanding the Week 🔱',
+        title: 'Commander la Semaine 🔱',
         verse: '"The Lord will cause your enemies who rise against you to be defeated."',
         ref: 'Deuteronomy 28:7',
         text: 'Today is Monday, May 4, 2026. This week is yours to command. You are not entering it as a passenger — you are entering it as an authority.\n\nRead these words and set the tone for your week:\n\n"On this Monday, May 4, I decree that this week bows to my divine assignment. I walk in supernatural strength and unstoppable momentum. Every obstacle is removed, every door is opened, and every blessing assigned to me this week arrives on time. I command this week in the name of the Most High. Amen." ✨\n\nDrop a "🔥" to command your week!'
       },
       '2026-05-05': {
-        title: 'Sharpened Vision 🔱',
+        title: 'Vision Aiguisée 🔱',
         verse: '"Where there is no vision, the people perish."',
         ref: 'Proverbs 29:18',
         text: 'Today is Tuesday, May 5, 2026. Clarity is one of the most powerful forces in the universe. A clear vision cuts through confusion and draws your destiny toward you.\n\nRead these words and sharpen your sight:\n\n"On this Tuesday, May 5, I decree that my vision is crystal clear. I see my purpose, I see my path, and I see my next step. I release every fog of confusion and align my mind with divine intelligence. I am walking with precision toward everything I have been promised. Amen." ✨\n\nDrop a "💡" if you are seeing your path clearly today!'
       },
       '2026-05-06': {
-        title: 'Rivers of Provision 🔱',
+        title: 'Rivières de Provision 🔱',
         verse: '"He makes rivers in the desert."',
         ref: 'Isaiah 43:20',
         text: 'Today is Wednesday, May 6, 2026. The Creator can open rivers where there are none. No matter what your circumstances look like, abundance is flowing toward you right now.\n\nRead these words and open yourself to the flow:\n\n"On this Wednesday, May 6, I decree that rivers of provision are flowing into my life. I release every feeling of scarcity and align with the infinite supply of the universe. I am a channel of abundance. What I need comes to me effortlessly and in perfect timing. Amen." ✨\n\nDrop a "💰" to activate your flow!'
       },
       '2026-05-07': {
-        title: 'Bold Expansion 🔱',
+        title: 'Expansion Audacieuse 🔱',
         verse: '"Ask of me, and I will make the nations your heritage."',
         ref: 'Psalm 2:8',
         text: 'Today is Thursday, May 7, 2026. You were not created to live small. Today you are called to expand — in your thinking, in your faith, and in your actions.\n\nRead these words and step into your greater territory:\n\n"On this Thursday, May 7, I dare to ask for more. I expand my vision beyond what my eyes can see. I decree that my influence, my resources, and my impact are growing exponentially. I take up the space I was always meant to fill. My expansion is divine and unstoppable. Amen." ✨\n\nDrop a "🔥" if you are stepping into expansion today!'
       },
       '2026-05-08': {
-        title: 'Sealing the Harvest 🔱',
+        title: 'Sceller la Moisson 🔱',
         verse: '"The Lord your God will bless you in all your harvest."',
         ref: 'Deuteronomy 16:15',
         text: 'Today is Friday, May 8, 2026. Another week of faithful decrees is sealed. You have planted seeds of intention and watered them with faith — your harvest is secured.\n\nRead these words and claim your week\'s victory:\n\n"On this Friday, May 8, I seal every decree, every prayer, and every divine seed I have planted this week. I declare that my harvest is abundant and that this weekend brings me unexpected blessings and divine surprises. I rest in complete trust. Amen." ✨\n\nDrop a "🔱" to seal your week!'
       },
       '2026-05-09': {
-        title: 'The Joy of the Lord 🔱',
+        title: 'La Joie du Seigneur 🔱',
         verse: '"The joy of the Lord is your strength."',
         ref: 'Nehemiah 8:10',
         text: 'Today is Saturday, May 9, 2026. Joy is not just an emotion — it is a spiritual weapon and a divine signal that you are aligned with your Source.\n\nRead these words and let joy rise in you:\n\n"On this Saturday, May 9, I choose joy. I release every weight that has tried to steal my peace and I align myself with the frequency of divine happiness. My joy attracts miracles. My joy is my shield. I am grateful, I am joyful, and I am overflowing. Amen." ✨\n\nDrop a "🙏" if you are walking in joy today!'
@@ -605,7 +605,7 @@
       }).join('');
 
       const replyHTML = '<div class="reply-box">' +
-          '<input class="amen-input" id="amenInput-' + dateStr + '" type="text" placeholder="Share your amen..." maxlength="200"/>' +
+          '<input class="amen-input" id="amenInput-' + dateStr + '" type="text" placeholder="Partagez votre amen..." maxlength="200"/>' +
           '<button class="amen-send" onclick="sendAmen(\'' + dateStr + '\')">Send</button>' +
         '</div>';
 
@@ -613,7 +613,7 @@
         '<div class="msg-wrap">' +
           '<div class="msg-av">🌿</div>' +
           '<div class="msg-right">' +
-            '<div class="msg-sender-name">The Age of Abundance</div>' +
+            '<div class="msg-sender-name">L'Âge de l'Abondance</div>' +
             '<div class="msg-bubble">' +
               '<div class="msg-title">' + escHtml(p.title) + '</div>' +
               '<div class="msg-verse-block">' +
@@ -635,10 +635,10 @@
     function renderAll() {
       const todayStr = _localDateStr();
       const dates    = getAvailableDates();
-      const members  = 2847 + dates.length * 17;
+      const membres  = 2847 + dates.length * 17;
 
-      document.getElementById('memberCount').textContent  = fmt(members) + ' members';
-      document.getElementById('onboardCount').textContent = fmt(members) + ' members · Daily prayers';
+      document.getElementById('memberCount').textContent  = fmt(members) + ' membres';
+      document.getElementById('onboardCount').textContent = fmt(members) + ' membres · Prières quotidiennes';
 
       const container   = document.getElementById('chatBody');
       const joinedNotice = document.getElementById('joinedNotice');
@@ -760,10 +760,10 @@
 <!-- BOTTOM NAV -->
 <nav class="bottom-nav">
   <div class="bottom-nav-inner">
-    <a href="index.html" class="bottom-nav-item"><span class="nav-icon">🏠</span><span>Home</span></a>
-    <a href="journey.html" class="bottom-nav-item"><span class="nav-icon">✨</span><span>Journey</span></a>
-    <a href="community.html" class="bottom-nav-item active"><span class="nav-icon">👥</span><span>Community</span></a>
-    <a href="support.html" class="bottom-nav-item"><span class="nav-icon">💬</span><span>Support</span></a>
+    <a href="index.html" class="bottom-nav-item"><span class="nav-icon">🏠</span><span>Accueil</span></a>
+    <a href="journey.html" class="bottom-nav-item"><span class="nav-icon">✨</span><span>Voyage</span></a>
+    <a href="community.html" class="bottom-nav-item active"><span class="nav-icon">👥</span><span>Communauté</span></a>
+    <a href="support.html" class="bottom-nav-item"><span class="nav-icon">💬</span><span>Assistance</span></a>
   </div>
 </nav>
 

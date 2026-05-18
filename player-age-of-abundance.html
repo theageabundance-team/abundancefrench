@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPGZMZW88T"></script>
@@ -15,10 +15,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Age of Abundance">
+  <meta name="apple-mobile-web-app-title" content="L'Ere de l'Abondance">
   <link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
   <meta name="theme-color" content="#0d0d12">
-  <title>The Age of Abundance — Abundance Time</title>
+  <title>L'Ère de l'Abondance — Temps d'Abondance</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -498,20 +498,20 @@
 <!-- GIFT BANNER -->
 <div class="gift-banner" id="gift-banner">
   <div class="gift-banner-text">
-    Complete all lessons to receive your spiritual gift
-    <span class="gift-pill">☀️ Blessing of Divine Abundance</span>
+    Terminez toutes les leçons pour recevoir votre don spirituel
+    <span class="gift-pill">☀️ Bénédiction de l'Abondance Divine</span>
   </div>
   <div class="gift-progress-wrap">
     <div class="gift-progress-bar">
       <div class="gift-progress-fill" id="gift-progress-fill"></div>
     </div>
-    <div class="gift-progress-label" id="gift-progress-label">0 of 4</div>
+    <div class="gift-progress-label" id="gift-progress-label">0 sur 4</div>
   </div>
 </div>
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-back" onclick="fadeOut(event, 'index.html')">← Back to Home</a>
+  <a href="index.html" class="nav-back" onclick="fadeOut(event, 'index.html')">← Retour à l'Accueil</a>
 </nav>
 
 <!-- LAYOUT -->
@@ -520,13 +520,13 @@
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-eyebrow">Course Content</div>
-      <div class="sidebar-course-title">The Age of Abundance</div>
+      <div class="sidebar-eyebrow">Contenu du Cours</div>
+      <div class="sidebar-course-title">L'Ère de l'Abondance</div>
     </div>
     <div class="sidebar-progress">
       <div class="progress-row">
-        <span>Progress</span>
-        <span id="progress-label">0 of 4 complete</span>
+        <span>Progression</span>
+        <span id="progress-label">0 sur 4 terminé</span>
       </div>
       <div class="progress-bar-wrap">
         <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
@@ -551,7 +551,7 @@
         <h1 class="module-title" id="lesson-title"></h1>
         <button class="btn-complete" id="btn-complete" onclick="markComplete()">
           <span id="complete-icon">◯</span>
-          <span id="complete-text">Mark as Complete</span>
+          <span id="complete-text">Marquer comme Terminé</span>
         </button>
       </div>
 
@@ -563,45 +563,45 @@
 
       <!-- TABS -->
       <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('about', this)">About</button>
-        <button class="tab-btn" onclick="switchTab('notes', this)">My Notes</button>
-        <button class="tab-btn" onclick="switchTab('comments', this)">Community</button>
+        <button class="tab-btn active" onclick="switchTab('about', this)">À Propos</button>
+        <button class="tab-btn" onclick="switchTab('notes', this)">Mes Notes</button>
+        <button class="tab-btn" onclick="switchTab('comments', this)">Communauté</button>
       </div>
 
       <!-- TAB: ABOUT -->
       <div class="tab-content active" id="tab-about">
-        <div class="about-label">About This Module</div>
-        <p class="about-text">Biblical principles for attracting divine abundance into every area of your life. Every lesson is a key that unlocks the overflow God has already prepared for you.</p>
+        <div class="about-label">À Propos de Ce Module</div>
+        <p class="about-text">Principes bibliques pour attirer l'abondance divine dans chaque domaine de votre vie. Chaque leçon est une clé qui déverrouille le débordement que Dieu a déjà préparé pour vous.</p>
         <div class="download-section" id="download-section" style="display:none;">
-          <div class="about-label" style="margin-top:28px;">Course Material</div>
+          <div class="about-label" style="margin-top:28px;">Matériel du Cours</div>
           <div id="download-content"></div>
         </div>
       </div>
 
       <!-- TAB: NOTES -->
       <div class="tab-content" id="tab-notes">
-        <div class="about-label">Your Personal Notes</div>
-        <textarea class="notes-textarea" id="notes-input" placeholder="Write your reflections, revelations, and insights here..."></textarea>
-        <button class="btn-save-notes" onclick="saveNotes()">✦ Save Notes</button>
+        <div class="about-label">Vos Notes Personnelles</div>
+        <textarea class="notes-textarea" id="notes-input" placeholder="Écrivez vos réflexions, révélations et idées ici..."></textarea>
+        <button class="btn-save-notes" onclick="saveNotes()">✦ Sauvegarder les Notes</button>
       </div>
 
       <!-- TAB: COMMENTS -->
       <div class="tab-content" id="tab-comments">
         <div class="rating-section">
-          <div class="about-label">Rate This Lesson</div>
+          <div class="about-label">Évaluez Cette Leçon</div>
           <div class="stars-row">
             <button class="star-btn" onclick="setRating(1)">★</button>
             <button class="star-btn" onclick="setRating(2)">★</button>
             <button class="star-btn" onclick="setRating(3)">★</button>
             <button class="star-btn" onclick="setRating(4)">★</button>
             <button class="star-btn" onclick="setRating(5)">★</button>
-            <span class="rating-label" id="rating-label">Tap to rate</span>
+            <span class="rating-label" id="rating-label">Appuyer pour évaluer</span>
           </div>
         </div>
         <div class="comment-box">
-          <textarea class="comment-input" id="comment-input" placeholder="Share what this teaching revealed to you..."></textarea>
+          <textarea class="comment-input" id="comment-input" placeholder="Partagez ce que cet enseignement vous a révélé..."></textarea>
           <div class="comment-footer">
-            <button class="btn-comment" onclick="submitComment()">✦ Share</button>
+            <button class="btn-comment" onclick="submitComment()">✦ Partager</button>
           </div>
         </div>
         <div class="comments-list" id="comments-list"></div>
@@ -609,8 +609,8 @@
 
       <!-- LESSON NAVIGATION -->
       <div class="lesson-nav">
-        <button class="btn-lesson-nav" id="btn-prev" onclick="goLesson(-1)">← Previous</button>
-        <button class="btn-lesson-nav next" id="btn-next" onclick="goLesson(1)">Next →</button>
+        <button class="btn-lesson-nav" id="btn-prev" onclick="goLesson(-1)">← Précédent</button>
+        <button class="btn-lesson-nav next" id="btn-next" onclick="goLesson(1)">Suivant →</button>
       </div>
 
     </div>
@@ -624,15 +624,15 @@
 <div class="gift-modal-overlay" id="gift-modal">
   <div class="gift-modal">
     <span class="gift-modal-emoji">☀️</span>
-    <div class="gift-modal-eyebrow">Your Gift Has Been Unlocked</div>
-    <div class="gift-modal-title">Blessing of Divine Abundance</div>
+    <div class="gift-modal-eyebrow">Votre Don a Été Débloqué</div>
+    <div class="gift-modal-title">Bénédiction de l'Abondance Divine</div>
     <p class="gift-modal-text">
-      You have walked through every door of this teaching. The overflow you have been praying for is not coming — it is already here. Receive it now.
+      Vous avez traversé chaque porte de cet enseignement. Le débordement pour lequel vous avez prié n'est pas en chemin — il est déjà là. Recevez-le maintenant.
     </p>
-    <div class="gift-modal-verse">"And God is able to bless you abundantly, so that in all things at all times, having all that you need, you will abound in every good work." — 2 Corinthians 9:8</div>
+    <div class="gift-modal-verse">« Dieu peut vous accorder toute grâce en abondance, afin que, en toutes choses, ayant toujours en tout ce qui est nécessaire, vous ayez encore en abondance pour toute bonne oeuvre. » — 2 Corinthiens 9:8</div>
     <div class="gift-modal-btns">
-      <a href="journey.html" class="btn-gift-journey" onclick="fadeOut(event,'journey.html')">✦ View My Gift on the Journey</a>
-      <button class="btn-gift-stay" onclick="closeGiftModal()">Keep Exploring</button>
+      <a href="journey.html" class="btn-gift-journey" onclick="fadeOut(event,'journey.html')">✦ Voir Mon Don sur le Parcours</a>
+      <button class="btn-gift-stay" onclick="closeGiftModal()">Continuer à Explorer</button>
     </div>
   </div>
 </div>
@@ -642,46 +642,46 @@
 const LESSONS = [
   {
     id: 'abundance-1',
-    title: 'Welcome',
-    eyebrow: 'Lesson 1 of 4 · Spirituality',
-    desc: 'Prepare to receive all the blessings that will come upon you and overtake you.',
+    title: 'Bienvenue',
+    eyebrow: 'Leçon 1 sur 4 · Spiritualité',
+    desc: 'Préparez-vous à recevoir toutes les bénédictions qui viendront sur vous et vous rattraperont.',
     hasDownload: false,
     videoHTML: `<div id="ifr_699748310d3abef3b296cc3f_wrapper" style="margin:0 auto;width:100%;"><div style="position:relative;padding:56.25% 0 0 0;" id="ifr_699748310d3abef3b296cc3f_aspect"><iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_699748310d3abef3b296cc3f" style="position:absolute;top:0;left:0;width:100%;height:100%;" referrerpolicy="origin" onload="this.onload=null,this.src='https://scripts.converteai.net/f8e465b5-f483-4d08-be19-bc14de388e59/players/699748310d3abef3b296cc3f/v4/embed.html'+(location.search||'?')+'&vl='+encodeURIComponent(location.href)"></iframe></div></div>`
   },
   {
     id: 'abundance-2',
-    title: 'The Call',
-    eyebrow: 'Lesson 2 of 4 · Spirituality',
-    desc: 'Understand the divine calling that leads to true abundance and prosperity in all areas of your life.',
+    title: 'L\'Appel',
+    eyebrow: 'Leçon 2 sur 4 · Spiritualité',
+    desc: 'Comprenez l\'appel divin qui mène à la véritable abondance et prospérité dans tous les domaines de votre vie.',
     hasDownload: true,
     downloadType: 'pdf',
     downloadHref: 'pdfs/pdfmodulo5.2.pdf',
-    downloadTitle: 'The Call to the Life That Was Always Yours',
-    downloadMeta: 'PDF · Lesson 2 material',
+    downloadTitle: 'L\'Appel à la Vie Qui a Toujours Été la Vôtre',
+    downloadMeta: 'PDF · Matériel Leçon 2',
     videoHTML: `<div id="ifr_699750b6f487e7b5d2feae4b_wrapper" style="margin:0 auto;width:100%;"><div style="position:relative;padding:56.25% 0 0 0;" id="ifr_699750b6f487e7b5d2feae4b_aspect"><iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_699750b6f487e7b5d2feae4b" style="position:absolute;top:0;left:0;width:100%;height:100%;" referrerpolicy="origin" onload="this.onload=null,this.src='https://scripts.converteai.net/f8e465b5-f483-4d08-be19-bc14de388e59/players/699750b6f487e7b5d2feae4b/v4/embed.html'+(location.search||'?')+'&vl='+encodeURIComponent(location.href)"></iframe></div></div>`
   },
   {
     id: 'abundance-3',
-    title: 'I Chose to Be Reborn',
-    eyebrow: 'Lesson 3 of 4 · Spirituality',
-    desc: 'Discover the revolutionary new approach to achieving abundance and attracting blessings into your life.',
+    title: 'J\'ai Choisi de Renaître',
+    eyebrow: 'Leçon 3 sur 4 · Spiritualité',
+    desc: 'Découvrez la nouvelle approche révolutionnaire pour atteindre l\'abondance et attirer les bénédictions dans votre vie.',
     hasDownload: true,
     downloadType: 'pdf',
     downloadHref: 'pdfs/modulo5.3.pdf',
-    downloadTitle: 'I Chose to Be Reborn',
-    downloadMeta: 'PDF · Lesson 3 material',
+    downloadTitle: 'J\'ai Choisi de Renaître',
+    downloadMeta: 'PDF · Matériel Leçon 3',
     videoHTML: `<div id="ifr_69974b4e10f8465bfaeaa4e3_wrapper" style="margin:0 auto;width:100%;"><div style="position:relative;padding:56.25% 0 0 0;" id="ifr_69974b4e10f8465bfaeaa4e3_aspect"><iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_69974b4e10f8465bfaeaa4e3" style="position:absolute;top:0;left:0;width:100%;height:100%;" referrerpolicy="origin" onload="this.onload=null,this.src='https://scripts.converteai.net/f8e465b5-f483-4d08-be19-bc14de388e59/players/69974b4e10f8465bfaeaa4e3/v4/embed.html'+(location.search||'?')+'&vl='+encodeURIComponent(location.href)"></iframe></div></div>`
   },
   {
     id: 'abundance-4',
-    title: 'Divine Script',
-    eyebrow: 'Lesson 4 of 4 · Spirituality',
-    desc: 'Click the button below to access your divine script.',
+    title: 'Script Divin',
+    eyebrow: 'Leçon 4 sur 4 · Spiritualité',
+    desc: 'Cliquez sur le bouton ci-dessous pour accéder à votre script divin.',
     hasDownload: true,
     downloadType: 'link',
     downloadHref: 'https://abundancemoment.com/script/',
-    downloadTitle: 'Access Your Divine Script',
-    downloadMeta: 'Open the sacred script prepared for you',
+    downloadTitle: 'Accéder à Votre Script Divin',
+    downloadMeta: 'Ouvrez le script sacré préparé pour vous',
     videoHTML: `<div id="ifr_699763e17d7b375b25e8f0c4_wrapper" style="margin:0 auto;width:100%;"><div style="position:relative;padding:56.25% 0 0 0;" id="ifr_699763e17d7b375b25e8f0c4_aspect"><iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_699763e17d7b375b25e8f0c4" style="position:absolute;top:0;left:0;width:100%;height:100%;" referrerpolicy="origin" onload="this.onload=null,this.src='https://scripts.converteai.net/f8e465b5-f483-4d08-be19-bc14de388e59/players/699763e17d7b375b25e8f0c4/v4/embed.html'+(location.search||'?')+'&vl='+encodeURIComponent(location.href)"></iframe></div></div>`
   }
 ];
@@ -748,7 +748,7 @@ function renderLesson(idx) {
             <div class="download-title">${lesson.downloadTitle}</div>
             <div class="download-meta">${lesson.downloadMeta}</div>
           </div>
-          <div class="download-btn">→ Access</div>
+          <div class="download-btn">→ Accéder</div>
         </a>`;
     } else {
       dlContent.innerHTML = `
@@ -758,7 +758,7 @@ function renderLesson(idx) {
             <div class="download-title">${lesson.downloadTitle}</div>
             <div class="download-meta">${lesson.downloadMeta}</div>
           </div>
-          <div class="download-btn">↓ Download PDF</div>
+          <div class="download-btn">↓ Télécharger PDF</div>
         </a>`;
     }
   } else {
@@ -768,12 +768,12 @@ function renderLesson(idx) {
   const done = isCompleted(lesson.id);
   const btn = document.getElementById('btn-complete');
   document.getElementById('complete-icon').textContent = done ? '✓' : '◯';
-  document.getElementById('complete-text').textContent = done ? 'Completed' : 'Mark as Complete';
+  document.getElementById('complete-text').textContent = done ? 'Terminé' : 'Marquer comme Terminé';
   btn.className = 'btn-complete' + (done ? ' done' : '');
 
   document.getElementById('btn-prev').className = 'btn-lesson-nav' + (idx === 0 ? ' disabled' : '');
   document.getElementById('btn-next').className = 'btn-lesson-nav next' + (idx === LESSONS.length - 1 ? ' disabled' : '');
-  document.getElementById('btn-next').textContent = idx === LESSONS.length - 1 ? '✓ Last Lesson' : 'Next →';
+  document.getElementById('btn-next').textContent = idx === LESSONS.length - 1 ? '✓ Dernière Leçon' : 'Suivant →';
 
   document.getElementById('notes-input').value = localStorage.getItem('notes_' + lesson.id) || '';
 
@@ -805,9 +805,9 @@ function updateProgress() {
   const total = LESSONS.length;
   const pct = (count / total) * 100;
   document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('progress-label').textContent = `${count} of ${total} complete`;
+  document.getElementById('progress-label').textContent = `${count} sur ${total} terminé`;
   document.getElementById('gift-progress-fill').style.width = pct + '%';
-  document.getElementById('gift-progress-label').textContent = `${count} of ${total}`;
+  document.getElementById('gift-progress-label').textContent = `${count} sur ${total}`;
 }
 
 // ── MARK COMPLETE ──
@@ -819,7 +819,7 @@ function markComplete() {
   localStorage.setItem('completed_lessons_' + MODULE_ID, JSON.stringify(done));
   saveModuleProgress(MODULE_ID, currentLesson, done);
   document.getElementById('complete-icon').textContent = '✓';
-  document.getElementById('complete-text').textContent = 'Completed';
+  document.getElementById('complete-text').textContent = 'Terminé';
   document.getElementById('btn-complete').className = 'btn-complete done';
   updateProgress();
   renderSidebar();
@@ -858,7 +858,7 @@ function setRating(n) {
 }
 function renderStars() {
   document.querySelectorAll('.star-btn').forEach((s, i) => s.className = 'star-btn' + (i < currentRating ? ' active' : ''));
-  const labels = ['Tap to rate', 'Not for me', 'It was ok', 'Good', 'Very good', 'Life-changing ✦'];
+  const labels = ['Appuyer pour évaluer', 'Pas pour moi', 'C\'était bien', 'Bien', 'Très bien', 'Qui change la vie ✦'];
   document.getElementById('rating-label').textContent = labels[currentRating];
 }
 
@@ -881,8 +881,8 @@ function submitComment() {
 
 function renderComments() {
   const demo = [
-    { name: 'Patricia', text: 'The Welcome lesson gave me chills. I have been waiting for permission to receive — and this was it. God is not withholding. I was.', rating: 5, date: 'Apr 1' },
-    { name: 'Marcus', text: 'The Call teaching wrecked me in the best way. I finally understand what I have been running from. My abundance starts now.', rating: 5, date: 'Mar 30' },
+    { name: 'Patricia', text: 'La leçon de Bienvenue m\'a donné des frissons. J\'attendais la permission de recevoir — et c\'était ça. Dieu ne retient pas. C\'était moi.', rating: 5, date: '1 Avr' },
+    { name: 'Marcus', text: 'L\'enseignement de l\'Appel m\'a bouleversé de la meilleure façon. Je comprends enfin ce dont je fuyais. Mon abondance commence maintenant.', rating: 5, date: '30 Mar' },
   ];
   getLessonComments(LESSONS[currentLesson].id).then(function(sbComments) {
     const all = [...sbComments, ...demo];
@@ -904,8 +904,8 @@ function renderComments() {
 function saveNotes() {
   saveLessonInteraction(LESSONS[currentLesson].id, document.getElementById('notes-input').value, undefined);
   const btn = document.querySelector('.btn-save-notes');
-  btn.textContent = '❆ Saved';
-  setTimeout(() => btn.textContent = '❆ Save Notes', 1800);
+  btn.textContent = '❆ Sauvegardé';
+  setTimeout(() => btn.textContent = '❆ Sauvegarder les Notes', 1800);
 }
 
 function closeGiftModal() {
@@ -941,7 +941,7 @@ onSupabaseReady(function() {
     updateProgress();
     var done = (p.completedLessons || []).includes(LESSONS[currentLesson].id);
     document.getElementById('complete-icon').textContent = done ? '\u2713' : '\u25ef';
-    document.getElementById('complete-text').textContent = done ? 'Completed' : 'Mark as Complete';
+    document.getElementById('complete-text').textContent = done ? 'Terminé' : 'Marquer comme Terminé';
     document.getElementById('btn-complete').className = 'btn-complete' + (done ? ' done' : '');
   });
 });

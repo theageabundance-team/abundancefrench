@@ -79,34 +79,34 @@
       <div class="profile-avatar-large" id="profile-avatar-large"></div>
       <div class="profile-name" id="profile-name"></div>
       <div class="profile-email" id="profile-email"></div>
-      <div class="profile-days-badge">✦ <span id="profile-days">0</span> Days of Connection</div>
+      <div class="profile-days-badge">✦ <span id="profile-days">0</span> Jours de Connexion</div>
     </div>
     <div class="profile-menu-body">
       <a href="index.html" class="profile-menu-item">
         <span class="profile-menu-item-icon">🏠</span>
-        <span class="profile-menu-item-label">Home</span>
+        <span class="profile-menu-item-label">Accueil</span>
       </a>
       <a href="journey.html" class="profile-menu-item">
         <span class="profile-menu-item-icon">✨</span>
-        <span class="profile-menu-item-label">My Journey</span>
+        <span class="profile-menu-item-label">Mon Parcours</span>
       </a>
       <a href="journal.html" class="profile-menu-item">
         <span class="profile-menu-item-icon">📖</span>
-        <span class="profile-menu-item-label">My Journal</span>
+        <span class="profile-menu-item-label">Mon Journal</span>
       </a>
       <a href="community.html" class="profile-menu-item">
         <span class="profile-menu-item-icon">👥</span>
-        <span class="profile-menu-item-label">Abundance Circle</span>
+        <span class="profile-menu-item-label">Cercle d'Abondance</span>
       </a>
       <div class="profile-menu-divider"></div>
       <a href="support.html" class="profile-menu-item">
         <span class="profile-menu-item-icon">💬</span>
-        <span class="profile-menu-item-label">Support</span>
+        <span class="profile-menu-item-label">Assistance</span>
       </a>
       <div class="profile-menu-divider"></div>
       <button class="profile-menu-item" onclick="logout()">
         <span class="profile-menu-item-icon">🚪</span>
-        <span class="profile-menu-item-label danger">Sign Out</span>
+        <span class="profile-menu-item-label danger">Se Déconnecter</span>
       </button>
     </div>
   `;

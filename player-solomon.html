@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPGZMZW88T"></script>
@@ -15,10 +15,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Age of Abundance">
+  <meta name="apple-mobile-web-app-title" content="L'Ere de l'Abondance">
   <link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
   <meta name="theme-color" content="#0d0d12">
-  <title>The Hidden Secrets of Solomon — Abundance Time</title>
+  <title>Les Secrets Cachés de Salomon — Temps d'Abondance</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -483,20 +483,20 @@
 <!-- GIFT BANNER -->
 <div class="gift-banner" id="gift-banner">
   <div class="gift-banner-text">
-    Complete all lessons to receive your spiritual gift
-    <span class="gift-pill">📜 Gift of Solomon's Wisdom</span>
+    Terminez toutes les leçons pour recevoir votre don spirituel
+    <span class="gift-pill">📜 Don de la Sagesse de Salomon</span>
   </div>
   <div class="gift-progress-wrap">
     <div class="gift-progress-bar">
       <div class="gift-progress-fill" id="gift-progress-fill"></div>
     </div>
-    <div class="gift-progress-label" id="gift-progress-label">0 of 2</div>
+    <div class="gift-progress-label" id="gift-progress-label">0 sur 2</div>
   </div>
 </div>
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-back" onclick="fadeOut(event, 'index.html')">← Back to Home</a>
+  <a href="index.html" class="nav-back" onclick="fadeOut(event, 'index.html')">← Retour à l'Accueil</a>
 </nav>
 
 <!-- LAYOUT -->
@@ -505,13 +505,13 @@
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-eyebrow">Course Content</div>
-      <div class="sidebar-course-title">The Hidden Secrets of Solomon</div>
+      <div class="sidebar-eyebrow">Contenu du Cours</div>
+      <div class="sidebar-course-title">Les Secrets Cachés de Salomon</div>
     </div>
     <div class="sidebar-progress">
       <div class="progress-row">
-        <span>Progress</span>
-        <span id="progress-label">0 of 2 complete</span>
+        <span>Progression</span>
+        <span id="progress-label">0 sur 2 terminé</span>
       </div>
       <div class="progress-bar-wrap">
         <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
@@ -536,7 +536,7 @@
         <h1 class="module-title" id="lesson-title"></h1>
         <button class="btn-complete" id="btn-complete" onclick="markComplete()">
           <span id="complete-icon">◯</span>
-          <span id="complete-text">Mark as Complete</span>
+          <span id="complete-text">Marquer comme Terminé</span>
         </button>
       </div>
 
@@ -548,41 +548,41 @@
 
       <!-- TABS -->
       <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('about', this)">About</button>
-        <button class="tab-btn" onclick="switchTab('notes', this)">My Notes</button>
-        <button class="tab-btn" onclick="switchTab('comments', this)">Community</button>
+        <button class="tab-btn active" onclick="switchTab('about', this)">À Propos</button>
+        <button class="tab-btn" onclick="switchTab('notes', this)">Mes Notes</button>
+        <button class="tab-btn" onclick="switchTab('comments', this)">Communauté</button>
       </div>
 
       <!-- TAB: ABOUT -->
       <div class="tab-content active" id="tab-about">
-        <div class="about-label">About This Module</div>
-        <p class="about-text">Solomon was the wealthiest man who ever lived — not because he chased riches, but because he sought something far greater. In this module, you will uncover the hidden principles behind his divine prosperity: the ancient wisdom God imparted to one king, and how those same secrets apply to your life today. Every lesson is a key. Every key opens a door.</p>
+        <div class="about-label">À Propos de Ce Module</div>
+        <p class="about-text">Salomon était l'homme le plus riche qui ait jamais vécu — non parce qu'il courait après les richesses, mais parce qu'il cherchait quelque chose de bien plus grand. Dans ce module, vous découvrirez les principes cachés derrière sa prospérité divine : la sagesse ancienne que Dieu a transmise à un roi, et comment ces mêmes secrets s'appliquent à votre vie aujourd'hui. Chaque leçon est une clé. Chaque clé ouvre une porte.</p>
       </div>
 
       <!-- TAB: NOTES -->
       <div class="tab-content" id="tab-notes">
-        <div class="about-label">Your Personal Notes</div>
-        <textarea class="notes-textarea" id="notes-input" placeholder="Write your reflections, revelations, and insights here..."></textarea>
-        <button class="btn-save-notes" onclick="saveNotes()">✦ Save Notes</button>
+        <div class="about-label">Vos Notes Personnelles</div>
+        <textarea class="notes-textarea" id="notes-input" placeholder="Écrivez vos réflexions, révélations et idées ici..."></textarea>
+        <button class="btn-save-notes" onclick="saveNotes()">✦ Sauvegarder les Notes</button>
       </div>
 
       <!-- TAB: COMMENTS -->
       <div class="tab-content" id="tab-comments">
         <div class="rating-section">
-          <div class="about-label">Rate This Lesson</div>
+          <div class="about-label">Évaluez Cette Leçon</div>
           <div class="stars-row">
             <button class="star-btn" onclick="setRating(1)">★</button>
             <button class="star-btn" onclick="setRating(2)">★</button>
             <button class="star-btn" onclick="setRating(3)">★</button>
             <button class="star-btn" onclick="setRating(4)">★</button>
             <button class="star-btn" onclick="setRating(5)">★</button>
-            <span class="rating-label" id="rating-label">Tap to rate</span>
+            <span class="rating-label" id="rating-label">Appuyer pour évaluer</span>
           </div>
         </div>
         <div class="comment-box">
-          <textarea class="comment-input" id="comment-input" placeholder="Share what this teaching revealed to you..."></textarea>
+          <textarea class="comment-input" id="comment-input" placeholder="Partagez ce que cet enseignement vous a révélé..."></textarea>
           <div class="comment-footer">
-            <button class="btn-comment" onclick="submitComment()">✦ Share</button>
+            <button class="btn-comment" onclick="submitComment()">✦ Partager</button>
           </div>
         </div>
         <div class="comments-list" id="comments-list"></div>
@@ -590,8 +590,8 @@
 
       <!-- LESSON NAVIGATION -->
       <div class="lesson-nav">
-        <button class="btn-lesson-nav" id="btn-prev" onclick="goLesson(-1)">← Previous</button>
-        <button class="btn-lesson-nav next" id="btn-next" onclick="goLesson(1)">Next →</button>
+        <button class="btn-lesson-nav" id="btn-prev" onclick="goLesson(-1)">← Précédent</button>
+        <button class="btn-lesson-nav next" id="btn-next" onclick="goLesson(1)">Suivant →</button>
       </div>
 
     </div>
@@ -605,15 +605,15 @@
 <div class="gift-modal-overlay" id="gift-modal">
   <div class="gift-modal">
     <span class="gift-modal-emoji">📜</span>
-    <div class="gift-modal-eyebrow">Your Gift Has Been Unlocked</div>
-    <div class="gift-modal-title">Gift of Solomon's Wisdom</div>
+    <div class="gift-modal-eyebrow">Votre Don a Été Débloqué</div>
+    <div class="gift-modal-title">Don de la Sagesse de Salomon</div>
     <p class="gift-modal-text">
-      You have walked the hidden path of the wisest king who ever lived. The secrets he carried — the principles of wealth, discernment, and divine favor — are now written upon your heart.
+      Vous avez emprunté le chemin caché du roi le plus sage qui ait jamais vécu. Les secrets qu'il portait — les principes de la richesse, du discernement et de la faveur divine — sont maintenant écrits sur votre coeur.
     </p>
-    <div class="gift-modal-verse">"For the Lord gives wisdom; from his mouth come knowledge and understanding." — Proverbs 2:6</div>
+    <div class="gift-modal-verse">« Car c'est l'Éternel qui donne la sagesse ; de sa bouche sortent la connaissance et l'intelligence. » — Proverbes 2:6</div>
     <div class="gift-modal-btns">
-      <a href="index.html" class="btn-gift-journey" onclick="fadeOut(event,'index.html')">✦ View My Gift on the Journey</a>
-      <button class="btn-gift-stay" onclick="closeGiftModal()">Keep Exploring</button>
+      <a href="index.html" class="btn-gift-journey" onclick="fadeOut(event,'index.html')">✦ Voir Mon Don sur le Parcours</a>
+      <button class="btn-gift-stay" onclick="closeGiftModal()">Continuer à Explorer</button>
     </div>
   </div>
 </div>
@@ -690,7 +690,7 @@ function renderLesson(idx) {
   const done = isCompleted(lesson.id);
   const btn = document.getElementById('btn-complete');
   document.getElementById('complete-icon').textContent = done ? '✓' : '◯';
-  document.getElementById('complete-text').textContent = done ? 'Completed' : 'Mark as Complete';
+  document.getElementById('complete-text').textContent = done ? 'Terminé' : 'Marquer comme Terminé';
   btn.className = 'btn-complete' + (done ? ' done' : '');
 
   document.getElementById('btn-prev').className = 'btn-lesson-nav' + (idx === 0 ? ' disabled' : '');
@@ -727,9 +727,9 @@ function updateProgress() {
   const total = LESSONS.length;
   const pct = (count / total) * 100;
   document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('progress-label').textContent = `${count} of ${total} complete`;
+  document.getElementById('progress-label').textContent = `${count} sur ${total} terminé`;
   document.getElementById('gift-progress-fill').style.width = pct + '%';
-  document.getElementById('gift-progress-label').textContent = `${count} of ${total}`;
+  document.getElementById('gift-progress-label').textContent = `${count} sur ${total}`;
 }
 
 // ── MARK COMPLETE ──
@@ -741,7 +741,7 @@ function markComplete() {
   localStorage.setItem('completed_lessons_' + MODULE_ID, JSON.stringify(done));
   saveModuleProgress(MODULE_ID, currentLesson, done);
   document.getElementById('complete-icon').textContent = '✓';
-  document.getElementById('complete-text').textContent = 'Completed';
+  document.getElementById('complete-text').textContent = 'Terminé';
   document.getElementById('btn-complete').className = 'btn-complete done';
   updateProgress();
   renderSidebar();
@@ -780,7 +780,7 @@ function setRating(n) {
 }
 function renderStars() {
   document.querySelectorAll('.star-btn').forEach((s, i) => s.className = 'star-btn' + (i < currentRating ? ' active' : ''));
-  const labels = ['Tap to rate', 'Not for me', 'It was ok', 'Good', 'Very good', 'Life-changing ✦'];
+  const labels = ['Appuyer pour évaluer', 'Pas pour moi', 'C\'était bien', 'Bien', 'Très bien', 'Qui change la vie ✦'];
   document.getElementById('rating-label').textContent = labels[currentRating];
 }
 
@@ -826,8 +826,8 @@ function renderComments() {
 function saveNotes() {
   saveLessonInteraction(LESSONS[currentLesson].id, document.getElementById('notes-input').value, undefined);
   const btn = document.querySelector('.btn-save-notes');
-  btn.textContent = '❆ Saved';
-  setTimeout(() => btn.textContent = '❆ Save Notes', 1800);
+  btn.textContent = '❆ Sauvegardé';
+  setTimeout(() => btn.textContent = '❆ Sauvegarder les Notes', 1800);
 }
 
 function closeGiftModal() {
@@ -863,7 +863,7 @@ onSupabaseReady(function() {
     updateProgress();
     var done = (p.completedLessons || []).includes(LESSONS[currentLesson].id);
     document.getElementById('complete-icon').textContent = done ? '\u2713' : '\u25ef';
-    document.getElementById('complete-text').textContent = done ? 'Completed' : 'Mark as Complete';
+    document.getElementById('complete-text').textContent = done ? 'Terminé' : 'Marquer comme Terminé';
     document.getElementById('btn-complete').className = 'btn-complete' + (done ? ' done' : '');
   });
 });

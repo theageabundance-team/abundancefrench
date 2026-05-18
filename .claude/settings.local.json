@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://uaicoxhobzpinkaqvepk.supabase.co/rest/v1/profiles?select=id&limit=1\" -H \"apikey: sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\" -H \"Authorization: Bearer sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\")",
+      "Bash(curl -s \"https://uaicoxhobzpinkaqvepk.supabase.co/rest/v1/daily_progress?select=id&limit=1\" -H \"apikey: sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\" -H \"Authorization: Bearer sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\")",
+      "Bash(curl -s \"https://uaicoxhobzpinkaqvepk.supabase.co/rest/v1/module_progress?select=id&limit=1\" -H \"apikey: sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\" -H \"Authorization: Bearer sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\")",
+      "Bash(curl -s \"https://uaicoxhobzpinkaqvepk.supabase.co/rest/v1/user_gifts?select=id&limit=1\" -H \"apikey: sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\" -H \"Authorization: Bearer sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\")",
+      "Bash(curl -s \"https://uaicoxhobzpinkaqvepk.supabase.co/rest/v1/community_interactions?select=id&limit=1\" -H \"apikey: sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\" -H \"Authorization: Bearer sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\")",
+      "Bash(curl -s \"https://uaicoxhobzpinkaqvepk.supabase.co/rest/v1/challenge_21days?select=id&limit=1\" -H \"apikey: sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\" -H \"Authorization: Bearer sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\")",
+      "Bash(curl -s \"https://uaicoxhobzpinkaqvepk.supabase.co/rest/v1/lesson_interactions?select=id&limit=1\" -H \"apikey: sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\" -H \"Authorization: Bearer sb_publishable_Jowm5dnurL2PDucXh1hZaQ_OzNBIbmt\")",
+      "Bash(git add:*)",
+      "Bash(__NEW_LINE_2b0975a2732fd914__ git:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(__NEW_LINE_38833642ff207d6b__ done:*)",
+      "Bash(python3 -c \":*)"
+    ]
+  }
+}

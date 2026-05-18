@@ -182,7 +182,7 @@
     chip.id = '_ib_chip';
     chip.innerHTML =
       '<span id="_ib_chip_icon">📱</span>' +
-      '<span id="_ib_chip_label">Install App</span>' +
+      '<span id="_ib_chip_label">Installer l\'appli</span>' +
       '<button id="_ib_chip_close" aria-label="Dismiss">✕</button>';
     document.body.appendChild(chip);
 
@@ -203,22 +203,22 @@
     if (isIOS) {
       instructionHTML =
         '<div class="ib-instruction">' +
-        'Tap the <b>Share button (□↑ or ⋯)</b> at the bottom of your screen, ' +
-        'then tap <b>"Add to Home Screen"</b>.' +
+        'Appuyez sur le <b>bouton Partager (□↑ ou ⋯)</b> en bas de votre écran, ' +
+        'puis appuyez sur <b>"Ajouter à l\'écran d\'accueil"</b>.' +
         '</div>';
     } else {
       instructionHTML =
         '<div class="ib-instruction">' +
-        'Tap <b>Install</b> below to add the app directly to your home screen.' +
+        'Appuyez sur <b>Installer</b> ci-dessous pour ajouter l\'appli directement à votre écran d\'accueil.' +
         '</div>' +
-        '<button id="_ib_modal_install_btn" disabled>Install App</button>';
+        '<button id="_ib_modal_install_btn" disabled>Installer l\'appli</button>';
     }
 
     overlay.innerHTML =
       '<div id="_ib_modal">' +
       '  <button id="_ib_modal_close" aria-label="Close">✕</button>' +
       '  <div id="_ib_modal_icon">📱</div>' +
-      '  <div id="_ib_modal_title">Install The Age of Abundance</div>' +
+      '  <div id="_ib_modal_title">Installer L\'Ere de l\'Abondance</div>' +
       instructionHTML +
       '</div>';
 
