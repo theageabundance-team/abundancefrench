@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FPGZMZW88T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FPGZMZW88T');
+</script>
+<script>if(!localStorage.getItem("abundance_email"))window.location.replace("login.html");</script>
+  <meta charset="UTF-8"/>
+  <link rel="manifest" href="manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Age of Abundance">
+  <link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
+  <meta name="theme-color" content="#0d0d12">
+  <title>Abundance Time</title>
+
+  <!-- Preload crítico para fontes aparecerem no mobile -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" media="all">
+
+  <style>
+    /* Forçar as fontes com @font-face de fallback */
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --gold-dim: #7a5f28;
+      --bg: #0a0a0f;
+      --bg2: #0f0f18;
+      --bg3: #13131f;
+      --text: #e8e0d0;
+      --text-dim: #8a8070;
+      --green: #2ecc71;
+      --orange: #e67e22;
+      --purple: #8b5cf6;
+      --radius: 10px;
+
+      /* Desktop: card fixo */
+      --card-w: 228px;
+      --gap: 18px;
+      --pad: 4%;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Crimson Pro', 'Georgia', 'Times New Roman', serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Aplicar Cinzel explicitamente em todos os lugares */
+    h1, h2, h3,
+    .nav-logo-text,
+    .hero-title,
+    .row-title,
+    .card-title,
+    .modal h2 {
+      font-family: 'Cinzel', 'Palatino Linotype', 'Book Antiqua', 'Palatino', serif !important;
+    }
+
+    ::-webkit-scrollbar { width: 6px; height: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.2); border-radius: 3px; }
+
+    /* ── NAV ── */
+    nav.desktop-nav {
+      position: fixed; top:0; left:0; right:0; z-index:100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem; height: 68px;
+      background: rgba(10,10,15,0.93);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .nav-logo { display:flex; align-items:center; gap:9px; text-decoration:none; }
+    .nav-logo-text {
+      font-family: 'Cinzel', 'Palatino Linotype', serif !important;
+      font-size:1.05rem; font-weight:700;
+      color: var(--gold); letter-spacing:0.05em;
+    }
+    .nav-links { display:flex; gap:2rem; list-style:none; }
+    .nav-links a {
+      text-decoration:none; color:var(--text-dim); font-size:0.92rem;
+      letter-spacing:0.02em; transition:color 0.2s;
+      font-family: 'Crimson Pro', Georgia, serif;
+    }
+    .nav-links a:hover { color:var(--text); }
+    .nav-links a.active { color:var(--text); border-bottom:2px solid var(--gold); padding-bottom:2px; }
+    .nav-right { display:flex; align-items:center; gap:1rem; }
+    .nav-icon-btn {
+      background:none; border:none; color:var(--text-dim); font-size:1.15rem;
+      cursor:pointer; padding:6px; border-radius:50%;
+      transition:color 0.2s, background 0.2s; position:relative;
+    }
+    .nav-icon-btn:hover { color:var(--text); background:rgba(255,255,255,0.06); }
+    .notif-dot {
+      position:absolute; top:4px; right:4px; width:8px; height:8px;
+      background:#e74c3c; border-radius:50%; border:2px solid var(--bg);
+    }
+    .nav-avatar {
+      width:36px; height:36px; border-radius:50%;
+      background:linear-gradient(135deg,#e67e22,#c0392b);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Cinzel',serif !important; font-size:0.8rem; font-weight:700;
+      color:#fff; cursor:pointer;
+    }
+    .nav-username { font-size:0.88rem; color:var(--text-dim); }
+
+    /* Mobile nav simplificado */
+    .mobile-nav {
+      display: none;
+      position: fixed; top:0; left:0; right:0; z-index:100;
+      align-items: center; justify-content: space-between;
+      padding: 0 1.2rem; height: 62px;
+      background: rgba(10,10,15,0.93);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .mobile-nav-right { display:flex; align-items:center; gap:12px; }
+
+    /* ── HERO ── */
+    .hero {
+      position:relative; width:100%; height:75vh; min-height:480px; overflow:hidden;
+    }
+    .hero-slide { position:absolute; inset:0; opacity:0; transition:opacity 1s ease; pointer-events:none; }
+    .hero-slide.active { opacity:1; pointer-events:auto; }
+    .hero-bg {
+      position:absolute; inset:0; background-size:cover; background-position:center;
+      transform:scale(1.04); transition:transform 8s ease;
+    }
+    .hero-slide.active .hero-bg { transform:scale(1); }
+    .hero-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(100deg,rgba(10,10,15,0.9) 0%,rgba(10,10,15,0.5) 48%,rgba(10,10,15,0.1) 100%);
+    }
+    .hero-overlay-mobile {
+      position:absolute; inset:0;
+      background:rgba(10,10,15,0.45);
+      display:none;
+    }
+    .hero-fade {
+      position:absolute; bottom:0; left:0; right:0; height:140px;
+      background:linear-gradient(to top,var(--bg) 0%,transparent 100%);
+    }
+    .hero-content {
+      position:absolute; bottom:80px; left:5%; max-width:560px;
+    }
+    .hero-badges { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+    .badge {
+      display:inline-flex; align-items:center; gap:5px;
+      padding:5px 14px; border-radius:999px;
+      font-size:0.8rem; font-weight:700; letter-spacing:0.03em;
+      font-family: 'Crimson Pro', Georgia, serif;
+    }
+    .badge-green  { background:#1a9e50; color:#fff; border:1px solid #1a9e50; }
+    .badge-orange { background:rgba(230,126,34,0.2);  color:#e67e22; border:1px solid rgba(230,126,34,0.4); }
+    .badge-purple { background:rgba(139,92,246,0.2);  color:#a78bfa; border:1px solid rgba(139,92,246,0.4); }
+    .badge-gold   { background:rgba(201,168,76,0.2);  color:var(--gold); border:1px solid rgba(201,168,76,0.4); }
+    .hero-title {
+      font-family:'Cinzel','Palatino Linotype',serif !important;
+      font-size:clamp(1.8rem,3.8vw,3rem);
+      font-weight:700; color:#fff; line-height:1.12; margin-bottom:12px;
+      text-shadow:0 2px 24px rgba(0,0,0,0.6);
+    }
+    .hero-desc {
+      font-size:1rem; color:rgba(232,224,208,0.82); line-height:1.6;
+      margin-bottom:10px; font-style:italic;
+      font-family: 'Crimson Pro', Georgia, serif;
+    }
+    .hero-meta {
+      display:flex; align-items:center; gap:14px; margin-bottom:26px;
+      font-size:0.9rem; color:var(--text-dim);
+      font-family: 'Crimson Pro', Georgia, serif;
+    }
+    .hero-meta .stars { color:#f1c40f; }
+    .cat-tag { background:rgba(255,255,255,0.08); padding:3px 10px; border-radius:999px; font-size:0.78rem; }
+    .hero-btns { display:flex; gap:12px; flex-wrap:wrap; }
+    .btn {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:12px 24px; border-radius:var(--radius);
+      font-family:'Crimson Pro',Georgia,serif; font-size:0.95rem; font-weight:600;
+      cursor:pointer; transition:all 0.2s; border:none; text-decoration:none;
+    }
+    .btn-primary { background:#fff; color:#0a0a0f; }
+    .btn-primary:hover { background:var(--gold-light); transform:translateY(-1px); }
+    .btn-secondary { background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.22); backdrop-filter:blur(6px); }
+    .btn-secondary:hover { background:rgba(255,255,255,0.18); transform:translateY(-1px); }
+    .hero-arrow {
+      position:absolute; top:50%; transform:translateY(-50%); z-index:10;
+      background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.14);
+      backdrop-filter:blur(6px); color:#fff; width:44px; height:44px;
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      cursor:pointer; font-size:1.25rem; transition:background 0.2s;
+    }
+    .hero-arrow:hover { background:rgba(255,255,255,0.16); }
+    .hero-arrow.left { left:20px; }
+    .hero-arrow.right { right:20px; }
+    .hero-dots {
+      position:absolute; bottom:112px; left:50%; transform:translateX(-50%);
+      display:flex; gap:8px; z-index:10;
+    }
+    .hero-dot { width:26px; height:3px; border-radius:2px; background:rgba(255,255,255,0.28); cursor:pointer; transition:all 0.25s; }
+    .hero-dot.active { background:#fff; width:40px; }
+
+    /* ── MAIN ── */
+    main { background:var(--bg); padding-bottom:80px; }
+    .need-help-wrap { padding:10px var(--pad) 0; }
+    .need-help {
+      display:inline-flex; align-items:center; gap:8px;
+      background:var(--bg3); border:1px solid rgba(255,255,255,0.08);
+      border-radius:999px; padding:8px 18px;
+      font-size:0.84rem; color:var(--text-dim); cursor:pointer;
+      transition:all 0.2s; font-family:'Crimson Pro',Georgia,serif;
+    }
+    .need-help:hover { color:var(--text); border-color:rgba(255,255,255,0.18); }
+    .divider { height:1px; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.15),transparent); margin:20px var(--pad) 0; }
+
+    /* ── ROW SECTION ── */
+    .row-section { padding:32px 0 8px; }
+    .row-header { display:flex; align-items:center; justify-content:space-between; padding:0 var(--pad); margin-bottom:18px; }
+    .row-title {
+      font-family:'Cinzel','Palatino Linotype',serif !important;
+      font-size:1.28rem; font-weight:700; color:var(--text); letter-spacing:0.02em;
+    }
+    .row-nav { display:flex; gap:8px; }
+    .row-nav-btn {
+      width:34px; height:34px; border-radius:8px;
+      background:var(--bg3); border:1px solid rgba(255,255,255,0.12);
+      color:var(--text-dim); display:flex; align-items:center; justify-content:center;
+      cursor:pointer; font-size:1rem; transition:all 0.2s;
+    }
+    .row-nav-btn:hover { background:rgba(255,255,255,0.1); color:var(--text); }
+
+    /* ── TRACK / VIEWPORT ── */
+    .cards-viewport { overflow:hidden; padding:6px 0 20px; touch-action:pan-y; }
+    .cards-track {
+      display:flex; gap:var(--gap); padding:0 var(--pad);
+      transition:transform 0.52s cubic-bezier(0.16,1,0.3,1);
+      will-change:transform;
+    }
+
+    /* ── CARD ── */
+    .product-card {
+      flex:0 0 var(--card-w); width:var(--card-w);
+      background:var(--bg3); border-radius:var(--radius); overflow:hidden;
+      border:1px solid rgba(255,255,255,0.07);
+      transition:transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+      cursor:pointer; position:relative;
+    }
+    .product-card:hover {
+      transform:translateY(-6px) scale(1.015);
+      box-shadow:0 20px 50px rgba(0,0,0,0.55);
+      border-color:rgba(201,168,76,0.2);
+      z-index:2;
+    }
+    .card-img-wrap { position:relative; width:100%; aspect-ratio:3/4; overflow:hidden; }
+    .card-img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; display:block; }
+    .product-card:hover .card-img-wrap img { transform:scale(1.06); }
+    .card-badges { position:absolute; top:9px; left:9px; display:flex; gap:5px; flex-wrap:wrap; }
+    .card-fav {
+      position:absolute; top:8px; right:8px;
+      width:30px; height:30px; background:rgba(10,10,15,0.55);
+      backdrop-filter:blur(6px); border-radius:50%; display:flex;
+      align-items:center; justify-content:center; border:none;
+      cursor:pointer; color:rgba(255,255,255,0.5); font-size:0.85rem; transition:all 0.2s;
+    }
+    .card-fav:hover, .card-fav.active { color:#e74c3c; }
+    .card-body { padding:12px 12px 11px; }
+    .cat-pill {
+      display:inline-block; padding:3px 10px; border-radius:999px;
+      font-size:0.69rem; font-weight:700; letter-spacing:0.05em;
+      margin-bottom:8px; font-family:'Crimson Pro',Georgia,serif;
+    }
+    .cat-spirituality { background:rgba(139,92,246,0.22); color:#a78bfa; }
+    .cat-mindset      { background:rgba(230,126,34,0.2);  color:#f0a055; }
+    .cat-premium      { background:rgba(201,168,76,0.2);  color:var(--gold); }
+    .cat-health       { background:rgba(46,204,113,0.18); color:#5de8a0; }
+    .card-title {
+      font-family:'Cinzel','Palatino Linotype',serif !important;
+      font-size:0.8rem; font-weight:600; color:var(--text); line-height:1.35; margin-bottom:6px;
+    }
+    .card-desc { font-size:0.78rem; color:var(--text-dim); line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; margin-bottom:9px; font-family:'Crimson Pro',Georgia,serif; }
+    .card-meta { display:flex; align-items:center; gap:8px; font-size:0.74rem; color:var(--text-dim); margin-bottom:11px; font-family:'Crimson Pro',Georgia,serif; }
+    .card-meta .stars { color:#f1c40f; }
+    .card-actions { display:flex; flex-direction:column; gap:6px; }
+    .card-btn {
+      width:100%; padding:9px; border-radius:7px;
+      font-family:'Crimson Pro',Georgia,serif; font-size:0.85rem; font-weight:600;
+      cursor:pointer; transition:all 0.18s; display:flex;
+      align-items:center; justify-content:center; gap:6px; border:none;
+    }
+    .card-btn-access { background:rgba(255,255,255,0.08); color:var(--text); border:1px solid rgba(255,255,255,0.14); }
+    .card-btn-access:hover { background:rgba(255,255,255,0.14); }
+    .card-btn-details { background:transparent; color:var(--text-dim); border:1px solid rgba(255,255,255,0.08); }
+    .card-btn-details:hover { color:var(--text); border-color:rgba(255,255,255,0.18); }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      display:none; position:fixed; inset:0;
+      background:rgba(0,0,0,0.8); z-index:200;
+      align-items:center; justify-content:center; backdrop-filter:blur(8px);
+    }
+    .modal-overlay.open { display:flex; }
+    .modal {
+      background:var(--bg2); border:1px solid rgba(201,168,76,0.18);
+      border-radius:16px; padding:34px; max-width:500px; width:90%;
+      position:relative; animation:mIn 0.28s ease;
+    }
+    @keyframes mIn { from{opacity:0;transform:translateY(18px) scale(0.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+    .modal-close { position:absolute; top:14px; right:16px; background:none; border:none; color:var(--text-dim); font-size:1.25rem; cursor:pointer; }
+    .modal-close:hover { color:var(--text); }
+    .modal h2 { font-family:'Cinzel','Palatino Linotype',serif !important; font-size:1.3rem; color:var(--text); margin-bottom:10px; line-height:1.25; }
+    .modal-meta { display:flex; align-items:center; gap:12px; margin-bottom:16px; font-size:0.85rem; color:var(--text-dim); font-family:'Crimson Pro',Georgia,serif; }
+    .modal-meta .stars { color:#f1c40f; }
+    .modal p { color:var(--text-dim); font-size:0.95rem; line-height:1.65; margin-bottom:22px; font-family:'Crimson Pro',Georgia,serif; }
+    .modal-actions { display:flex; gap:10px; }
+    .modal-cat { margin-bottom:10px; }
+
+    /* ── MOBILE ── */
+    @media(max-width:768px) {
+      /* Hide desktop nav, show mobile top nav */
+      nav:not(.bottom-nav) { display:none !important; }
+      .mobile-nav { display:flex; }
+
+      /* Hero */
+      .hero { height:100svh; min-height:500px; }
+      .hero-overlay { background:linear-gradient(180deg,rgba(10,10,15,0.3) 0%,rgba(10,10,15,0.7) 70%,rgba(10,10,15,0.95) 100%); }
+      .hero-overlay-mobile { display:block; }
+      .hero-content { left:5%; right:5%; bottom:140px; max-width:100%; }
+      .hero-title { font-size:clamp(1.6rem,7vw,2.4rem); }
+      .hero-btns .btn { flex:1; justify-content:center; padding:14px 16px; font-size:1rem; }
+      .hero-arrow.left { left:10px; }
+      .hero-arrow.right { right:10px; }
+
+      /* Cards */
+      :root {
+        --card-w: calc((100vw - 5% * 2 - 18px) / 1.5);
+        --gap: 14px;
+        --pad: 5%;
+      }
+
+      /* Row header */
+      .row-title { font-size:1.5rem; font-weight:900; }
+
+      /* Need help */
+      .need-help { font-size:0.9rem; }
+
+      /* Bottom nav */
+      .bottom-nav { display:flex; flex-direction:column; }
+      main { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px) + 20px); }
+    }
+
+    /* ── BOTTOM NAV MOBILE ── */
+    .bottom-nav {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.97);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(201,168,76,0.15);
+      padding: 0 0 env(safe-area-inset-bottom, 0);
+    }
+    .bottom-nav-inner {
+      display: flex; justify-content: space-around; align-items: center;
+      height: 62px;
+    }
+    .bottom-nav-item {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      text-decoration: none; color: var(--text-dim);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 0.7rem; letter-spacing: 0.04em;
+      padding: 8px 20px; border-radius: 10px;
+      transition: color 0.2s; flex: 1;
+    }
+    .bottom-nav-item.active { color: var(--gold); }
+    .bottom-nav-item span.nav-icon { font-size: 1.3rem; }
+
+    /* ── PRACTICE DONE / PENDING STATES ── */
+    .practice-done-overlay {
+      position:absolute; inset:0; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; gap:6px;
+      animation:fadeIn 0.4s ease;
+    }
+    .pdo-check {
+      width:48px; height:48px; border-radius:50%;
+      background:rgba(0,0,0,0.35); border:2px solid rgba(255,255,255,0.6);
+      display:flex; align-items:center; justify-content:center;
+      font-size:22px; color:#fff; font-weight:700;
+    }
+    .pdo-text {
+      font-family:'Cinzel',serif; font-size:10px; letter-spacing:.14em;
+      text-transform:uppercase; color:#fff; opacity:.9;
+    }
+    .practice-pending-bar {
+      position:absolute; bottom:0; left:0; right:0;
+      background:rgba(10,8,15,0.75); padding:6px 10px;
+      display:flex; align-items:center; gap:6px;
+    }
+    .ppb-dot {
+      width:6px; height:6px; border-radius:50%;
+      background:#e8b84b; display:inline-block; flex-shrink:0;
+      animation:pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .ppb-text {
+      font-family:'Cinzel',serif; font-size:9px; letter-spacing:.12em;
+      text-transform:uppercase; color:#c9a84c; opacity:.85;
+    }
+
+    /* ── COMPLETION BANNER ── */
+    .practice-complete-banner {
+      margin:0 0 20px;
+      animation:fadeIn 0.6s ease;
+    }
+    .pcb-inner {
+      background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(201,168,76,0.04));
+      border:1px solid rgba(201,168,76,0.35);
+      border-left:3px solid #c9a84c;
+      border-radius:4px; padding:20px 24px; text-align:center;
+    }
+    .pcb-stars {
+      font-size:13px; color:#c9a84c; letter-spacing:.3em; margin-bottom:8px; opacity:.7;
+    }
+    .pcb-title {
+      font-family:'Cinzel',serif; font-size:16px; color:#c9a84c;
+      font-weight:600; margin-bottom:6px;
+    }
+    .pcb-text {
+      font-size:14px; color:var(--text-dim); margin-bottom:8px; line-height:1.6;
+    }
+    .pcb-verse {
+      font-style:italic; font-size:13px; color:rgba(201,168,76,0.65);
+    }
+
+    /* ── DONE BUTTON STATE ── */
+    .card-btn-done {
+      background:rgba(201,168,76,0.08) !important;
+      border:1px solid rgba(201,168,76,0.3) !important;
+      color:#c9a84c !important;
+      cursor:default !important;
+    }
+      flex: 0 0 var(--card-w); width: var(--card-w);
+      background: var(--bg3); border-radius: var(--radius); overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+      cursor: pointer; position: relative;
+    }
+    .practice-card:hover {
+      transform: translateY(-6px) scale(1.015);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.55);
+      border-color: rgba(201,168,76,0.2);
+      z-index: 2;
+    }
+    .practice-card .card-img-wrap { position:relative; width:100%; aspect-ratio:3/4; overflow:hidden; }
+    .practice-card .card-img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; display:block; }
+    .practice-card:hover .card-img-wrap img { transform:scale(1.06); }
+    .practice-type-badge {
+      position: absolute; top: 9px; left: 9px;
+      background: rgba(10,10,15,0.72); backdrop-filter: blur(6px);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 999px; padding: 4px 12px;
+      font-family: 'Cinzel', serif; font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.08em; color: var(--gold);
+    }
+    .practice-card .card-body { padding: 12px 12px 11px; }
+    .practice-title {
+      font-family: 'Cinzel', 'Palatino Linotype', serif !important;
+      font-size: 0.8rem; font-weight: 600; color: var(--text); line-height: 1.35; margin-bottom: 6px;
+    }
+    .practice-desc {
+      font-size: 0.78rem; color: var(--text-dim); line-height: 1.5;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+      overflow: hidden; margin-bottom: 9px;
+      font-family: 'Crimson Pro', Georgia, serif;
+    }
+    .practice-action {
+      width: 100%; padding: 9px; border-radius: 7px;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25);
+      color: var(--gold); font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+      transition: all 0.18s; display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .practice-action:hover { background: rgba(201,168,76,0.18); }
+
+    /* ── EXPAND CARD (upsell) ── */
+    .expand-card {
+      flex: 0 0 var(--card-w); width: var(--card-w);
+      background: var(--bg3); border-radius: var(--radius); overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+      cursor: pointer; position: relative;
+    }
+    .expand-card:hover {
+      transform: translateY(-6px) scale(1.015);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.55);
+      border-color: rgba(201,168,76,0.25);
+    }
+    .expand-card .card-img-wrap { aspect-ratio: 3/4; }
+    .expand-card .card-img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; display:block; }
+    .expand-card:hover .card-img-wrap img { transform:scale(1.06); }
+    .lock-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,10,15,0.92) 0%, rgba(10,10,15,0.3) 60%, transparent 100%);
+      display: flex; align-items: flex-end; padding: 14px;
+    }
+    .lock-badge {
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 999px; padding: 4px 12px;
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      color: var(--gold); letter-spacing: 0.06em;
+    }
+    .expand-card .card-body { padding: 12px 12px 14px; }
+    .btn-unlock {
+      width: 100%; padding: 10px; border-radius: 7px;
+      background: linear-gradient(135deg, rgba(201,168,76,0.25), rgba(201,168,76,0.12));
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold); font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+      transition: all 0.18s; margin-top: 8px;
+    }
+    .btn-unlock:hover { background: linear-gradient(135deg, rgba(201,168,76,0.38), rgba(201,168,76,0.2)); }
+
+    @media(max-width:768px) {
+      .bottom-nav { display: flex; flex-direction: column; }
+      main { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px) + 20px); }
+    }
+
+    @media(max-width:400px) {
+      :root { --card-w: calc(100vw * 0.72); }
+    }
+
+    /* ── PAGE FADE IN ── */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Page transition out */
+    .page-fade-out {
+      animation: pageFadeOut 0.4s ease forwards;
+    }
+    @keyframes pageFadeOut {
+      to { opacity: 0; transform: translateY(-10px); }
+    }
+
+    .practice-pending-banner {
+      margin: 0 0 16px;
+    }
+    .ppb-inner {
+      background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(201,168,76,0.02));
+      border: 1px solid rgba(201,168,76,0.2);
+      border-left: 3px solid rgba(201,168,76,0.5);
+      border-radius: 8px;
+      padding: 18px 20px;
+      text-align: center;
+    }
+    .ppb-icon { font-size: 18px; margin-bottom: 6px; }
+    .ppb-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 5px;
+      letter-spacing: 0.02em;
+    }
+    .ppb-text {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+      font-variant: normal;
+      text-transform: none;
+      font-feature-settings: normal;
+    }
+
+    /* ── NOTIFICATIONS PANEL ── */
+    .notif-panel {
+      display: none; position: fixed; top: 62px; right: 16px; z-index: 210;
+      width: min(340px, calc(100vw - 32px));
+      background: #0e0e12; border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 14px; box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+      overflow: hidden;
+      animation: notifSlideIn 0.22s ease;
+    }
+    .notif-panel.open { display: block; }
+    @keyframes notifSlideIn { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
+    .notif-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px 10px;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .notif-header-title {
+      font-family: 'Cinzel', serif; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
+    }
+    .notif-header-clear {
+      font-size: 0.75rem; color: var(--text-dim); cursor: pointer;
+      background: none; border: none; padding: 0; transition: color 0.2s;
+    }
+    .notif-header-clear:hover { color: var(--gold); }
+    .notif-list { padding: 6px 0; }
+    .notif-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 18px; cursor: pointer; transition: background 0.15s;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      text-decoration: none;
+    }
+    .notif-item:last-child { border-bottom: none; }
+    .notif-item:hover { background: rgba(201,168,76,0.06); }
+    .notif-item.read { opacity: 0.5; }
+    .notif-icon {
+      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25);
+      display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .notif-body { flex: 1; min-width: 0; }
+    .notif-title {
+      font-family: 'Crimson Pro', Georgia, serif; font-size: 0.95rem;
+      font-weight: 600; color: var(--text); line-height: 1.3; margin-bottom: 2px;
+    }
+    .notif-sub {
+      font-size: 0.8rem; color: var(--text-dim); line-height: 1.3;
+    }
+    .notif-unread-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: #e74c3c;
+      flex-shrink: 0; margin-top: 6px;
+    }
+    .notif-item.read .notif-unread-dot { display: none; }
+    .notif-btn {
+      display: inline-block; margin-top: 8px;
+      background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold); border-radius: 6px; padding: 5px 14px;
+      font-family: 'Cinzel', serif; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.08em; cursor: pointer; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .notif-btn:hover { background: rgba(201,168,76,0.28); }
+
+    /* ── DAILY STREAK MODAL ── */
+    .dm-overlay {
+      display:none; position:fixed; inset:0; z-index:300;
+      background:rgba(0,0,0,0.88); backdrop-filter:blur(10px);
+      align-items:center; justify-content:center; padding:20px;
+    }
+    .dm-overlay.open { display:flex; }
+    .dm-box {
+      background:linear-gradient(160deg,#0d0d14,#111118);
+      border:1px solid rgba(201,168,76,0.28);
+      border-radius:22px; padding:36px 24px 28px;
+      max-width:440px; width:100%; text-align:center;
+      box-shadow:0 24px 80px rgba(0,0,0,0.8);
+      animation:dmPop 0.45s cubic-bezier(0.16,1,0.3,1);
+    }
+    @keyframes dmPop{from{opacity:0;transform:scale(0.9) translateY(24px)}to{opacity:1;transform:scale(1) translateY(0)}}
+    .dm-eyebrow {
+      font-family:'Cinzel',serif; font-size:0.65rem; font-weight:700;
+      letter-spacing:0.18em; text-transform:uppercase;
+      color:rgba(201,168,76,0.65); margin-bottom:10px;
+    }
+    .dm-title {
+      font-family:'Cinzel',serif; font-size:1.6rem; font-weight:700;
+      color:#f5e6b8; line-height:1.2; margin-bottom:6px;
+    }
+    .dm-title span { color:var(--gold); }
+    .dm-sub {
+      font-family:'Crimson Pro',Georgia,serif; font-size:1rem;
+      color:var(--text-dim); margin-bottom:28px;
+    }
+    /* Streak row */
+    .dm-streak {
+      display:flex; gap:0; overflow-x:auto; padding-bottom:8px;
+      justify-content:flex-start; margin:0 -8px 28px;
+      scrollbar-width:none;
+    }
+    .dm-streak::-webkit-scrollbar{display:none;}
+    .dm-cell {
+      display:flex; flex-direction:column; align-items:center; gap:5px;
+      flex-shrink:0; width:46px;
+    }
+    .dm-circle {
+      width:36px; height:36px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:0.78rem; font-weight:700; position:relative;
+      transition:all 0.2s;
+    }
+    .dm-cell.sc-past .dm-circle {
+      background:#1a3d25; border:1.5px solid #2a7a45; color:#4caf70;
+      font-size:1rem;
+    }
+    .dm-cell.sc-current .dm-circle {
+      background:linear-gradient(135deg,#8a6020,var(--gold));
+      border:2px solid var(--gold-light); color:#0a0508;
+      font-family:'Cinzel',serif; font-size:0.82rem;
+      box-shadow:0 0 16px rgba(201,168,76,0.55), 0 0 4px rgba(201,168,76,0.9);
+      animation:dmPulse 2s ease-in-out infinite;
+    }
+    @keyframes dmPulse{0%,100%{box-shadow:0 0 16px rgba(201,168,76,0.55),0 0 4px rgba(201,168,76,0.9)}50%{box-shadow:0 0 28px rgba(201,168,76,0.85),0 0 8px rgba(201,168,76,1)}}
+    .dm-cell.sc-future .dm-circle {
+      background:rgba(255,255,255,0.04); border:1.5px solid rgba(255,255,255,0.1);
+      color:rgba(255,255,255,0.22); font-size:0.78rem;
+    }
+    /* Milestone gift override */
+    .dm-cell.sc-milestone-reached .dm-circle {
+      background:linear-gradient(135deg,#3d2800,#7a5020);
+      border:1.5px solid rgba(201,168,76,0.6); font-size:1rem; color:#fff;
+    }
+    .dm-cell.sc-milestone-locked .dm-circle {
+      background:rgba(255,255,255,0.03); border:1.5px solid rgba(255,255,255,0.08);
+      font-size:1rem; filter:grayscale(1) opacity(0.35);
+    }
+    .dm-day-num {
+      font-family:'Cinzel',serif; font-size:0.6rem; font-weight:600;
+      color:rgba(255,255,255,0.25); letter-spacing:0.04em;
+    }
+    .dm-cell.sc-current .dm-day-num  { color:var(--gold); }
+    .dm-cell.sc-past .dm-day-num     { color:rgba(76,175,112,0.6); }
+    .dm-cell.sc-milestone-reached .dm-day-num { color:rgba(201,168,76,0.7); }
+    /* Connector line between circles */
+    .dm-connector {
+      height:2px; flex-shrink:0; align-self:center; margin-bottom:18px;
+      background:rgba(255,255,255,0.08); width:10px;
+    }
+    .dm-connector.cp { background:rgba(76,175,112,0.4); }
+    /* CTA button */
+    .dm-btn {
+      width:100%; padding:15px; border:none; border-radius:12px;
+      background:linear-gradient(135deg,#7a5020,var(--gold));
+      color:#0a0508; font-family:'Cinzel',serif; font-size:0.9rem;
+      font-weight:700; letter-spacing:0.08em; cursor:pointer;
+      transition:opacity 0.2s, transform 0.2s;
+    }
+    .dm-btn:hover { opacity:0.9; transform:translateY(-1px); }
+
+    /* ── PROFILE MENU ── */
+    .profile-menu-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.55); backdrop-filter: blur(6px);
+    }
+    .profile-menu-overlay.open { display: block; }
+    .profile-menu {
+      position: fixed; top: 0; right: 0; bottom: 0; z-index: 201;
+      width: min(320px, 88vw);
+      background: #0e0e12;
+      border-left: 1px solid rgba(201,168,76,0.15);
+      display: flex; flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.32s cubic-bezier(0.22,1,0.36,1);
+    }
+    .profile-menu.open { transform: translateX(0); }
+    .profile-menu-header {
+      padding: 28px 24px 20px;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      position: relative;
+    }
+    .profile-menu-close {
+      position: absolute; top: 18px; right: 18px;
+      background: none; border: none; color: var(--text-dim);
+      font-size: 1.1rem; cursor: pointer; padding: 6px;
+      border-radius: 50%; transition: color 0.2s, background 0.2s;
+    }
+    .profile-menu-close:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+    .profile-avatar-large {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg,#e67e22,#c0392b);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 700;
+      color: #fff; margin-bottom: 12px;
+      border: 2px solid rgba(201,168,76,0.3);
+    }
+    .profile-name { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: #f5e6b8; margin-bottom: 3px; }
+    .profile-email { font-size: 0.82rem; color: var(--text-dim); }
+    .profile-days-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 10px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 999px; padding: 5px 14px;
+      font-family: 'Cinzel', serif; font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.12em; color: #c9a84c;
+    }
+    .profile-menu-body { flex: 1; padding: 16px 0; overflow-y: auto; }
+    .profile-menu-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 24px; cursor: pointer; text-decoration: none;
+      transition: background 0.15s;
+      border: none; background: none; width: 100%; text-align: left;
+    }
+    .profile-menu-item:hover { background: rgba(255,255,255,0.04); }
+    .profile-menu-item-icon { font-size: 1.1rem; width: 24px; text-align: center; flex-shrink: 0; }
+    .profile-menu-item-label { font-family: 'Crimson Pro', Georgia, serif; font-size: 1rem; color: var(--text); }
+    .profile-menu-item-label.danger { color: #e07070; }
+    .profile-menu-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 8px 24px; }
+  </style>
+  <script src="sw-register.js"></script>
+</head>
+<body>
+
+<!-- NAV DESKTOP -->
+<nav class="desktop-nav">
+  <a href="#" class="nav-logo">
+    <span style="font-size:1.3rem;">👑</span>
+    <span class="nav-logo-text">Abundance Time</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#my-products">My Products</a></li>
+    <li><a href="journey.html">Journey</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-icon-btn">🔍</button>
+    <button class="nav-icon-btn" id="bell-desktop" style="position:relative;" onclick="toggleNotifPanel(event)">🔔<span class="notif-dot" id="notif-dot-desktop"></span></button>
+    <div class="nav-avatar" id="nav-avatar" onclick="openProfileMenu()" style="cursor:pointer;"></div>
+    <span class="nav-username" id="nav-username" onclick="openProfileMenu()" style="cursor:pointer;"></span>
+  </div>
+</nav>
+
+<!-- NAV MOBILE -->
+<div class="mobile-nav">
+  <div style="display:flex;align-items:center;gap:8px;">
+    <span style="font-size:1.2rem;">👑</span>
+    <span class="nav-logo-text" style="font-size:0.95rem;">Abundance Time</span>
+  </div>
+  <div class="mobile-nav-right">
+    <button class="nav-icon-btn">🔍</button>
+    <button class="nav-icon-btn" id="bell-mobile" style="position:relative;" onclick="toggleNotifPanel(event)">🔔<span class="notif-dot" id="notif-dot-mobile"></span></button>
+    <div class="nav-avatar" onclick="openProfileMenu()" style="cursor:pointer;"></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero fade-section">
+  <!-- Slide 1: The Age Of Abundance -->
+  <div class="hero-slide active" id="slide-0">
+    <div class="hero-bg" style="background-image:url('images/theageofabundance.jpeg');"></div>
+    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.50);"></div>
+    <div class="hero-fade"></div>
+    <div class="hero-content">
+      <div class="hero-badges">
+        <span class="badge badge-green">✓ Available</span>
+        <span class="badge badge-orange">Featured</span>
+      </div>
+      <h1 class="hero-title">The Age Of Abundance</h1>
+      <p class="hero-desc">"All these blessings will come upon you and overtake you" — Deuteronomy 28:2</p>
+      <div class="hero-meta">
+        <span>🕐 4h</span>
+        <span class="stars">★★★★★</span>
+        <span>5</span>
+        <span class="cat-tag">Mindset</span>
+      </div>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="navigateTo('player-age-of-abundance.html')">▶ Access Content</button>
+        <button class="btn btn-secondary" onclick="openModal(6,'my')">ⓘ More Info</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2: Guardian Angel -->
+  <div class="hero-slide" id="slide-1">
+    <div class="hero-bg" style="background-image:url('images/newguardiann.jpeg');"></div>
+    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.20);"></div>
+    <div class="hero-fade"></div>
+    <div class="hero-content">
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="https://quizangel.vercel.app/" target="_blank" rel="noopener">✦ Discover Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arrows -->
+  <div class="hero-arrow left" onclick="changeSlide(-1)">‹</div>
+  <div class="hero-arrow right" onclick="changeSlide(1)">›</div>
+
+  <!-- Dots -->
+  <div class="hero-dots">
+    <div class="hero-dot active" onclick="goToSlide(0)"></div>
+    <div class="hero-dot" onclick="goToSlide(1)"></div>
+  </div>
+</div>
+
+<!-- DIVINE SCRIPT BANNER -->
+<div class="fade-section" style="padding:20px var(--pad) 0;max-width:100%;">
+  <a href="divine-script.html" style="text-decoration:none;display:block;">
+    <div style="background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.05));border:1px solid rgba(201,168,76,0.3);border-radius:12px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:all .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,0.6)';this.style.background='linear-gradient(135deg,rgba(201,168,76,0.18),rgba(201,168,76,0.08))'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)';this.style.background='linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.05))'">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <span style="font-size:24px;">📜</span>
+        <div>
+          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(201,168,76,0.7);margin-bottom:3px;">Personalized</div>
+          <div style="font-family:'Cinzel',serif;font-size:15px;font-weight:700;color:#e8e0d0;">Access Your Divine Script</div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,#8a6020,#c9a84c);color:#0a0508;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;border:none;border-radius:6px;padding:10px 18px;white-space:nowrap;flex-shrink:0;">Open →</div>
+    </div>
+  </a>
+</div>
+
+<!-- MAIN -->
+<main>
+  <div class="divider"></div>
+
+  <!-- MY PRODUCTS -->
+  <div id="my-products" class="row-section fade-section">
+    <div class="row-header">
+      <h2 class="row-title">My Products</h2>
+      <div class="row-nav">
+        <button class="row-nav-btn" onclick="scrollRow('my',-1)">‹</button>
+        <button class="row-nav-btn" onclick="scrollRow('my',1)">›</button>
+      </div>
+    </div>
+    <div class="cards-viewport"><div class="cards-track" id="track-my"></div></div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- TODAY'S PRACTICE -->
+  <div class="row-section fade-section">
+    <div class="row-header">
+      <div>
+        <h2 class="row-title">Today's Practice</h2>
+        <p style="font-family:'Crimson Pro',Georgia,serif;font-size:0.88rem;color:var(--text-dim);margin-top:4px;" id="todays-date"></p>
+      </div>
+      <div class="row-nav">
+        <button class="row-nav-btn" onclick="scrollRow('practice',-1)">‹</button>
+        <button class="row-nav-btn" onclick="scrollRow('practice',1)">›</button>
+      </div>
+    </div>
+    <div class="cards-viewport">
+      <div class="cards-track" id="track-practice"></div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <!-- EXPAND YOUR JOURNEY -->
+  <div class="row-section fade-section">
+    <div class="row-header">
+      <div>
+        <h2 class="row-title">Expand Your Journey</h2>
+        <p style="font-family:'Crimson Pro',Georgia,serif;font-size:0.88rem;color:var(--text-dim);margin-top:4px;">Deepen your practice with these sacred teachings</p>
+      </div>
+      <div class="row-nav">
+        <button class="row-nav-btn" onclick="scrollRow('expand',-1)">‹</button>
+        <button class="row-nav-btn" onclick="scrollRow('expand',1)">›</button>
+      </div>
+    </div>
+    <div class="cards-viewport"><div class="cards-track" id="track-expand"></div></div>
+  </div>
+
+  <!-- ABUNDANCE CIRCLE BANNER -->
+  <div class="divider"></div>
+  <div class="row-section fade-section" style="padding:0 var(--pad) 32px;">
+    <a href="community.html" onclick="event.preventDefault();navigateTo('community.html')" style="text-decoration:none;display:block;">
+      <div style="background:linear-gradient(135deg,#0f1a12,#131f17);border:1px solid rgba(201,168,76,0.25);border-radius:12px;padding:24px 24px;display:flex;align-items:center;gap:18px;transition:border-color .2s;cursor:pointer;" onmouseover="this.style.borderColor='rgba(201,168,76,0.5)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.25)'">
+        <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#7a5020,#c9a84c);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🌿</div>
+        <div style="flex:1;">
+          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;opacity:.7;margin-bottom:4px;">Daily Alignment</div>
+          <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:#e8e0d0;margin-bottom:4px;">Abundance Circle</div>
+          <div style="font-size:13px;color:#8a8070;font-family:'Crimson Pro',Georgia,serif;">Receive your daily prayer of alignment →</div>
+        </div>
+        <div style="font-size:22px;color:rgba(201,168,76,0.4);">›</div>
+      </div>
+    </a>
+  </div>
+</main>
+
+<!-- BOTTOM NAV MOBILE -->
+<nav class="bottom-nav">
+  <div class="bottom-nav-inner">
+    <a href="#" class="bottom-nav-item active">
+      <span class="nav-icon">🏠</span>
+      <span>Home</span>
+    </a>
+    <a href="journey.html" class="bottom-nav-item" onclick="event.preventDefault();navigateTo('journey.html')">
+      <span class="nav-icon">✨</span>
+      <span>Journey</span>
+    </a>
+    <a href="community.html" class="bottom-nav-item" onclick="event.preventDefault();navigateTo('community.html')">
+      <span class="nav-icon">👥</span>
+      <span>Community</span>
+    </a>
+    <a href="support.html" class="bottom-nav-item">
+      <span class="nav-icon">💬</span>
+      <span>Support</span>
+    </a>
+  </div>
+</nav>
+
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-cat"><span class="cat-pill" id="m-cat"></span></div>
+    <h2 id="m-title"></h2>
+    <div class="modal-meta">
+      <span class="stars">★★★★★</span>
+      <span id="m-rating"></span>
+      <span id="m-duration"></span>
+    </div>
+    <p id="m-desc"></p>
+    <div class="modal-actions">
+      <button class="btn btn-primary" onclick="closeModal()">▶ Access Content</button>
+      <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="supabase-client.js"></script>
+<script src="search.js"></script>
+<script src="install-banner.js"></script>
+<script>
+const DATA = {
+  my:[
+    {title:"Powerful Prayers to Archangel Michael",desc:"Connect with divine protection and spiritual strength through powerful prayers to the Archangel.",cat:"Spirituality",catClass:"cat-spirituality",rating:"4.9",count:"847",dur:"3h",img:"images/prayersmichael.jpg",available:true,player:"player.html"},
+    {title:"The Sacred Chant of Archangel Michael",desc:"A transformative journey into divine protection and spiritual purification. Unlock the power of angelic frequencies.",cat:"Spirituality",catClass:"cat-spirituality",rating:"4.9",count:"847",dur:"3h",img:"images/sacredprotocol.png",available:true,featured:true,player:"player-sacred-chant.html"},
+    {title:"The 7 Frequencies of Divine Acceleration",desc:"Discover and activate the seven sacred frequencies that advance your divine path.",cat:"Spirituality",catClass:"cat-spirituality",rating:"4.8",count:"723",dur:"2h",img:"images/7frequencies.png",available:true,player:"player-7frequencies.html"},
+    {title:"The Hidden Secrets of King Solomon's Prosperity",desc:"Unlock the ancient wisdom of King Solomon and discover the sacred principles of wealth.",cat:"Spirituality",catClass:"cat-spirituality",rating:"5.0",count:"891",dur:"4h",img:"images/solomon.jpg",available:true,player:"player-solomon.html"},
+    {title:"The Secret Of Power",desc:"Unlock your inner strength and discover the keys to personal power and transformation.",cat:"Mindset",catClass:"cat-mindset",rating:"4.8",count:"756",dur:"2h",img:"images/TheKeyOfPower.jpg",available:true,player:"player-secret-of-power.html"},
+    {title:"Powerful Numbers — Divine Frequency",desc:"Explore the sacred geometry of numbers and their divine frequencies for manifestation.",cat:"Premium",catClass:"cat-premium",rating:"4.9",count:"812",dur:"3h",img:"images/powerfulnumbers.png",available:true,player:"player-powerful-numbers.html"},
+    {title:"The Age Of Abundance",desc:"Biblical principles for attracting divine abundance into every area of your life.",cat:"Mindset",catClass:"cat-mindset",rating:"5.0",count:"1024",dur:"4h",img:"images/theageofabundance.jpeg",available:true,featured:true,player:"player-age-of-abundance.html"},
+    {title:"Mindset Reset Formula",desc:"Update your mental software and unlock automatic growth, abundance and confidence.",cat:"Mindset",catClass:"cat-mindset",rating:"4.8",count:"620",dur:"2h",img:"images/mindsetreset.png",available:true,player:"player-mindset-reset.html"},
+    {title:"Dream Life Journal",desc:"A guided journal to help you design, declare and attract the life God has prepared for you.",cat:"Mindset",catClass:"cat-mindset",rating:"5.0",count:"430",dur:"",img:"images/dreamjournal.png",available:true,player:"player-dream-journal.html"},
+  ],
+};
+
+const EXPAND_DATA = [
+  {title:"Vision Board Academy",desc:"Learn to create powerful vision boards that accelerate your manifestation journey and align your desires with divine purpose.",cat:"Mindset",catClass:"cat-mindset",rating:"5.0",count:"312",dur:"1h",img:"images/visionboard.png",player:"player-vision-board.html"},
+  {title:"The Whisper of Faith",desc:"Unlock Divine Blessings and Abundance through sacred practices and ancient wisdom.",cat:"Mindset",catClass:"cat-mindset",rating:"5.0",count:"891",dur:"4h",img:"images/whisperfaith.png",player:"player-whisper-faith.html"},
+  {title:"21-Day Manifestation Challenge",desc:"Your life will be transformed in 21 days through focused divine intention and daily practice.",cat:"Mindset",catClass:"cat-mindset",rating:"5.0",count:"745",dur:"21d",img:"images/21daymanifestation.png",player:"player-21-days.html"},
+];
+
+const DAILY_FOCUS_DATA = [
+  {0:{theme:'Rest & Surrender',title:'Total Surrender'},1:{theme:'Prosperity',title:'Identify Open Doors'},2:{theme:'Mindset',title:'Government of Speech'},3:{theme:'Connection',title:'Selective Silence'},4:{theme:'Abundance',title:'Flow Consciousness'},5:{theme:'Protection',title:'Preserving Your Peace'},6:{theme:'Vision',title:'Royal Posture'}},
+  {0:{theme:'Rest & Renewal',title:"The Mind's Sabbath"},1:{theme:'Prosperity',title:'Seed Mentality'},2:{theme:'Mindset',title:'Emotional Sovereignty'},3:{theme:'Connection',title:'Spiritual Discernment'},4:{theme:'Abundance',title:'Gratitude Anchor'},5:{theme:'Protection',title:'Noise Fast'},6:{theme:'Vision',title:'Legacy Thinking'}},
+  {0:{theme:'Rest & Faith',title:'Faith in the Invisible'},1:{theme:'Prosperity',title:'Sacred Boldness'},2:{theme:'Mindset',title:'Destroying the Impostor'},3:{theme:'Connection',title:'Synchronization'},4:{theme:'Abundance',title:'Capacity to Receive'},5:{theme:'Protection',title:'Boundaries of Light'},6:{theme:'Vision',title:'Writing the Future'}},
+  {0:{theme:'Rest & Celebration',title:'Celebrating the Creator'},1:{theme:'Prosperity',title:'Financial Stewardship'},2:{theme:'Mindset',title:'Divine Resilience'},3:{theme:'Connection',title:'Intuitive Action'},4:{theme:'Abundance',title:'Living in Overflow'},5:{theme:'Protection',title:'Armor of Light'},6:{theme:'Vision',title:'The Finished Work'}},
+];
+
+function _localDateStr(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function getWeekIdx(){
+  let s=localStorage.getItem('abundance_start_date');
+  if(!s||s==='null'||s==='undefined'){s=_localDateStr();localStorage.setItem('abundance_start_date',s);}
+  const start=new Date(s+'T00:00:00'),today=new Date();today.setHours(0,0,0,0);
+  const diff=(today-start)/86400000;
+  if(isNaN(diff)){return 0;}
+  const d=Math.max(0,Math.floor(diff));
+  return Math.floor(d/7)%4;
+}
+const todayStr = _localDateStr();
+const todayDOW = new Date().getDay();
+const weekIdx = getWeekIdx();
+const todayFocus = (DAILY_FOCUS_DATA[weekIdx] || DAILY_FOCUS_DATA[0])[todayDOW] || {theme:'Abundance',title:'Daily Reflection'};
+
+const DONE_KEYS = ['daily_focus_done','divine_truth_done','solomons_wisdom_done','daily_decree_done'];
+function isDone(key){ return localStorage.getItem(key) === todayStr; }
+function allDone(){ return DONE_KEYS.every(k => isDone(k)); }
+
+const PRACTICE_BANK = [
+  {type:'Daily Focus',      title:'Daily Focus',      desc:'Your divine assignment for today. Set your intention and align with Heaven\'s frequency.',     catLabel:todayFocus.theme, catClass:'cat-premium',      img:'images/bussola.jpeg', player:'player-daily-focus.html',    doneKey:'daily_focus_done',    emoji:'🎯', accentColor:'#c9a84c'},
+  {type:'Divine Truth',     title:'Divine Truth',     desc:'A living word for this exact moment in your journey. Open your heart and receive.',             catLabel:'Scripture',       catClass:'cat-mindset',      img:'images/divinetruth.jpeg', player:'player-divine-truth.html',   doneKey:'divine_truth_done',   emoji:'✝️', accentColor:'#3a85c4'},
+  {type:"Solomon's Wisdom", title:"Solomon's Wisdom", desc:'Ancient wisdom for your modern challenges. What Solomon knew that changed everything.',         catLabel:'Wisdom',          catClass:'cat-premium',      img:'images/solomonwisdomcert.jpeg',  player:'player-solomons-wisdom.html',doneKey:'solomons_wisdom_done',emoji:'👑', accentColor:'#3a9e6e'},
+  {type:'Daily Decree',     title:'Daily Decree',     desc:'Your daily declaration of power. Speak this aloud with conviction and open hands.',              catLabel:'Decree',          catClass:'cat-spirituality', img:'images/dailydecree.jpeg', player:'player-daily-decree.html',   doneKey:'daily_decree_done',   emoji:'📜', accentColor:'#9a2a3e'},
+];
+
+const rowPos = {my:0, expand:0};
+
+// Set today's date
+const dateEl = document.getElementById('todays-date');
+if(dateEl){ const d=new Date(); dateEl.textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}); }
+
+// Render Today's Practice cards
+const practiceTrack = document.getElementById('track-practice');
+if(practiceTrack){
+  const done = PRACTICE_BANK.map(p => isDone(p.doneKey));
+  const allComplete = done.every(Boolean);
+
+  // Completion banner
+  const practiceSection = practiceTrack.closest('.row-section');
+  if(practiceSection){
+    // Remove any existing banner
+    const existing = practiceSection.querySelector('.practice-complete-banner');
+    if(existing) existing.remove();
+
+    if(allComplete){
+      const banner = document.createElement('div');
+      banner.className = 'practice-complete-banner';
+      banner.innerHTML = `
+        <div class="pcb-inner">
+          <div class="pcb-stars">✦ ✦ ✦</div>
+          <div class="pcb-title">Today's Practice Complete</div>
+          <div class="pcb-text">You have walked in alignment today. Your connection with God has been renewed. Heaven has registered your faithfulness.</div>
+          <div class="pcb-verse">"Well done, good and faithful servant." — Matthew 25:23</div>
+        </div>`;
+      practiceSection.querySelector('.row-header').after(banner);
+    } else {
+      const doneSoFar = done.filter(Boolean).length;
+      if(doneSoFar === 0){
+        const banner = document.createElement('div');
+        banner.className = 'practice-pending-banner';
+        banner.innerHTML = `
+          <div class="ppb-inner">
+            <div class="ppb-icon">🙏</div>
+            <div class="ppb-title">Your daily practices are waiting</div>
+            <div class="ppb-text">Take 2 minutes to deepen your connection with God today and carry His presence into every moment that follows.</div>
+          </div>`;
+        practiceSection.querySelector('.row-header').after(banner);
+      }
+    }
+  }
+
+  practiceTrack.innerHTML = PRACTICE_BANK.map((p,i) => {
+    const d = done[i];
+    return `
+    <div class="product-card practice-card-wrap" onclick="navigateTo('${p.player}')" style="cursor:pointer;position:relative;${d ? `border-color:${p.accentColor};box-shadow:0 0 0 1px ${p.accentColor}33;` : ''}">
+      <div class="card-img-wrap">
+        <img src="${p.img}" alt="${p.title}" loading="lazy"/>
+        <div class="card-badges">
+          <span class="badge badge-gold" style="font-size:0.68rem;padding:3px 9px;">${p.emoji} ${p.type}</span>
+        </div>
+        ${d
+          ? `<div class="practice-done-overlay" style="background:linear-gradient(135deg,${p.accentColor}dd,${p.accentColor}99);">
+               <div class="pdo-check">✓</div>
+               <div class="pdo-text">Done Today</div>
+             </div>`
+          : `<div class="practice-pending-bar">
+               <span class="ppb-dot"></span>
+               <span class="ppb-text">Not done yet</span>
+             </div>`
+        }
+      </div>
+      <div class="card-body">
+        <span class="cat-pill ${p.catClass}">${p.catLabel}</span>
+        <div class="card-title">${p.title}</div>
+        <div class="card-desc">${p.desc}</div>
+        <div class="card-actions">
+          <button class="card-btn ${d ? 'card-btn-done' : 'card-btn-access'}" onclick="event.stopPropagation();navigateTo('${p.player}')">
+            ${d ? '✓ Completed' : '▶ Begin'}
+          </button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// Render My Products
+function cardHTML(p,key,i){
+  const fid=`fav-${key}-${i}`;
+  const accessAction = p.player
+    ? `navigateTo('${p.player}')`
+    : `openModal(${i},'my')`;
+  return `<div class="product-card">
+    <div class="card-img-wrap">
+      <img src="${p.img}" alt="${p.title}" loading="lazy"/>
+      <div class="card-badges">
+        ${p.available?'<span class="badge badge-green" style="font-size:0.68rem;padding:3px 9px;">✓ Available</span>':''}
+        ${p.featured?'<span class="badge badge-orange" style="font-size:0.68rem;padding:3px 9px;">Featured</span>':''}
+      </div>
+      <button class="card-fav" id="${fid}" onclick="toggleFav('${fid}')">♡</button>
+    </div>
+    <div class="card-body">
+      <span class="cat-pill ${p.catClass}">${p.cat}</span>
+      <div class="card-title">${p.title}</div>
+      <div class="card-desc">${p.desc}</div>
+      <div class="card-meta">
+        <span class="stars">★ ${p.rating}</span>
+        <span>(${p.count})</span>
+        <span>🕐 ${p.dur}</span>
+      </div>
+      <div class="card-actions">
+        <button class="card-btn card-btn-access" onclick="${accessAction}">▶ Access</button>
+        <button class="card-btn card-btn-details" onclick="openModal(${i},'my')">⊙ View Details</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+window.addEventListener('pageshow', function(e) {
+  if (e.persisted) {
+    document.body.classList.remove('page-fade-out');
+    document.body.style.opacity = '';
+  }
+});
+
+function navigateTo(url) {
+  document.body.classList.add('page-fade-out');
+  setTimeout(() => window.location.href = url, 200);
+}
+
+// Render Expand Your Journey cards
+function expandCardHTML(p,i){
+  const hasPlayer = !!p.player;
+  return `<div class="expand-card" ${hasPlayer ? `onclick="navigateTo('${p.player}')" style="cursor:pointer;"` : ''}>
+    <div class="card-img-wrap">
+      <img src="${p.img}" alt="${p.title}" loading="lazy"/>
+
+    </div>
+    <div class="card-body">
+      <span class="cat-pill ${p.catClass}">${p.cat}</span>
+      <div class="card-title">${p.title}</div>
+      <div class="card-desc">${p.desc}</div>
+      <div class="card-meta">
+        <span class="stars">★ ${p.rating}</span>
+        <span>(${p.count})</span>
+        <span>🕐 ${p.dur}</span>
+      </div>
+      ${hasPlayer
+        ? `<button class="card-btn card-btn-access" onclick="event.stopPropagation();navigateTo('${p.player}')">▶ Access</button>`
+        : `<button class="btn-unlock">✨ Coming Soon</button>`}
+    </div>
+  </div>`;
+}
+
+const guardianAngelCard = `<div class="product-card" onclick="window.open('https://quizangel.vercel.app/','_blank')" style="cursor:pointer;">
+  <div class="card-img-wrap">
+    <img src="images/newguardiann.jpeg" alt="Discover Your Guardian Angel" loading="lazy"/>
+    <div class="card-badges">
+      <span class="badge badge-gold" style="font-size:0.68rem;padding:3px 9px;">✦ Exclusive</span>
+    </div>
+  </div>
+  <div class="card-body">
+    <span class="cat-pill cat-spirituality">Spirituality</span>
+    <div class="card-title">Discover Your Guardian Angel</div>
+    <div class="card-desc">Find out which angel watches over you and what divine message they carry for your life.</div>
+    <div class="card-meta">
+      <span class="stars">★ 5.0</span>
+      <span>(2.4k)</span>
+      <span>🕐 5min</span>
+    </div>
+    <div class="card-actions">
+      <a class="card-btn card-btn-access" href="https://quizangel.vercel.app/" target="_blank" rel="noopener" onclick="event.stopPropagation()">▶ Access</a>
+      <button class="card-btn card-btn-details" onclick="event.stopPropagation();openGuardianAngelModal()">⊙ View Details</button>
+    </div>
+  </div>
+</div>`;
+document.getElementById('track-my').innerHTML = guardianAngelCard + DATA.my.map((p,i)=>cardHTML(p,'my',i)).join('');
+document.getElementById('track-expand').innerHTML = EXPAND_DATA.map((p,i)=>expandCardHTML(p,i)).join('');
+
+function scrollRow(key,dir){
+  const track=document.getElementById('track-'+key);
+  const cards=track.querySelectorAll('.product-card,.expand-card,.practice-card');
+  if(!cards.length)return;
+  const gap=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--gap'))||18;
+  const cardW=cards[0].offsetWidth+gap;
+  const vw=track.parentElement.offsetWidth;
+  const visible=Math.max(1,Math.floor(vw/cardW));
+  const step=visible*cardW;
+  const totalW=cards.length*cardW;
+  const maxPos=Math.max(0,totalW-vw);
+  if(!rowPos[key]) rowPos[key]=0;
+  rowPos[key]=Math.max(0,Math.min(rowPos[key]+dir*step,maxPos));
+  track.style.transform=`translateX(-${rowPos[key]}px)`;
+}
+
+function toggleFav(id){
+  const b=document.getElementById(id);
+  b.classList.toggle('active');
+  b.textContent=b.classList.contains('active')?'♥':'♡';
+}
+
+function openGuardianAngelModal(){
+  const mc=document.getElementById('m-cat');
+  mc.textContent='Spirituality'; mc.className='cat-pill cat-spirituality';
+  document.getElementById('m-title').textContent='Discover Your Guardian Angel';
+  document.getElementById('m-rating').textContent='5.0';
+  document.getElementById('m-duration').textContent='🕐 5min';
+  document.getElementById('m-desc').textContent='Find out which angel watches over you and what divine message they carry for your life.';
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function openModal(idx,key){
+  const p=DATA[key][idx]; if(!p)return;
+  const mc=document.getElementById('m-cat');
+  mc.textContent=p.cat; mc.className='cat-pill '+p.catClass;
+  document.getElementById('m-title').textContent=p.title;
+  document.getElementById('m-rating').textContent=p.rating;
+  document.getElementById('m-duration').textContent='🕐 '+p.dur;
+  document.getElementById('m-desc').textContent=p.desc;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeModalOutside(e){ if(e.target.id==='modal-overlay')closeModal(); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeModal(); });
+
+// HERO
+let cur=0,total=2,auto;
+function goToSlide(n){
+  document.getElementById('slide-'+cur).classList.remove('active');
+  document.querySelectorAll('.hero-dot')[cur].classList.remove('active');
+  cur=(n+total)%total;
+  document.getElementById('slide-'+cur).classList.add('active');
+  document.querySelectorAll('.hero-dot')[cur].classList.add('active');
+  clearInterval(auto); auto=setInterval(()=>goToSlide(cur+1),6000);
+}
+function changeSlide(d){goToSlide(cur+d);}
+auto=setInterval(()=>goToSlide(cur+1),6000);
+
+// ── SWIPE GESTURE ──
+document.querySelectorAll('.cards-viewport').forEach(viewport => {
+  let startX = 0, startY = 0, isDragging = false;
+  const track = viewport.querySelector('.cards-track');
+  const key = track ? track.id.replace('track-','') : null;
+  if (!key) return;
+
+  viewport.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    isDragging = true;
+  }, { passive: true });
+
+  viewport.addEventListener('touchend', e => {
+    if (!isDragging) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      scrollRow(key, dx < 0 ? 1 : -1);
+    }
+    isDragging = false;
+  }, { passive: true });
+});
+
+// ── PAGE FADE IN ──
+const fadeSections = document.querySelectorAll('.fade-section');
+fadeSections.forEach((el, i) => {
+  setTimeout(() => el.classList.add('visible'), i * 150);
+});
+
+// ── NOTIFICATIONS ──
+const NOTIFS = [
+  { id:'angel',    icon:'👼', title:"Discover Your Guardian Angel",       sub:'See what it has for you', btn:'Open', btnUrl:'https://quizangel.vercel.app/', action: function(){ closeNotifPanel(); window.open('https://quizangel.vercel.app/','_blank'); } },
+  { id:'practice', icon:'🎯', title:"Your practice for today is waiting", sub:'', action: function(){ closeNotifPanel(); const el=document.getElementById('track-practice'); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); } },
+];
+
+function _getNotifState() {
+  try { return JSON.parse(localStorage.getItem('notif_read') || '{}'); } catch(e) { return {}; }
+}
+function _saveNotifState(s) { localStorage.setItem('notif_read', JSON.stringify(s)); }
+
+function renderNotifPanel() {
+  const state = _getNotifState();
+  const list = document.getElementById('notif-list');
+  if (!list) return;
+  list.innerHTML = NOTIFS.map(n => `
+    <div class="notif-item ${state[n.id] ? 'read' : ''}" onclick="clickNotif('${n.id}')">
+      <div class="notif-icon">${n.icon}</div>
+      <div class="notif-body">
+        <div class="notif-title">${n.title}</div>
+        ${n.sub ? `<div class="notif-sub">${n.sub}</div>` : ''}
+        ${n.btn ? `<a class="notif-btn" href="${n.btnUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation();clickNotif('${n.id}')">${n.btn}</a>` : ''}
+      </div>
+      <div class="notif-unread-dot"></div>
+    </div>`).join('');
+}
+
+function updateNotifBadge() {
+  const state = _getNotifState();
+  const hasUnread = NOTIFS.some(n => !state[n.id]);
+  ['notif-dot-desktop','notif-dot-mobile'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = hasUnread ? '' : 'none';
+  });
+}
+
+function toggleNotifPanel(e) {
+  e.stopPropagation();
+  const panel = document.getElementById('notif-panel');
+  const isOpen = panel.classList.contains('open');
+  closeNotifPanel();
+  if (!isOpen) {
+    renderNotifPanel();
+    panel.classList.add('open');
+  }
+}
+
+function closeNotifPanel() {
+  document.getElementById('notif-panel').classList.remove('open');
+}
+
+function clickNotif(id) {
+  const state = _getNotifState();
+  state[id] = true;
+  _saveNotifState(state);
+  updateNotifBadge();
+  renderNotifPanel();
+  const notif = NOTIFS.find(n => n.id === id);
+  if (notif) notif.action();
+}
+
+function markAllRead() {
+  const state = {};
+  NOTIFS.forEach(n => state[n.id] = true);
+  _saveNotifState(state);
+  updateNotifBadge();
+  renderNotifPanel();
+}
+
+// Close panel when clicking outside
+document.addEventListener('click', function(e) {
+  const panel = document.getElementById('notif-panel');
+  if (panel && panel.classList.contains('open') &&
+      !panel.contains(e.target) &&
+      e.target.id !== 'bell-desktop' && e.target.id !== 'bell-mobile') {
+    closeNotifPanel();
+  }
+});
+
+updateNotifBadge();
+
+// ── PROFILE MENU ──
+function openProfileMenu() {
+  const name  = localStorage.getItem('abundance_name')  || 'Friend';
+  const email = localStorage.getItem('abundance_email') || '';
+  const start = localStorage.getItem('abundance_start_date');
+  const days  = _localDateStr ? (function(sd){if(!sd||sd==='null'||sd==='undefined')return 1;const diff=(new Date()-new Date(sd+'T00:00:00'))/86400000;return isNaN(diff)?1:Math.max(1,Math.floor(diff)+1);})(start) : 1;
+  const first = name.split(' ')[0];
+  document.getElementById('profile-avatar-large').textContent = first[0].toUpperCase();
+  document.getElementById('profile-name').textContent = name;
+  document.getElementById('profile-email').textContent = email;
+  document.getElementById('profile-days').textContent = days;
+  document.getElementById('profile-menu-overlay').classList.add('open');
+  document.getElementById('profile-menu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeProfileMenu() {
+  document.getElementById('profile-menu-overlay').classList.remove('open');
+  document.getElementById('profile-menu').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function logout() {
+  logoutUser();
+  window.location.href = 'login.html';
+}
+
+function applyNavName(name) {
+  if (!name) return;
+  const first = name.split(' ')[0];
+  const letter = first[0].toUpperCase();
+  document.querySelectorAll('.nav-avatar').forEach(function(el) { el.textContent = letter; });
+  document.querySelectorAll('.nav-username').forEach(function(el) { el.textContent = first; });
+}
+
+// Apply immediately from cache, then refresh from Supabase
+applyNavName(localStorage.getItem('abundance_name'));
+
+// ── DAILY STREAK MODAL ──
+const DM_MILESTONES = [3, 7, 14, 21, 30];
+const DM_SUBS = [
+  'Every step of faith moves Heaven.',
+  'You are building something eternal.',
+  'Consistency is your superpower.',
+  'Heaven registers every return.',
+  'Your connection is growing deeper.',
+  'The faithful always receive.',
+  'Divine alignment is your reward.',
+];
+
+function _dmCalcDay() {
+  const s = localStorage.getItem('abundance_start_date');
+  if (!s || s === 'null' || s === 'undefined') return 1;
+  const diff = (new Date() - new Date(s + 'T00:00:00')) / 86400000;
+  return isNaN(diff) ? 1 : Math.max(1, Math.floor(diff) + 1);
+}
+
+function _dmShouldShow() {
+  return localStorage.getItem('daily_modal_shown') !== _localDateStr();
+}
+
+function _dmBuildStreak(day) {
+  const start = Math.max(1, day - 4);
+  const end = day + 6;
+  let html = '';
+  for (let d = start; d <= end; d++) {
+    const isMilestone = DM_MILESTONES.includes(d);
+    const isPast      = d < day;
+    const isCurrent   = d === day;
+
+    let cellClass, circleContent;
+    if (isMilestone) {
+      cellClass     = isPast || isCurrent ? 'sc-milestone-reached' : 'sc-milestone-locked';
+      circleContent = '🎁';
+    } else if (isPast) {
+      cellClass     = 'sc-past';
+      circleContent = '✓';
+    } else if (isCurrent) {
+      cellClass     = 'sc-current';
+      circleContent = String(d);
+    } else {
+      cellClass     = 'sc-future';
+      circleContent = String(d);
+    }
+
+    // connector line before each cell (except first)
+    if (d > start) {
+      html += `<div class="dm-connector ${isPast || isCurrent ? 'cp' : ''}"></div>`;
+    }
+    html += `<div class="dm-cell ${cellClass}">
+      <div class="dm-circle">${circleContent}</div>
+      <div class="dm-day-num">${d}</div>
+    </div>`;
+  }
+  return html;
+}
+
+function showDailyModal() {
+  const day = _dmCalcDay();
+  document.getElementById('dm-day-num').textContent = day;
+  document.getElementById('dm-sub').textContent = DM_SUBS[(day - 1) % DM_SUBS.length];
+  const streak = document.getElementById('dm-streak');
+  streak.innerHTML = _dmBuildStreak(day);
+  document.getElementById('dm-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // scroll the current day into view
+  const current = streak.querySelector('.sc-current');
+  if (current) setTimeout(() => current.scrollIntoView({inline:'center', behavior:'smooth'}), 150);
+}
+
+function closeDailyModal() {
+  document.getElementById('dm-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+  localStorage.setItem('daily_modal_shown', _localDateStr());
+}
+
+onSupabaseReady(function() {
+  loadProfile().then(function() {
+    applyNavName(localStorage.getItem('abundance_name'));
+    if (_dmShouldShow()) {
+      setTimeout(showDailyModal, 900);
+    }
+  });
+});
+</script>
+
+<!-- DAILY STREAK MODAL -->
+<div class="dm-overlay" id="dm-overlay" onclick="if(event.target===this)closeDailyModal()">
+  <div class="dm-box">
+    <div class="dm-eyebrow">✦ Your Journey ✦</div>
+    <div class="dm-title">Day <span id="dm-day-num">1</span> of Connection</div>
+    <div class="dm-sub" id="dm-sub">Keep walking — your breakthrough is near.</div>
+    <div class="dm-streak" id="dm-streak"></div>
+    <button class="dm-btn" onclick="closeDailyModal()">Continue My Journey</button>
+  </div>
+</div>
+
+<!-- NOTIFICATIONS PANEL -->
+<div class="notif-panel" id="notif-panel">
+  <div class="notif-header">
+    <span class="notif-header-title">Notifications</span>
+    <button class="notif-header-clear" onclick="markAllRead()">Mark all as read</button>
+  </div>
+  <div class="notif-list" id="notif-list"></div>
+</div>
+
+<!-- PROFILE MENU -->
+<div class="profile-menu-overlay" id="profile-menu-overlay" onclick="closeProfileMenu()"></div>
+<div class="profile-menu" id="profile-menu">
+  <div class="profile-menu-header">
+    <button class="profile-menu-close" onclick="closeProfileMenu()">✕</button>
+    <div class="profile-avatar-large" id="profile-avatar-large">F</div>
+    <div class="profile-name" id="profile-name">Friend</div>
+    <div class="profile-email" id="profile-email"></div>
+    <div class="profile-days-badge">✦ <span id="profile-days">0</span> Days of Connection</div>
+  </div>
+  <div class="profile-menu-body">
+    <a href="journey.html" class="profile-menu-item" onclick="closeProfileMenu();navigateTo('journey.html');return false;">
+      <span class="profile-menu-item-icon">✨</span>
+      <span class="profile-menu-item-label">My Journey</span>
+    </a>
+    <a href="journal.html" class="profile-menu-item" onclick="closeProfileMenu();navigateTo('journal.html');return false;">
+      <span class="profile-menu-item-icon">📖</span>
+      <span class="profile-menu-item-label">My Journal</span>
+    </a>
+    <a href="community.html" class="profile-menu-item" onclick="closeProfileMenu();navigateTo('community.html');return false;">
+      <span class="profile-menu-item-icon">👥</span>
+      <span class="profile-menu-item-label">Abundance Circle</span>
+    </a>
+    <div class="profile-menu-divider"></div>
+    <a href="support.html" class="profile-menu-item">
+      <span class="profile-menu-item-icon">💬</span>
+      <span class="profile-menu-item-label">Support</span>
+    </a>
+    <div class="profile-menu-divider"></div>
+    <button class="profile-menu-item" onclick="logout()">
+      <span class="profile-menu-item-icon">🚪</span>
+      <span class="profile-menu-item-label danger">Sign Out</span>
+    </button>
+  </div>
+</div>
+</body>
+</html>
