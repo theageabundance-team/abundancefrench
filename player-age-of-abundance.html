@@ -650,7 +650,7 @@ const LESSONS = [
     eyebrow: 'Leçon 1 sur 4 · Spiritualité',
     desc: 'Préparez-vous à recevoir toutes les bénédictions qui viendront sur vous et vous rattraperont.',
     hasDownload: false,
-    videoHTML: `<vturb-smartplayer id="vid-6a0d14e249252ad507807ac1" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>`
+    videoId: 'vid-6a0d14e249252ad507807ac1'
   },
   {
     id: 'abundance-2',
@@ -662,7 +662,7 @@ const LESSONS = [
     downloadHref: 'pdfs/pdfmodulo5.2.pdf',
     downloadTitle: 'L\'Appel à la Vie Qui a Toujours Été la Vôtre',
     downloadMeta: 'PDF · Matériel Leçon 2',
-    videoHTML: `<vturb-smartplayer id="vid-6a0d116c17c81ae27f5937c0" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>`
+    videoId: 'vid-6a0d116c17c81ae27f5937c0'
   },
   {
     id: 'abundance-3',
@@ -674,7 +674,7 @@ const LESSONS = [
     downloadHref: 'pdfs/modulo5.3.pdf',
     downloadTitle: 'J\'ai Choisi de Renaître',
     downloadMeta: 'PDF · Matériel Leçon 3',
-    videoHTML: `<vturb-smartplayer id="vid-6a0d10c2d90ffe137074c59e" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>`
+    videoId: 'vid-6a0d10c2d90ffe137074c59e'
   },
   {
     id: 'abundance-4',
@@ -686,7 +686,7 @@ const LESSONS = [
     downloadHref: 'https://abundancemoment.com/script/',
     downloadTitle: 'Accéder à Votre Script Divin',
     downloadMeta: 'Ouvrez le script sacré préparé pour vous',
-    videoHTML: `<vturb-smartplayer id="vid-6a0d111ebf3b7f17424be89e" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>`
+    videoId: 'vid-6a0d111ebf3b7f17424be89e'
   }
 ];
 
@@ -735,7 +735,12 @@ function renderLesson(idx) {
   saveModuleProgress(MODULE_ID, idx, completedSoFar);
   const lesson = LESSONS[idx];
 
-  document.getElementById('video-container').innerHTML = lesson.videoHTML;
+  const videoContainer = document.getElementById('video-container');
+  videoContainer.innerHTML = '';
+  const player = document.createElement('vturb-smartplayer');
+  player.setAttribute('id', lesson.videoId);
+  player.style.cssText = 'display: block; margin: 0 auto; width: 100%;';
+  videoContainer.appendChild(player);
   document.getElementById('lesson-eyebrow').textContent = lesson.eyebrow;
   document.getElementById('lesson-title').textContent = lesson.title;
 
