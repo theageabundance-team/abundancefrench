@@ -681,37 +681,17 @@
 const LESSONS = [
   {
     id: 'powerful-prayers-1',
-    title: 'Powerful Prayers to Archangel Michael',
-    eyebrow: 'Lesson 1 of 2 · Spirituality',
-    desc: 'Access powerful prayers and invocations to Archangel Michael for divine protection and guidance.',
-    videoHTML: `
-      <div id="ifr_698e954c4be992fe765dace0_wrapper" style="margin:0 auto;width:100%;">
-        <div style="position:relative;padding:56.25% 0 0 0;" id="ifr_698e954c4be992fe765dace0_aspect">
-          <iframe frameborder="0" allowfullscreen src="about:blank"
-            id="ifr_698e954c4be992fe765dace0"
-            style="position:absolute;top:0;left:0;width:100%;height:100%;"
-            referrerpolicy="origin"
-            onload="this.onload=null,this.src='https://scripts.converteai.net/f8e465b5-f483-4d08-be19-bc14de388e59/players/698e954c4be992fe765dace0/v4/embed.html'+(location.search||'?')+'&vl='+encodeURIComponent(location.href)">
-          </iframe>
-        </div>
-      </div>`
+    title: 'Prières Puissantes à l\'Archange Michel',
+    eyebrow: 'Leçon 1 sur 2 · Spiritualité',
+    desc: 'Accédez à des prières et invocations puissantes à l\'Archange Michel pour la protection et la guidance divines.',
+    videoHTML: `<div id="ifr_6a0d1f644ae01ca777a676e6_wrapper" style="margin:0 auto;width:100%;"><div style="position:relative;padding:56.25% 0 0 0;"><iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_6a0d1f644ae01ca777a676e6" style="position:absolute;top:0;left:0;width:100%;height:100%;" referrerpolicy="origin" onload="this.onload=null,this.src='https://scripts.converteai.net/f8e465b5-f483-4d08-be19-bc14de388e59/players/6a0d1f644ae01ca777a676e6/v4/embed.html'+(location.search||'?')+'&vl='+encodeURIComponent(location.href)"></iframe></div></div>`
   },
   {
     id: 'powerful-prayers-2',
-    title: 'Sacred Invocations to Archangel Michael',
-    eyebrow: 'Lesson 2 of 2 · Spirituality',
-    desc: 'Access powerful prayers and invocations to Archangel Michael for divine protection and guidance.',
-    videoHTML: `
-      <div id="ifr_698fa4a0ceb26906d0068252_wrapper" style="margin:0 auto;width:100%;">
-        <div style="position:relative;padding:56.25% 0 0 0;" id="ifr_698fa4a0ceb26906d0068252_aspect">
-          <iframe frameborder="0" allowfullscreen src="about:blank"
-            id="ifr_698fa4a0ceb26906d0068252"
-            style="position:absolute;top:0;left:0;width:100%;height:100%;"
-            referrerpolicy="origin"
-            onload="this.onload=null,this.src='https://scripts.converteai.net/f8e465b5-f483-4d08-be19-bc14de388e59/players/698fa4a0ceb26906d0068252/v4/embed.html'+(location.search||'?')+'&vl='+encodeURIComponent(location.href)">
-          </iframe>
-        </div>
-      </div>`
+    title: 'Invocations Sacrées à l\'Archange Michel',
+    eyebrow: 'Leçon 2 sur 2 · Spiritualité',
+    desc: 'Accédez à des prières et invocations puissantes à l\'Archange Michel pour la protection et la guidance divines.',
+    videoHTML: `<div id="ifr_6a0d1fa2d90ffe137074d549_wrapper" style="margin:0 auto;width:100%;"><div style="position:relative;padding:56.25% 0 0 0;"><iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_6a0d1fa2d90ffe137074d549" style="position:absolute;top:0;left:0;width:100%;height:100%;" referrerpolicy="origin" onload="this.onload=null,this.src='https://scripts.converteai.net/f8e465b5-f483-4d08-be19-bc14de388e59/players/6a0d1fa2d90ffe137074d549/v4/embed.html'+(location.search||'?')+'&vl='+encodeURIComponent(location.href)"></iframe></div></div>`
   }
 ];
 
@@ -913,8 +893,8 @@ function submitComment() {
 
 function renderComments() {
   const demo = [
-    { name: 'Margaret', text: 'This prayer changed my morning. I felt protected the moment I spoke it out loud.', rating: 5, date: 'Mar 28' },
-    { name: 'James', text: 'Archangel Michael has always been close to my heart. This teaching brought me to tears.', rating: 5, date: 'Mar 25' },
+    { name: 'Margaret', text: 'Cette prière a transformé mes matins. Je me suis sentie protégée dès l\'instant où je l\'ai prononcée à voix haute.', rating: 5, date: '28 Mar' },
+    { name: 'James', text: 'L\'Archange Michel a toujours été proche de mon cœur. Cet enseignement m\'a ému aux larmes.', rating: 5, date: '25 Mar' },
   ];
   getLessonComments(LESSONS[currentLesson].id).then(function(sbComments) {
     const all = [...sbComments, ...demo];
