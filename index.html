@@ -873,27 +873,6 @@
     </div>
   </div>
 
-  <!-- Slide 2: Guardian Angel -->
-  <div class="hero-slide" id="slide-1">
-    <div class="hero-bg" style="background-image:url('images/newguardiann.jpeg');"></div>
-    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.20);"></div>
-    <div class="hero-fade"></div>
-    <div class="hero-content">
-      <div class="hero-btns">
-        <a class="btn btn-primary" href="https://quizangel.vercel.app/" target="_blank" rel="noopener">✦ Découvrir Maintenant</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Arrows -->
-  <div class="hero-arrow left" onclick="changeSlide(-1)">‹</div>
-  <div class="hero-arrow right" onclick="changeSlide(1)">›</div>
-
-  <!-- Dots -->
-  <div class="hero-dots">
-    <div class="hero-dot active" onclick="goToSlide(0)"></div>
-    <div class="hero-dot" onclick="goToSlide(1)"></div>
-  </div>
 </div>
 
 <!-- DIVINE SCRIPT BANNER -->
@@ -1225,29 +1204,7 @@ function expandCardHTML(p,i){
   </div>`;
 }
 
-const guardianAngelCard = `<div class="product-card" onclick="window.open('https://quizangel.vercel.app/','_blank')" style="cursor:pointer;">
-  <div class="card-img-wrap">
-    <img src="images/newguardiann.jpeg" alt="Discover Your Guardian Angel" loading="lazy"/>
-    <div class="card-badges">
-      <span class="badge badge-gold" style="font-size:0.68rem;padding:3px 9px;">✦ Exclusive</span>
-    </div>
-  </div>
-  <div class="card-body">
-    <span class="cat-pill cat-spirituality">Spirituality</span>
-    <div class="card-title">Discover Your Guardian Angel</div>
-    <div class="card-desc">Find out which angel watches over you and what divine message they carry for your life.</div>
-    <div class="card-meta">
-      <span class="stars">★ 5.0</span>
-      <span>(2.4k)</span>
-      <span>🕐 5min</span>
-    </div>
-    <div class="card-actions">
-      <a class="card-btn card-btn-access" href="https://quizangel.vercel.app/" target="_blank" rel="noopener" onclick="event.stopPropagation()">▶ Access</a>
-      <button class="card-btn card-btn-details" onclick="event.stopPropagation();openGuardianAngelModal()">⊙ Voir les Détails</button>
-    </div>
-  </div>
-</div>`;
-document.getElementById('track-my').innerHTML = guardianAngelCard + DATA.my.map((p,i)=>cardHTML(p,'my',i)).join('');
+document.getElementById('track-my').innerHTML = DATA.my.map((p,i)=>cardHTML(p,'my',i)).join('');
 document.getElementById('track-expand').innerHTML = EXPAND_DATA.map((p,i)=>expandCardHTML(p,i)).join('');
 
 function scrollRow(key,dir){
@@ -1272,16 +1229,7 @@ function toggleFav(id){
   b.textContent=b.classList.contains('active')?'♥':'♡';
 }
 
-function openGuardianAngelModal(){
-  const mc=document.getElementById('m-cat');
-  mc.textContent='Spirituality'; mc.className='cat-pill cat-spirituality';
-  document.getElementById('m-title').textContent='Discover Your Guardian Angel';
-  document.getElementById('m-rating').textContent='5.0';
-  document.getElementById('m-duration').textContent='🕐 5min';
-  document.getElementById('m-desc').textContent='Find out which angel watches over you and what divine message they carry for your life.';
-  document.getElementById('modal-overlay').classList.add('open');
-  document.body.style.overflow='hidden';
-}
+
 function openModal(idx,key){
   const p=DATA[key][idx]; if(!p)return;
   const mc=document.getElementById('m-cat');
@@ -1301,17 +1249,9 @@ function closeModalOutside(e){ if(e.target.id==='modal-overlay')closeModal(); }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeModal(); });
 
 // HERO
-let cur=0,total=2,auto;
-function goToSlide(n){
-  document.getElementById('slide-'+cur).classList.remove('active');
-  document.querySelectorAll('.hero-dot')[cur].classList.remove('active');
-  cur=(n+total)%total;
-  document.getElementById('slide-'+cur).classList.add('active');
-  document.querySelectorAll('.hero-dot')[cur].classList.add('active');
-  clearInterval(auto); auto=setInterval(()=>goToSlide(cur+1),6000);
-}
-function changeSlide(d){goToSlide(cur+d);}
-auto=setInterval(()=>goToSlide(cur+1),6000);
+let cur=0,total=1,auto;
+function goToSlide(n){}
+function changeSlide(d){}
 
 // ── SWIPE GESTURE ──
 document.querySelectorAll('.cards-viewport').forEach(viewport => {
@@ -1345,7 +1285,6 @@ fadeSections.forEach((el, i) => {
 
 // ── NOTIFICATIONS ──
 const NOTIFS = [
-  { id:'angel',    icon:'👼', title:"Discover Your Guardian Angel",       sub:'See what it has for you', btn:'Open', btnUrl:'https://quizangel.vercel.app/', action: function(){ closeNotifPanel(); window.open('https://quizangel.vercel.app/','_blank'); } },
   { id:'practice', icon:'🎯', title:"Your practice for today is waiting", sub:'', action: function(){ closeNotifPanel(); const el=document.getElementById('track-practice'); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); } },
 ];
 
