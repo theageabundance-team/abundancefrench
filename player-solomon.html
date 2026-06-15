@@ -803,8 +803,8 @@ function submitComment() {
 
 function renderComments() {
   const demo = [
-    { name: 'Catherine', text: 'I never understood why Solomon asked for wisdom instead of riches until this lesson. Now everything makes sense. God is a God of order — and wisdom always comes first.', rating: 5, date: 'Mar 30' },
-    { name: 'David', text: 'The 5 signs hit me like a revelation. I have been in season 3 for months without realizing it was God preparing me. I will not despise this waiting anymore.', rating: 5, date: 'Mar 28' },
+    { name: 'Catherine', text: 'Je n'avais jamais compris pourquoi Salomon avait demandé la sagesse plutôt que les richesses avant cette leçon. Maintenant tout prend sens. Dieu est un Dieu d'ordre — et la sagesse passe toujours en premier.', rating: 5, date: 'Mar 30' },
+    { name: 'David', text: 'Les 5 signes m'ont frappé comme une révélation. J'étais dans la saison 3 depuis des mois sans réaliser que c'était Dieu qui me préparait. Je ne mépriserai plus cette attente.', rating: 5, date: 'Mar 28' },
   ];
   getLessonComments(LESSONS[currentLesson].id).then(function(sbComments) {
     const all = [...sbComments, ...demo];

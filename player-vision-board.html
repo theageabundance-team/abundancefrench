@@ -570,14 +570,14 @@ const LESSONS = [
     hasDownload: true,
     downloadType: 'pdf',
     downloadHref: 'pdfs/Visionboard.pdf',
-    downloadTitle: 'Vision Board Academy Guide',
-    downloadMeta: 'PDF · Your complete vision board workbook',
+    downloadTitle: 'Guide de l\'Académie du Tableau de Vision',
+    downloadMeta: 'PDF · Votre cahier d\'exercices complet pour le tableau de vision',
     videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/TOTX2BQnggU?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
   }
 ];
 
 const MODULE_ID = 'vision-board';
-const GIFT_NAME = 'Gift of Divine Vision';
+const GIFT_NAME = 'Don de la Vision Divine';
 
 let currentLesson = parseInt(localStorage.getItem('current_lesson_' + MODULE_ID) || '0');
 let currentRating = 0;
@@ -729,8 +729,8 @@ function renderStars() {
 function submitComment() {
   const text = document.getElementById('comment-input').value.trim();
   if (!text) return;
-  const name = savedName ? savedName.split(' ')[0] : 'Member';
-  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) };
+  const name = savedName ? savedName.split(' ')[0] : 'Membre';
+  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('fr-FR', { month: 'short', day: 'numeric' }) };
   document.getElementById('comment-input').value = '';
   // Optimistic: prepend immediately
   const list = document.getElementById('comments-list');
@@ -744,8 +744,8 @@ function submitComment() {
 
 function renderComments() {
   const demo = [
-    { name: 'Sarah', text: 'I created my vision board the same night I watched this. For the first time in years, I could see my future clearly. Something in me woke up.', rating: 5, date: 'Apr 4' },
-    { name: 'James', text: 'I always thought vision boards were just pretty pictures. This lesson changed everything. Now I understand it is an act of faith, not just creativity.', rating: 5, date: 'Apr 1' },
+    { name: 'Sarah', text: 'J\'ai créé mon tableau de vision la nuit même où j\'ai regardé ceci. Pour la première fois en des années, je pouvais voir mon avenir clairement. Quelque chose en moi s\'est éveillé.', rating: 5, date: 'Apr 4' },
+    { name: 'James', text: 'J\'ai toujours pensé que les tableaux de vision n\'étaient que de jolies images. Cette leçon a tout changé. Maintenant je comprends que c\'est un acte de foi, pas seulement de créativité.', rating: 5, date: 'Apr 1' },
   ];
   getLessonComments(LESSONS[currentLesson].id).then(function(sbComments) {
     const all = [...sbComments, ...demo];

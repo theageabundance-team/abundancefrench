@@ -680,8 +680,8 @@ function renderStars() {
 function submitComment() {
   const text = document.getElementById('comment-input').value.trim();
   if (!text) return;
-  const name = savedName ? savedName.split(' ')[0] : 'Member';
-  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) };
+  const name = savedName ? savedName.split(' ')[0] : 'Membre';
+  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('fr-FR', { month: 'short', day: 'numeric' }) };
   document.getElementById('comment-input').value = '';
   // Optimistic: prepend immediately
   const list = document.getElementById('comments-list');
@@ -695,8 +695,8 @@ function submitComment() {
 
 function renderComments() {
   const demo = [
-    { name: 'Angela', text: 'I filled three pages my first night with this journal. Dreams I had buried for years came rushing back. It felt like God was reminding me of who I was made to be.', rating: 5, date: 'Apr 5' },
-    { name: 'Kevin', text: 'Writing it down made it real. I used to think journaling was just for feelings. Now I understand it is an act of faith. My life is already changing.', rating: 5, date: 'Apr 2' },
+    { name: 'Angela', text: 'J\'ai rempli trois pages dès ma première nuit avec ce journal. Des rêves que j\'avais enfouis pendant des années sont revenus en masse. J\'avais l\'impression que Dieu me rappelait qui j\'étais faite pour être.', rating: 5, date: 'Apr 5' },
+    { name: 'Kevin', text: 'L\'écrire l\'a rendu réel. Je pensais que tenir un journal était seulement pour les sentiments. Maintenant je comprends que c\'est un acte de foi. Ma vie est déjà en train de changer.', rating: 5, date: 'Apr 2' },
   ];
   getLessonComments(LESSONS[currentLesson].id).then(function(sbComments) {
     const all = [...sbComments, ...demo];

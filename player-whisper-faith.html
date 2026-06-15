@@ -630,28 +630,28 @@
 const LESSONS = [
   {
     id: 'whisper-faith-1',
-    title: 'The Sacred Beginning: Opening Your Heart',
-    eyebrow: 'Lesson 1 of 2 · Spirituality',
-    desc: 'Learn how to open your heart and awaken to divine love and spiritual connection through sacred practices and mindfulness.',
+    title: 'Le Commencement Sacré : Ouvrir Votre Cœur',
+    eyebrow: 'Leçon 1 sur 2 · Spiritualité',
+    desc: 'Apprenez à ouvrir votre cœur et à vous éveiller à l\'amour divin et à la connexion spirituelle à travers des pratiques sacrées et la pleine conscience.',
     hasDownload: true,
     downloadType: 'pdf',
     downloadHref: 'pdfs/pdfmodulo3.1.pdf',
-    downloadTitle: 'Prayer as a Path of Faith',
-    downloadMeta: 'PDF · Lesson 1 material',
+    downloadTitle: 'La Prière comme Chemin de Foi',
+    downloadMeta: 'PDF · Matériel de la leçon 1',
     videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/VTTyERc0zUI?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
   },
   {
     id: 'whisper-faith-2',
-    title: 'Activating Faith Through Daily Prayer',
-    eyebrow: 'Lesson 2 of 2 · Spirituality',
-    desc: 'Master the art of daily prayer and develop a powerful spiritual practice that deepens your faith and connection to the divine.',
+    title: 'Activer la Foi par la Prière Quotidienne',
+    eyebrow: 'Leçon 2 sur 2 · Spiritualité',
+    desc: 'Maîtrisez l\'art de la prière quotidienne et développez une pratique spirituelle puissante qui approfondit votre foi et votre connexion au divin.',
     hasDownload: false,
     videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/bHzV8dKXIzA?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
   }
 ];
 
 const MODULE_ID = 'whisper-faith';
-const GIFT_NAME = 'Gift of Living Faith';
+const GIFT_NAME = 'Don de la Foi Vivante';
 
 let currentLesson = parseInt(localStorage.getItem('current_lesson_' + MODULE_ID) || '0');
 let currentRating = 0;
@@ -827,8 +827,8 @@ function renderStars() {
 function submitComment() {
   const text = document.getElementById('comment-input').value.trim();
   if (!text) return;
-  const name = savedName ? savedName.split(' ')[0] : 'Member';
-  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) };
+  const name = savedName ? savedName.split(' ')[0] : 'Membre';
+  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('fr-FR', { month: 'short', day: 'numeric' }) };
   document.getElementById('comment-input').value = '';
   // Optimistic: prepend immediately
   const list = document.getElementById('comments-list');
@@ -842,8 +842,8 @@ function submitComment() {
 
 function renderComments() {
   const demo = [
-    { name: 'Grace', text: 'Opening my heart in that first lesson felt like finally exhaling after years of holding my breath. Something shifted permanently. I am not the same.', rating: 5, date: 'Apr 3' },
-    { name: 'Daniel', text: 'The daily prayer activation gave me a structure I had been searching for. My mornings are now sacred. My faith is no longer passive — it acts.', rating: 5, date: 'Mar 31' },
+    { name: 'Grace', text: 'Ouvrir mon cœur lors de cette première leçon m\'a semblé enfin expirer après des années à retenir mon souffle. Quelque chose s\'est déplacé de façon permanente. Je ne suis plus la même.', rating: 5, date: 'Apr 3' },
+    { name: 'Daniel', text: 'L\'activation de la prière quotidienne m\'a donné une structure que je cherchais. Mes matins sont maintenant sacrés. Ma foi n\'est plus passive — elle agit.', rating: 5, date: 'Mar 31' },
   ];
   getLessonComments(LESSONS[currentLesson].id).then(function(sbComments) {
     const all = [...sbComments, ...demo];

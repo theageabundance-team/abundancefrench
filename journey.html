@@ -567,7 +567,7 @@
       <div class="counter-number" id="day-count">1</div>
       <div class="counter-unit">Jours</div>
       <div class="counter-message" id="counter-msg">
-        "Seven is the number of divine completion. You have walked a full sacred cycle."
+        "Sept est le nombre de l'accomplissement divin. Vous avez parcouru un cycle sacré complet."
       </div>
       <div class="next-milestone">
         <div class="next-milestone-label">Prochain Jalon</div>
@@ -575,7 +575,7 @@
         <div class="progress-bar-wrap">
           <div class="progress-bar-fill" id="progress-fill" style="width: 0%"></div>
         </div>
-        <div class="progress-text" id="progress-text">7 of 15 days</div>
+        <div class="progress-text" id="progress-text">7 sur 15 jours</div>
       </div>
     </div>
   </div>
@@ -701,7 +701,7 @@ onSupabaseReady(function() {
       const fillEl = document.getElementById('progress-fill');
       if (fillEl) fillEl.style.width = pct + '%';
       const nextNameEl = document.getElementById('next-name');
-      if (nextNameEl) nextNameEl.textContent = 'Day ' + nm.day + ' \u2014 ' + nm.name;
+      if (nextNameEl) nextNameEl.textContent = 'Jour ' + nm.day + ' \u2014 ' + nm.name;
       const ptEl = document.getElementById('progress-text');
       if (ptEl) ptEl.textContent = days + ' sur ' + nm.day + ' jours';
     } else {
@@ -863,7 +863,7 @@ milestonesList.innerHTML = MILESTONES.map((m, i) => {
       ${i < MILESTONES.length - 1 ? '<div class="milestone-line"></div>' : ''}
       <div class="milestone-icon-wrap ${s}">${iconHtml}</div>
       <div class="milestone-content">
-        <div class="milestone-day ${s}">Day ${m.day}</div>
+        <div class="milestone-day ${s}">Jour ${m.day}</div>
         <div class="milestone-name ${s}">${m.name}</div>
 
         <div class="milestone-desc ${s}">${m.desc}</div>

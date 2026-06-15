@@ -581,37 +581,37 @@
 const LESSONS = [
   {
     id: 'mindset-1',
-    title: 'What is Mindset',
-    eyebrow: 'Lesson 1 of 5 · Mindset',
-    desc: 'Discover the true meaning of mindset and how your mental framework shapes every area of your life — your relationships, finances, health, and spiritual walk.',
+    title: 'Qu\'est-ce que l\'État d\'Esprit',
+    eyebrow: 'Leçon 1 sur 5 · État d\'Esprit',
+    desc: 'Découvrez la véritable signification de l\'état d\'esprit et comment votre cadre mental façonne chaque domaine de votre vie — vos relations, vos finances, votre santé et votre marche spirituelle.',
     videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/TNX1FO5WdIc?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
   },
   {
     id: 'mindset-2',
-    title: 'How Limiting Beliefs Are Formed',
-    eyebrow: 'Lesson 2 of 5 · Mindset',
-    desc: 'Understand the root of the beliefs that have been holding you back — where they come from, how they were planted, and why they feel so real.',
+    title: 'Comment se Forment les Croyances Limitantes',
+    eyebrow: 'Leçon 2 sur 5 · État d\'Esprit',
+    desc: 'Comprenez la racine des croyances qui vous ont retenu — d\'où elles viennent, comment elles ont été plantées, et pourquoi elles semblent si réelles.',
     videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/riCuvs_DAPo?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
   },
   {
     id: 'mindset-3',
-    title: 'Neuroplasticity — The Science of Mental Change',
-    eyebrow: 'Lesson 3 of 5 · Mindset',
-    desc: 'Science confirms what Scripture declared: your mind can be renewed. Learn how neuroplasticity gives you the power to literally rewire your brain for abundance.',
+    title: 'Neuroplasticité — La Science du Changement Mental',
+    eyebrow: 'Leçon 3 sur 5 · État d\'Esprit',
+    desc: 'La science confirme ce que l\'Écriture a déclaré : votre esprit peut être renouvelé. Découvrez comment la neuroplasticité vous donne le pouvoir de recâbler littéralement votre cerveau pour l\'abondance.',
     videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/5uuZt842Qmk?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
   },
   {
     id: 'mindset-4',
-    title: 'Replacing Beliefs with New Positive Truths',
-    eyebrow: 'Lesson 4 of 5 · Mindset',
-    desc: 'It is not enough to remove the old — you must replace it with truth. Learn the practical method for installing new empowering beliefs that align with God\'s Word.',
+    title: 'Remplacer les Croyances par de Nouvelles Vérités Positives',
+    eyebrow: 'Leçon 4 sur 5 · État d\'Esprit',
+    desc: 'Il ne suffit pas d\'enlever l\'ancien — vous devez le remplacer par la vérité. Apprenez la méthode pratique pour installer de nouvelles croyances dynamisantes qui s\'alignent sur la Parole de Dieu.',
     videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/9QabbLzBMjo?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
   },
   {
     id: 'mindset-5',
-    title: 'The Role of Creative Visualization',
-    eyebrow: 'Lesson 5 of 5 · Mindset',
-    desc: 'See it before you have it. Creative visualization is a sacred practice that activates faith, aligns your subconscious, and accelerates the manifestation of your divine destiny.',
+    title: 'Le Rôle de la Visualisation Créatrice',
+    eyebrow: 'Leçon 5 sur 5 · État d\'Esprit',
+    desc: 'Voyez-le avant de l\'avoir. La visualisation créatrice est une pratique sacrée qui active la foi, aligne votre subconscient et accélère la manifestation de votre destinée divine.',
     videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/0tJe_-DEy_A?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
   }
 ];
@@ -751,8 +751,8 @@ function renderStars() {
 function submitComment() {
   const text = document.getElementById('comment-input').value.trim();
   if (!text) return;
-  const name = savedName ? savedName.split(' ')[0] : 'Member';
-  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) };
+  const name = savedName ? savedName.split(' ')[0] : 'Membre';
+  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('fr-FR', { month: 'short', day: 'numeric' }) };
   document.getElementById('comment-input').value = '';
   // Optimistic: prepend immediately
   const list = document.getElementById('comments-list');
@@ -766,8 +766,8 @@ function submitComment() {
 
 function renderComments() {
   const demo = [
-    { name: 'Rachel', text: 'The neuroplasticity lesson broke something open in me. I always thought I was just wired this way. Now I know the truth — my mind can change. It already is.', rating: 5, date: 'Apr 6' },
-    { name: 'Marcus', text: 'Replacing beliefs with truth is the most practical spiritual exercise I have ever done. After lesson 4, I wrote my new beliefs on paper and read them every morning. My whole atmosphere shifted.', rating: 5, date: 'Apr 3' },
+    { name: 'Rachel', text: 'La leçon sur la neuroplasticité a ouvert quelque chose en moi. Je pensais toujours que j\'étais simplement faite ainsi. Maintenant je connais la vérité — mon esprit peut changer. Il change déjà.', rating: 5, date: 'Apr 6' },
+    { name: 'Marcus', text: 'Remplacer les croyances par la vérité est l\'exercice spirituel le plus pratique que j\'aie jamais fait. Après la leçon 4, j\'ai écrit mes nouvelles croyances sur papier et les ai lues chaque matin. Toute mon atmosphère a changé.', rating: 5, date: 'Apr 3' },
   ];
   getLessonComments(LESSONS[currentLesson].id).then(function(sbComments) {
     const all = [...sbComments, ...demo];

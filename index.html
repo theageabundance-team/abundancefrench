@@ -1285,7 +1285,7 @@ fadeSections.forEach((el, i) => {
 
 // ── NOTIFICATIONS ──
 const NOTIFS = [
-  { id:'practice', icon:'🎯', title:"Your practice for today is waiting", sub:'', action: function(){ closeNotifPanel(); const el=document.getElementById('track-practice'); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); } },
+  { id:'practice', icon:'🎯', title:"Votre pratique du jour vous attend", sub:'', action: function(){ closeNotifPanel(); const el=document.getElementById('track-practice'); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); } },
 ];
 
 function _getNotifState() {
@@ -1402,13 +1402,13 @@ applyNavName(localStorage.getItem('abundance_name'));
 // ── DAILY STREAK MODAL ──
 const DM_MILESTONES = [3, 7, 14, 21, 30];
 const DM_SUBS = [
-  'Every step of faith moves Heaven.',
-  'You are building something eternal.',
-  'Consistency is your superpower.',
-  'Heaven registers every return.',
-  'Your connection is growing deeper.',
-  'The faithful always receive.',
-  'Divine alignment is your reward.',
+  'Chaque pas de foi fait bouger le Ciel.',
+  'Vous construisez quelque chose d\'éternel.',
+  'La constance est votre superpouvoir.',
+  'Le Ciel enregistre chaque retour.',
+  'Votre connexion grandit de plus en plus.',
+  'Les fidèles reçoivent toujours.',
+  'L\'alignement divin est votre récompense.',
 ];
 
 function _dmCalcDay() {
@@ -1490,11 +1490,11 @@ onSupabaseReady(function() {
 <!-- DAILY STREAK MODAL -->
 <div class="dm-overlay" id="dm-overlay" onclick="if(event.target===this)closeDailyModal()">
   <div class="dm-box">
-    <div class="dm-eyebrow">✦ Your Journey ✦</div>
-    <div class="dm-title">Day <span id="dm-day-num">1</span> of Connection</div>
-    <div class="dm-sub" id="dm-sub">Keep walking — your breakthrough is near.</div>
+    <div class="dm-eyebrow">✦ Votre Chemin ✦</div>
+    <div class="dm-title">Jour <span id="dm-day-num">1</span> de Connexion</div>
+    <div class="dm-sub" id="dm-sub">Continuez — votre percée est proche.</div>
     <div class="dm-streak" id="dm-streak"></div>
-    <button class="dm-btn" onclick="closeDailyModal()">Continue My Journey</button>
+    <button class="dm-btn" onclick="closeDailyModal()">Continuer Mon Chemin</button>
   </div>
 </div>
 
@@ -1515,7 +1515,7 @@ onSupabaseReady(function() {
     <div class="profile-avatar-large" id="profile-avatar-large">F</div>
     <div class="profile-name" id="profile-name">Friend</div>
     <div class="profile-email" id="profile-email"></div>
-    <div class="profile-days-badge">✦ <span id="profile-days">0</span> Days of Connection</div>
+    <div class="profile-days-badge">✦ <span id="profile-days">0</span> Jours de Connexion</div>
   </div>
   <div class="profile-menu-body">
     <a href="journey.html" class="profile-menu-item" onclick="closeProfileMenu();navigateTo('journey.html');return false;">
