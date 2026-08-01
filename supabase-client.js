@@ -1,5 +1,5 @@
 /**
- * Age of Abundance - Supabase Client (v2 — email as PK)
+ * L'Ère de l'Abondance - Supabase Client (v2 — email as PK)
  * Usa o email como identificador único em todas as tabelas.
  * Mantém localStorage como cache/fallback offline.
  */
