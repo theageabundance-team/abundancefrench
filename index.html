@@ -859,12 +859,12 @@
         <span class="badge badge-orange">En vedette</span>
       </div>
       <h1 class="hero-title">L'Ère de l'Abondance</h1>
-      <p class="hero-desc">"All these blessings will come upon you and overtake you" — Deuteronomy 28:2</p>
+      <p class="hero-desc">"Toutes ces bénédictions viendront sur toi et se répandront sur toi" — Deutéronome 28:2</p>
       <div class="hero-meta">
         <span>🕐 4h</span>
         <span class="stars">★★★★★</span>
         <span>5</span>
-        <span class="cat-tag">Mindset</span>
+        <span class="cat-tag">Esprit</span>
       </div>
       <div class="hero-btns">
         <button class="btn btn-primary" onclick="navigateTo('player-age-of-abundance.html')">▶ Accéder au Contenu</button>
@@ -1366,7 +1366,7 @@ updateNotifBadge();
 
 // ── PROFILE MENU ──
 function openProfileMenu() {
-  const name  = localStorage.getItem('abundance_name')  || 'Friend';
+  const name  = localStorage.getItem('abundance_name')  || 'Ami';
   const email = localStorage.getItem('abundance_email') || '';
   const start = localStorage.getItem('abundance_start_date');
   const days  = _localDateStr ? (function(sd){if(!sd||sd==='null'||sd==='undefined')return 1;const diff=(new Date()-new Date(sd+'T00:00:00'))/86400000;return isNaN(diff)?1:Math.max(1,Math.floor(diff)+1);})(start) : 1;
@@ -1503,7 +1503,7 @@ onSupabaseReady(function() {
 <div class="notif-panel" id="notif-panel">
   <div class="notif-header">
     <span class="notif-header-title">Notifications</span>
-    <button class="notif-header-clear" onclick="markAllRead()">Mark all as read</button>
+    <button class="notif-header-clear" onclick="markAllRead()">Tout marquer comme lu</button>
   </div>
   <div class="notif-list" id="notif-list"></div>
 </div>
@@ -1514,32 +1514,32 @@ onSupabaseReady(function() {
   <div class="profile-menu-header">
     <button class="profile-menu-close" onclick="closeProfileMenu()">✕</button>
     <div class="profile-avatar-large" id="profile-avatar-large">F</div>
-    <div class="profile-name" id="profile-name">Friend</div>
+    <div class="profile-name" id="profile-name">Ami</div>
     <div class="profile-email" id="profile-email"></div>
     <div class="profile-days-badge">✦ <span id="profile-days">0</span> Jours de Connexion</div>
   </div>
   <div class="profile-menu-body">
     <a href="journey.html" class="profile-menu-item" onclick="closeProfileMenu();navigateTo('journey.html');return false;">
       <span class="profile-menu-item-icon">✨</span>
-      <span class="profile-menu-item-label">My Journey</span>
+      <span class="profile-menu-item-label">Mon Parcours</span>
     </a>
     <a href="journal.html" class="profile-menu-item" onclick="closeProfileMenu();navigateTo('journal.html');return false;">
       <span class="profile-menu-item-icon">📖</span>
-      <span class="profile-menu-item-label">My Journal</span>
+      <span class="profile-menu-item-label">Mon Journal</span>
     </a>
     <a href="community.html" class="profile-menu-item" onclick="closeProfileMenu();navigateTo('community.html');return false;">
       <span class="profile-menu-item-icon">👥</span>
-      <span class="profile-menu-item-label">Abundance Circle</span>
+      <span class="profile-menu-item-label">Cercle d'Abondance</span>
     </a>
     <div class="profile-menu-divider"></div>
     <a href="support.html" class="profile-menu-item">
       <span class="profile-menu-item-icon">💬</span>
-      <span class="profile-menu-item-label">Support</span>
+      <span class="profile-menu-item-label">Assistance</span>
     </a>
     <div class="profile-menu-divider"></div>
     <button class="profile-menu-item" onclick="logout()">
       <span class="profile-menu-item-icon">🚪</span>
-      <span class="profile-menu-item-label danger">Sign Out</span>
+      <span class="profile-menu-item-label danger">Déconnexion</span>
     </button>
   </div>
 </div>

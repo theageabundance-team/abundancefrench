@@ -183,7 +183,7 @@
     chip.innerHTML =
       '<span id="_ib_chip_icon">📱</span>' +
       '<span id="_ib_chip_label">Installer l\'appli</span>' +
-      '<button id="_ib_chip_close" aria-label="Dismiss">✕</button>';
+      '<button id="_ib_chip_close" aria-label="Fermer">✕</button>';
     document.body.appendChild(chip);
 
     chip.addEventListener('click', function (e) {
@@ -216,9 +216,9 @@
 
     overlay.innerHTML =
       '<div id="_ib_modal">' +
-      '  <button id="_ib_modal_close" aria-label="Close">✕</button>' +
+      '  <button id="_ib_modal_close" aria-label="Fermer">✕</button>' +
       '  <div id="_ib_modal_icon">📱</div>' +
-      '  <div id="_ib_modal_title">Installer L\'Ere de l\'Abondance</div>' +
+      '  <div id="_ib_modal_title">Installer L\'Ère de l\'Abondance</div>' +
       instructionHTML +
       '</div>';
 
